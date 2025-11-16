@@ -1,0 +1,14 @@
+{
+    "mcpServers": {
+      "neo4j-quantum-network-aura": {
+        "command": "uvx",
+        "args": [ "mcp-neo4j-cypher@0.4.1", "--transport", "stdio"  ],
+        "env": {
+          "NEO4J_URI": "neo4j+s://87983fcb.databases.neo4j.io",
+          "NEO4J_USERNAME": "neo4j",
+          "NEO4J_PASSWORD": "6LYXoE4Z5jrCwJVikRtk5TwcJNGn8C5UFiXu4YskEnY",
+          "NEO4J_DATABASE": "neo4j"
+        }
+      }
+    }
+  }

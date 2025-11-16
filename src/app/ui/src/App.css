@@ -1,0 +1,40 @@
+.App {
+  min-height: 100vh;
+  background: white;
+}
+
+.App-header {
+  padding: 1.5rem 2rem;
+  text-align: center;
+  background: white;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.App-header h1 {
+  font-size: 2rem;
+  margin: 0;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.App-main {
+  width: 100%;
+  height: calc(100vh - 80px);
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+

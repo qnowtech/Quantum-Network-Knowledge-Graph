@@ -1,0 +1,37 @@
+{
+  "name": "knowledge-react",
+  "version": "1.0.0",
+  "private": true,
+  "homepage": "./",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "npm run export-data && react-scripts build",
+    "export-data": "python ../../app/scripts/export_neo4j_data.py",
+    "prebuild": "npm run export-data",
+    "test": "react-scripts test",
+    "deploy": "npm run build && gh-pages -d build"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "@neo4j-ndl/base": "^3.7.36",
+    "@neo4j-ndl/react": "^3.9.24",
+    "@neo4j-nvl/react": "^0.3.9"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
