@@ -45,6 +45,9 @@ This project is born under **QNOW's philosophy** as a company focused on **knowl
 
 Instead of merely storing event data, this public project builds an **open semantic layer** that:
 
+
+![knowlesge](data/kg_graph_schema.png)
+
 - Represents people, organizations, domains, and problems as connected nodes.
 - Makes explicit the relationships between interests, experience, and needs.
 - Enables intelligent agents, analysis tools, and other systems to explore the quantum computing ecosystem in LATAM in a structured way, and on which knowledge will be mined and generated in the quantum computing domain.
@@ -93,7 +96,7 @@ Under QNOW's philosophy as a company focused on **knowledge mining and generatio
   - Quantum use case design,
   - Team building and collaboration networks.
 - An **open semantic layer** that any system can consume:
-  - Agents orchestrated with LangGraph / LangChain for instance see reference at
+  - Agents orchestrated  for instance could leverage this knowledge to fin the best talent for the rigth problem.
   - Ecosystem analysis dashboards,
   - Program and call planning tools.
 
@@ -216,7 +219,7 @@ Includes an interactive web interface built with React and Neo4j NVL to visualiz
 
 ### Strategic Query Examples (Cypher)
 
-Below are some useful questions and how to answer them in Cypher.
+Below are some useful questions and how to answer them in Cypher. This cpuld be executed agains the Aura instance.
 
 #### 1. People with Active Experience in a Specific Domain and Sector
 
