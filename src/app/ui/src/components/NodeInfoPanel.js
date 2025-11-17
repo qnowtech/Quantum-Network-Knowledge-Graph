@@ -41,6 +41,12 @@ function NodeInfoPanel({ node, relationships, allNodes, onClose }) {
               <span key={idx} className="node-label">{label}</span>
             ))}
           </div>
+          {node.degree !== undefined && (
+            <div className="node-degree">
+              <span className="degree-label">Degree (Conexiones):</span>
+              <span className="degree-value">{node.degree}</span>
+            </div>
+          )}
         </div>
 
         {/* Propiedades del nodo */}
@@ -60,10 +66,29 @@ function NodeInfoPanel({ node, relationships, allNodes, onClose }) {
           </div>
         )}
 
+        {/* Resumen de relaciones por tipo */}
+        <div className="relationships-summary">
+          <h5>Resumen de Relaciones</h5>
+          <div className="summary-stats">
+            {(() => {
+              const relTypes = {};
+              nodeRelationships.forEach(rel => {
+                relTypes[rel.type] = (relTypes[rel.type] || 0) + 1;
+              });
+              return Object.entries(relTypes).map(([type, count]) => (
+                <div key={type} className="summary-item">
+                  <span className="summary-type">{type}:</span>
+                  <span className="summary-count">{count}</span>
+                </div>
+              ));
+            })()}
+          </div>
+        </div>
+
         {/* Relaciones */}
         <div className="node-relationships">
           <h5>
-            Relaciones ({nodeRelationships.length})
+            Relaciones Detalladas ({nodeRelationships.length})
           </h5>
           {relatedNodes.length > 0 ? (
             <div className="relationships-list">

@@ -8,7 +8,16 @@ import './GraphVisualization.css';
 const NODE_COLORS = {
   'Person': '#4A90E2',      // Azul para Personas
   'Organization': '#50C878', // Verde para Organizaciones
-  'Domain': '#FF6B6B'        // Rojo para Dominios
+  'Domain': '#FF6B6B',       // Rojo para Dominios
+  'Problem': '#FFA500'      // Naranja para Problemas
+};
+
+// Mapeo de nombres en español para cada tipo de nodo
+const NODE_LABELS_ES = {
+  'Person': 'Personas',
+  'Organization': 'Organizaciones',
+  'Domain': 'Dominios',
+  'Problem': 'Problemas'
 };
 
 // Función para obtener el color según el tipo de nodo
@@ -26,7 +35,7 @@ function getNodeColor(labels) {
 }
 
 // Función para enriquecer nodos con colores y hacerlos más visibles
-function enrichNodesWithColors(nodes, sizeMultiplier = 1.0) {
+function enrichNodesWithColors(nodes, sizeMultiplier = 1.0, nodeDegrees = new Map(), useDegreeForSize = false, degreeStats = { min: 0, max: 1 }) {
   return nodes.map(node => {
     // Si el nodo ya está marcado como oculto (fantasma), mantener su estilo
     if (node.hidden) {
@@ -39,17 +48,27 @@ function enrichNodesWithColors(nodes, sizeMultiplier = 1.0) {
     }
     
     const nodeColor = getNodeColor(node.labels);
+    const degree = nodeDegrees.get(node.id) || 0;
     
-    // Tamaños base multiplicados por el factor de escala
+    // Calcular tamaño base
     let baseSize;
-    if (node.labels?.includes('Person')) {
-      baseSize = 2.5 * sizeMultiplier;
-    } else if (node.labels?.includes('Organization')) {
-      baseSize = 3.5 * sizeMultiplier;
-    } else if (node.labels?.includes('Domain')) {
-      baseSize = 2.0 * sizeMultiplier;
+    if (useDegreeForSize && degreeStats.max > 0) {
+      // Usar degree para tamaño: normalizar entre 0.5 y 3.0
+      const normalizedDegree = (degree - degreeStats.min) / (degreeStats.max - degreeStats.min || 1);
+      baseSize = (0.5 + normalizedDegree * 2.5) * sizeMultiplier;
     } else {
-      baseSize = 2.0 * sizeMultiplier;
+      // Tamaños base multiplicados por el factor de escala
+      if (node.labels?.includes('Person')) {
+        baseSize = 2.5 * sizeMultiplier;
+      } else if (node.labels?.includes('Organization')) {
+        baseSize = 3.5 * sizeMultiplier;
+      } else if (node.labels?.includes('Domain')) {
+        baseSize = 2.0 * sizeMultiplier;
+      } else if (node.labels?.includes('Problem')) {
+        baseSize = 2.5 * sizeMultiplier;
+      } else {
+        baseSize = 2.0 * sizeMultiplier;
+      }
     }
     
     // Calcular radio en píxeles (mínimo 15px para legibilidad)
@@ -64,6 +83,7 @@ function enrichNodesWithColors(nodes, sizeMultiplier = 1.0) {
       // Tamaños ajustables
       size: baseSize,
       radius: radius,
+      degree: degree, // Agregar degree como propiedad
       // Agregar estilo personalizado si es necesario
       style: {
         fill: nodeColor,
@@ -79,6 +99,20 @@ function enrichNodesWithColors(nodes, sizeMultiplier = 1.0) {
   });
 }
 
+// Función para enriquecer relaciones con opacidad y grosor
+function enrichRelationships(relationships, opacity = 0.6, width = 1.0) {
+  return relationships.map(rel => ({
+    ...rel,
+    opacity: opacity,
+    width: width,
+    style: {
+      ...rel.style,
+      opacity: opacity,
+      strokeWidth: width
+    }
+  }));
+}
+
 // Layouts disponibles en @neo4j-nvl/react
 // Nota: Los nombres pueden variar según la versión de la librería
 const AVAILABLE_LAYOUTS = [
@@ -89,6 +123,26 @@ const AVAILABLE_LAYOUTS = [
   { value: 'forceDirected', label: 'Force-Directed (alt)', description: 'Variante del layout de fuerzas' }
 ];
 
+// Función para calcular el degree (grado) de cada nodo
+function calculateNodeDegrees(nodes, relationships) {
+  const degreeMap = new Map();
+  
+  // Inicializar todos los nodos con degree 0
+  nodes.forEach(node => {
+    degreeMap.set(node.id, 0);
+  });
+  
+  // Contar relaciones para cada nodo
+  relationships.forEach(rel => {
+    const fromDegree = degreeMap.get(rel.from) || 0;
+    const toDegree = degreeMap.get(rel.to) || 0;
+    degreeMap.set(rel.from, fromDegree + 1);
+    degreeMap.set(rel.to, toDegree + 1);
+  });
+  
+  return degreeMap;
+}
+
 function GraphVisualization() {
   const eventLogRef = useRef(null);
   const { nodes, relationships, stats, loading, error } = useGraphData();
@@ -97,13 +151,66 @@ function GraphVisualization() {
   const [layoutKey, setLayoutKey] = useState(0); // Key para forzar re-render
   const [nodeSizeMultiplier, setNodeSizeMultiplier] = useState(1.5); // Multiplicador de tamaño (1.0 = normal)
   const [showControls, setShowControls] = useState(true); // Mostrar/ocultar controles
+  const [useDegreeForSize, setUseDegreeForSize] = useState(false); // Usar degree para tamaño
+  const [relationshipOpacity, setRelationshipOpacity] = useState(0.6); // Opacidad de relaciones
+  const [relationshipWidth, setRelationshipWidth] = useState(1.0); // Grosor de relaciones
   
-  // Filtros de nodos por tipo
-  const [nodeFilters, setNodeFilters] = useState({
-    Person: true,
-    Organization: true,
-    Domain: true
+  // Detectar dinámicamente todos los tipos de nodos presentes en los datos
+  const availableNodeTypes = React.useMemo(() => {
+    const types = new Set();
+    nodes.forEach(node => {
+      if (node.labels && node.labels.length > 0) {
+        node.labels.forEach(label => types.add(label));
+      }
+    });
+    return Array.from(types).sort();
+  }, [nodes]);
+  
+  // Inicializar filtros dinámicamente basados en los tipos disponibles
+  const [nodeFilters, setNodeFilters] = useState(() => {
+    const initialFilters = {};
+    // Inicializar todos los tipos como visibles por defecto
+    availableNodeTypes.forEach(type => {
+      initialFilters[type] = true;
+    });
+    return initialFilters;
   });
+  
+  // Actualizar filtros cuando cambian los tipos disponibles
+  useEffect(() => {
+    setNodeFilters(prev => {
+      const updated = { ...prev };
+      // Agregar nuevos tipos que no existían antes
+      availableNodeTypes.forEach(type => {
+        if (!(type in updated)) {
+          updated[type] = true; // Por defecto visible
+        }
+      });
+      // Mantener solo los tipos que existen actualmente
+      Object.keys(updated).forEach(type => {
+        if (!availableNodeTypes.includes(type)) {
+          delete updated[type];
+        }
+      });
+      return updated;
+    });
+  }, [availableNodeTypes]);
+  
+  // Calcular degrees de todos los nodos
+  const nodeDegrees = React.useMemo(() => {
+    return calculateNodeDegrees(nodes, relationships);
+  }, [nodes, relationships]);
+  
+  // Calcular estadísticas de degree
+  const degreeStats = React.useMemo(() => {
+    const degrees = Array.from(nodeDegrees.values());
+    if (degrees.length === 0) return { min: 0, max: 0, avg: 0 };
+    return {
+      min: Math.min(...degrees),
+      max: Math.max(...degrees),
+      avg: degrees.reduce((a, b) => a + b, 0) / degrees.length
+    };
+  }, [nodeDegrees]);
   
   // Filtrar nodos según los filtros activos
   const filteredNodes = React.useMemo(() => {
@@ -159,11 +266,16 @@ function GraphVisualization() {
     }))];
   }, [filteredNodes, relationships, nodes]);
   
+  // Enriquecer relaciones con opacidad y grosor
+  const enrichedRelationships = React.useMemo(() => {
+    return enrichRelationships(filteredRelationships, relationshipOpacity, relationshipWidth);
+  }, [filteredRelationships, relationshipOpacity, relationshipWidth]);
+  
   // Enriquecer nodos con colores y hacerlos más visibles
   // Incluir nodos visibles y nodos fantasma (conectados pero ocultos)
   const enrichedNodes = React.useMemo(() => {
-    return enrichNodesWithColors(allVisibleNodes, nodeSizeMultiplier);
-  }, [allVisibleNodes, nodeSizeMultiplier]);
+    return enrichNodesWithColors(allVisibleNodes, nodeSizeMultiplier, nodeDegrees, useDegreeForSize, degreeStats);
+  }, [allVisibleNodes, nodeSizeMultiplier, nodeDegrees, useDegreeForSize, degreeStats]);
 
   // Forzar actualización del layout cuando cambia
   useEffect(() => {
@@ -183,11 +295,16 @@ function GraphVisualization() {
     }
   };
 
+  // Detectar si es dispositivo móvil
+  const isMobile = React.useMemo(() => {
+    return window.innerWidth <= 768 || ('ontouchstart' in window);
+  }, []);
+
   const mouseEventCallbacks = {
     onHover: (element, hitTargets, originalEvent) => {
       logEvent('Hover', { originalEvent, data: element, hitTargets });
-      // Mostrar información del nodo al hacer hover
-      if (element && element.id) {
+      // En móvil, no mostrar automáticamente al hover (solo al click)
+      if (!isMobile && element && element.id) {
         const hoveredNode = enrichedNodes.find(n => n.id === element.id);
         if (hoveredNode) {
           setSelectedNode(hoveredNode);
@@ -197,7 +314,7 @@ function GraphVisualization() {
     
     onNodeClick: (node, hitTargets, originalEvent) => {
       logEvent('Click en Nodo', { originalEvent, data: node, hitTargets });
-      // Seleccionar nodo al hacer click
+      // Seleccionar nodo al hacer click (funciona en desktop y móvil)
       if (node && node.id) {
         const clickedNode = enrichedNodes.find(n => n.id === node.id);
         if (clickedNode) {
@@ -251,7 +368,23 @@ function GraphVisualization() {
       allowDynamicMinZoom: true,
       disableWebGL: false,
       maxZoom: 5,
-      minZoom: 0.1
+      minZoom: 0.1,
+      // Opciones para mejorar la visualización de relaciones y evitar solapamientos
+      relationshipCurve: 'curved', // Usar curvas en lugar de líneas rectas para relaciones
+      relationshipRouting: 'curved', // Enrutamiento curvo para relaciones paralelas
+      relationshipSeparation: 10, // Separación mínima entre relaciones paralelas (píxeles)
+      // Opciones de fuerza para layouts force-directed
+      ...(currentLayout === 'force' || currentLayout === 'forceDirected' ? {
+        force: {
+          charge: -300, // Fuerza de repulsión entre nodos (negativo = repulsión)
+          linkDistance: 100, // Distancia preferida entre nodos conectados
+          linkStrength: 0.5, // Fuerza de los enlaces (0-1)
+          collisionRadius: 20, // Radio de colisión para evitar superposición de nodos
+          // Opciones para mejorar el espaciado
+          centerStrength: 0.1, // Fuerza hacia el centro (evita que se dispersen demasiado)
+          manyBodyStrength: -300 // Fuerza de repulsión entre todos los nodos
+        }
+      } : {})
     };
     
     // Opciones específicas para layout circular
@@ -374,47 +507,100 @@ function GraphVisualization() {
               </span>
             </div>
 
-            {/* Filtros de Tipos de Nodos */}
+            {/* Filtros de Tipos de Nodos - Dinámicos */}
             <div className="control-group">
               <label>Filtrar por Tipo:</label>
               <div className="node-filters">
-                <label className="filter-checkbox">
-                  <input
-                    type="checkbox"
-                    checked={nodeFilters.Person}
-                    onChange={(e) => setNodeFilters(prev => ({ ...prev, Person: e.target.checked }))}
-                  />
-                  <span className="filter-label">
-                    <span className="filter-color" style={{ backgroundColor: NODE_COLORS.Person }}></span>
-                    Personas ({nodes.filter(n => n.labels?.includes('Person')).length})
-                  </span>
-                </label>
-                <label className="filter-checkbox">
-                  <input
-                    type="checkbox"
-                    checked={nodeFilters.Organization}
-                    onChange={(e) => setNodeFilters(prev => ({ ...prev, Organization: e.target.checked }))}
-                  />
-                  <span className="filter-label">
-                    <span className="filter-color" style={{ backgroundColor: NODE_COLORS.Organization }}></span>
-                    Organizaciones ({nodes.filter(n => n.labels?.includes('Organization')).length})
-                  </span>
-                </label>
-                <label className="filter-checkbox">
-                  <input
-                    type="checkbox"
-                    checked={nodeFilters.Domain}
-                    onChange={(e) => setNodeFilters(prev => ({ ...prev, Domain: e.target.checked }))}
-                  />
-                  <span className="filter-label">
-                    <span className="filter-color" style={{ backgroundColor: NODE_COLORS.Domain }}></span>
-                    Dominios ({nodes.filter(n => n.labels?.includes('Domain')).length})
-                  </span>
-                </label>
+                {availableNodeTypes.map(nodeType => {
+                  const count = nodes.filter(n => n.labels?.includes(nodeType)).length;
+                  const color = NODE_COLORS[nodeType] || '#888888';
+                  const label = NODE_LABELS_ES[nodeType] || nodeType;
+                  
+                  return (
+                    <label key={nodeType} className="filter-checkbox">
+                      <input
+                        type="checkbox"
+                        checked={nodeFilters[nodeType] !== false}
+                        onChange={(e) => setNodeFilters(prev => ({ ...prev, [nodeType]: e.target.checked }))}
+                      />
+                      <span className="filter-label">
+                        <span className="filter-color" style={{ backgroundColor: color }}></span>
+                        {label} ({count})
+                      </span>
+                    </label>
+                  );
+                })}
               </div>
               <span className="control-description">
                 Muestra u oculta tipos específicos de nodos en el grafo
               </span>
+            </div>
+
+            {/* Toggle para usar degree como tamaño */}
+            <div className="control-group">
+              <label className="toggle-label">
+                <input
+                  type="checkbox"
+                  checked={useDegreeForSize}
+                  onChange={(e) => setUseDegreeForSize(e.target.checked)}
+                  className="toggle-input"
+                />
+                <span>Usar Degree para Tamaño</span>
+              </label>
+              {useDegreeForSize && (
+                <div className="degree-stats">
+                  <span className="degree-stat">Min: {degreeStats.min}</span>
+                  <span className="degree-stat">Max: {degreeStats.max}</span>
+                  <span className="degree-stat">Prom: {degreeStats.avg.toFixed(1)}</span>
+                </div>
+              )}
+              <span className="control-description">
+                El tamaño del nodo será proporcional a su número de conexiones (degree)
+              </span>
+            </div>
+
+            {/* Control de Opacidad de Relaciones */}
+            <div className="control-group">
+              <label htmlFor="rel-opacity-slider">
+                Opacidad de Relaciones: {(relationshipOpacity * 100).toFixed(0)}%
+              </label>
+              <input
+                id="rel-opacity-slider"
+                type="range"
+                min="0.1"
+                max="1.0"
+                step="0.1"
+                value={relationshipOpacity}
+                onChange={(e) => setRelationshipOpacity(parseFloat(e.target.value))}
+                className="control-slider"
+              />
+              <div className="slider-labels">
+                <span>Transparente</span>
+                <span>Normal</span>
+                <span>Opaco</span>
+              </div>
+            </div>
+
+            {/* Control de Grosor de Relaciones */}
+            <div className="control-group">
+              <label htmlFor="rel-width-slider">
+                Grosor de Relaciones: {relationshipWidth.toFixed(1)}px
+              </label>
+              <input
+                id="rel-width-slider"
+                type="range"
+                min="0.5"
+                max="5.0"
+                step="0.5"
+                value={relationshipWidth}
+                onChange={(e) => setRelationshipWidth(parseFloat(e.target.value))}
+                className="control-slider"
+              />
+              <div className="slider-labels">
+                <span>Fino</span>
+                <span>Normal</span>
+                <span>Grueso</span>
+              </div>
             </div>
           </div>
         </div>
@@ -435,7 +621,7 @@ function GraphVisualization() {
         <InteractiveNvlWrapper
           key={`${currentLayout}-${layoutKey}`} // Forzar re-render completo cuando cambia el layout
           nodes={enrichedNodes}
-          rels={filteredRelationships}
+          rels={enrichedRelationships}
           nvlOptions={nvlOptions}
           mouseEventCallbacks={mouseEventCallbacks}
         />

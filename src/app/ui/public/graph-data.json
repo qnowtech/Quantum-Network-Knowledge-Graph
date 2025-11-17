@@ -2,220 +2,6 @@
   "nodes": [
     {
       "id": "1",
-      "caption": "Federico Holik",
-      "labels": [
-        "Person"
-      ],
-      "properties": {
-        "role": "Investigador",
-        "name": "Federico Holik",
-        "created_at": "2025-11-16T22:55:36.920000000+00:00",
-        "email": "holik@fisica.unlp.edu.ar"
-      }
-    },
-    {
-      "id": "2",
-      "caption": "UNLP - IFLP",
-      "labels": [
-        "Organization"
-      ],
-      "properties": {
-        "updated_at": "2025-11-16T22:55:40.085000000+00:00",
-        "industry_sector": "Academia / Investigación",
-        "name": "UNLP - IFLP",
-        "created_at": "2025-11-16T22:55:36.920000000+00:00"
-      }
-    },
-    {
-      "id": "3",
-      "caption": "Mariano Caruso",
-      "labels": [
-        "Person"
-      ],
-      "properties": {
-        "role": "Investigador & Desarrollo",
-        "name": "Mariano Caruso",
-        "created_at": "2025-11-16T22:55:37.843000000+00:00",
-        "email": "mcaruso@fidesol.org"
-      }
-    },
-    {
-      "id": "4",
-      "caption": "FIDESOL",
-      "labels": [
-        "Organization"
-      ],
-      "properties": {
-        "industry_sector": "Industria / Empresa privada",
-        "name": "FIDESOL",
-        "created_at": "2025-11-16T22:55:37.843000000+00:00"
-      }
-    },
-    {
-      "id": "5",
-      "caption": "Tomás Tagliani",
-      "labels": [
-        "Person"
-      ],
-      "properties": {
-        "role": "Founder",
-        "name": "Tomás Tagliani",
-        "created_at": "2025-11-16T22:55:38.016000000+00:00",
-        "email": "tomas@falcondale.pro"
-      }
-    },
-    {
-      "id": "6",
-      "caption": "Falcondale",
-      "labels": [
-        "Organization"
-      ],
-      "properties": {
-        "industry_sector": "Startup / Emprendimiento",
-        "name": "Falcondale",
-        "created_at": "2025-11-16T22:55:38.016000000+00:00"
-      }
-    },
-    {
-      "id": "7",
-      "caption": "Julio Cella",
-      "labels": [
-        "Person"
-      ],
-      "properties": {
-        "role": "Security Client Leader",
-        "name": "Julio Cella",
-        "created_at": "2025-11-16T22:55:38.183000000+00:00",
-        "email": "Julio.Cella@ibm.com"
-      }
-    },
-    {
-      "id": "8",
-      "caption": "IBM",
-      "labels": [
-        "Organization"
-      ],
-      "properties": {
-        "updated_at": "2025-11-16T22:55:40.770000000+00:00",
-        "industry_sector": "Industria / Empresa privada",
-        "name": "IBM",
-        "created_at": "2025-11-16T22:55:38.183000000+00:00"
-      }
-    },
-    {
-      "id": "9",
-      "caption": "Victoria Dominguez",
-      "labels": [
-        "Person"
-      ],
-      "properties": {
-        "role": "Marketing",
-        "name": "Victoria Dominguez",
-        "created_at": "2025-11-16T22:55:38.348000000+00:00",
-        "email": "marketing@qnow.tech"
-      }
-    },
-    {
-      "id": "10",
-      "caption": "QNOW",
-      "labels": [
-        "Organization"
-      ],
-      "properties": {
-        "updated_at": "2025-11-16T22:55:43.865000000+00:00",
-        "industry_sector": "Startup / Emprendimiento",
-        "name": "QNOW",
-        "created_at": "2025-11-16T22:55:38.348000000+00:00"
-      }
-    },
-    {
-      "id": "11",
-      "caption": "Alejandro Giraldo Londoño",
-      "labels": [
-        "Person"
-      ],
-      "properties": {
-        "role": "Research",
-        "quantum_experience": "active",
-        "updated_at": "2025-11-16T22:55:43.865000000+00:00",
-        "name": "Alejandro Giraldo Londoño",
-        "created_at": "2025-11-16T22:55:38.514000000+00:00",
-        "linkedin_url": "https://www.linkedin.com/in/alejandrosin",
-        "email": "alejandro@qnow.tech"
-      }
-    },
-    {
-      "id": "12",
-      "caption": "Daniel Ruiz",
-      "labels": [
-        "Person"
-      ],
-      "properties": {
-        "role": "CIO",
-        "quantum_experience": "active",
-        "event_expectations": "Contactos clave",
-        "name": "Daniel Ruiz",
-        "created_at": "2025-11-16T22:55:38.687000000+00:00",
-        "email": "daniel@qnow.tech"
-      }
-    },
-    {
-      "id": "13",
-      "caption": "Investigación académica",
-      "labels": [
-        "Domain"
-      ],
-      "properties": {
-        "name": "Investigación académica",
-        "created_at": "2025-11-16T22:55:38.687000000+00:00"
-      }
-    },
-    {
-      "id": "14",
-      "caption": "Casos de uso en Finanzas",
-      "labels": [
-        "Domain"
-      ],
-      "properties": {
-        "name": "Casos de uso en Finanzas",
-        "created_at": "2025-11-16T22:55:38.687000000+00:00"
-      }
-    },
-    {
-      "id": "15",
-      "caption": "Casos de uso en Salud",
-      "labels": [
-        "Domain"
-      ],
-      "properties": {
-        "name": "Casos de uso en Salud",
-        "created_at": "2025-11-16T22:55:38.687000000+00:00"
-      }
-    },
-    {
-      "id": "16",
-      "caption": "Desarrollo de software / algoritmos",
-      "labels": [
-        "Domain"
-      ],
-      "properties": {
-        "name": "Desarrollo de software / algoritmos",
-        "created_at": "2025-11-16T22:55:38.687000000+00:00"
-      }
-    },
-    {
-      "id": "17",
-      "caption": "Networking / Colaboración",
-      "labels": [
-        "Domain"
-      ],
-      "properties": {
-        "name": "Networking / Colaboración",
-        "created_at": "2025-11-16T22:55:38.687000000+00:00"
-      }
-    },
-    {
-      "id": "18",
       "caption": "Ramiro Pluss",
       "labels": [
         "Person"
@@ -225,13 +11,13 @@
         "quantum_experience": "academic",
         "event_expectations": "Ideas para implementar en investigación o tecnologías cuánticas",
         "name": "Ramiro Pluss",
-        "created_at": "2025-11-16T22:55:38.882000000+00:00",
+        "created_at": "2025-11-17T01:33:13.957000000+00:00",
         "linkedin_url": "https://www.linkedin.com/in/ramiropluss",
         "email": "rpluss@itba.edu.ar"
       }
     },
     {
-      "id": "19",
+      "id": "2",
       "caption": "ITBA",
       "labels": [
         "Organization"
@@ -239,33 +25,33 @@
       "properties": {
         "industry_sector": "Academia / Investigación",
         "name": "ITBA",
-        "created_at": "2025-11-16T22:55:38.882000000+00:00"
+        "created_at": "2025-11-17T01:33:13.957000000+00:00"
       }
     },
     {
-      "id": "20",
+      "id": "3",
       "caption": "Hardware cuántico",
       "labels": [
         "Domain"
       ],
       "properties": {
         "name": "Hardware cuántico",
-        "created_at": "2025-11-16T22:55:38.882000000+00:00"
+        "created_at": "2025-11-17T01:33:13.957000000+00:00"
       }
     },
     {
-      "id": "21",
+      "id": "4",
       "caption": "Formación y capacitación",
       "labels": [
         "Domain"
       ],
       "properties": {
         "name": "Formación y capacitación",
-        "created_at": "2025-11-16T22:55:38.882000000+00:00"
+        "created_at": "2025-11-17T01:33:13.957000000+00:00"
       }
     },
     {
-      "id": "22",
+      "id": "5",
       "caption": "Franco Meroi",
       "labels": [
         "Person"
@@ -275,13 +61,13 @@
         "quantum_experience": "active",
         "event_expectations": "Conocer mas acerca de las tecnologias cuanticas",
         "name": "Franco Meroi",
-        "created_at": "2025-11-16T22:55:39.067000000+00:00",
+        "created_at": "2025-11-17T01:33:14.123000000+00:00",
         "linkedin_url": "https://www.linkedin.com/in/franco-meroi-3729a8208",
         "email": "meroi.f@hotmail.com"
       }
     },
     {
-      "id": "23",
+      "id": "6",
       "caption": "Universidad de Buenos Aires",
       "labels": [
         "Organization"
@@ -289,11 +75,22 @@
       "properties": {
         "industry_sector": "Academia / Investigación",
         "name": "Universidad de Buenos Aires",
-        "created_at": "2025-11-16T22:55:39.067000000+00:00"
+        "created_at": "2025-11-17T01:33:14.123000000+00:00"
       }
     },
     {
-      "id": "24",
+      "id": "7",
+      "caption": "Falta de información sobre aplicaciones",
+      "labels": [
+        "Problem"
+      ],
+      "properties": {
+        "name": "Falta de información sobre aplicaciones",
+        "created_at": "2025-11-17T01:33:14.123000000+00:00"
+      }
+    },
+    {
+      "id": "8",
       "caption": "Leandro Batlle",
       "labels": [
         "Person"
@@ -303,13 +100,13 @@
         "quantum_experience": "exploration",
         "event_expectations": "estado actual de la tecnología Q y sus aplicacionws",
         "name": "Leandro Batlle",
-        "created_at": "2025-11-16T22:55:39.242000000+00:00",
+        "created_at": "2025-11-17T01:33:14.290000000+00:00",
         "linkedin_url": "https://www.linkedin.com/in/lean-b",
         "email": "lbatlle@fundacionsadosky.org.ar"
       }
     },
     {
-      "id": "25",
+      "id": "9",
       "caption": "Fundación Sadosky",
       "labels": [
         "Organization"
@@ -317,22 +114,22 @@
       "properties": {
         "industry_sector": "Gobierno / Sector público",
         "name": "Fundación Sadosky",
-        "created_at": "2025-11-16T22:55:39.242000000+00:00"
+        "created_at": "2025-11-17T01:33:14.290000000+00:00"
       }
     },
     {
-      "id": "26",
+      "id": "10",
       "caption": "Desarrollo del mercado local y capacidad de exportación",
       "labels": [
         "Domain"
       ],
       "properties": {
         "name": "Desarrollo del mercado local y capacidad de exportación",
-        "created_at": "2025-11-16T22:55:39.242000000+00:00"
+        "created_at": "2025-11-17T01:33:14.290000000+00:00"
       }
     },
     {
-      "id": "27",
+      "id": "11",
       "caption": "Lucas Burdman",
       "labels": [
         "Person"
@@ -342,25 +139,36 @@
         "quantum_experience": "exploration",
         "event_expectations": "Una visión general de demanda para trabajar en cuántica",
         "name": "Lucas Burdman",
-        "created_at": "2025-11-16T22:55:39.433000000+00:00",
+        "created_at": "2025-11-17T01:33:14.469000000+00:00",
         "email": "lburdman@fi.uba.ar"
       }
     },
     {
-      "id": "28",
+      "id": "12",
       "caption": "FIUBA",
       "labels": [
         "Organization"
       ],
       "properties": {
-        "updated_at": "2025-11-16T22:55:43.189000000+00:00",
+        "updated_at": "2025-11-17T01:33:18.074000000+00:00",
         "industry_sector": "Academia / Investigación",
         "name": "FIUBA",
-        "created_at": "2025-11-16T22:55:39.433000000+00:00"
+        "created_at": "2025-11-17T01:33:14.469000000+00:00"
       }
     },
     {
-      "id": "29",
+      "id": "13",
+      "caption": "Falta de conocimiento general",
+      "labels": [
+        "Problem"
+      ],
+      "properties": {
+        "name": "Falta de conocimiento general",
+        "created_at": "2025-11-17T01:33:14.469000000+00:00"
+      }
+    },
+    {
+      "id": "14",
       "caption": "Luciano Cipitria",
       "labels": [
         "Person"
@@ -370,12 +178,12 @@
         "quantum_experience": "academic",
         "event_expectations": "Actualización",
         "name": "Luciano Cipitria",
-        "created_at": "2025-11-16T22:55:39.739000000+00:00",
+        "created_at": "2025-11-17T01:33:14.666000000+00:00",
         "email": "luciano@consultores400.com"
       }
     },
     {
-      "id": "30",
+      "id": "15",
       "caption": "Consultores 400",
       "labels": [
         "Organization"
@@ -383,11 +191,11 @@
       "properties": {
         "industry_sector": "Industria / Empresa privada",
         "name": "Consultores 400",
-        "created_at": "2025-11-16T22:55:39.739000000+00:00"
+        "created_at": "2025-11-17T01:33:14.666000000+00:00"
       }
     },
     {
-      "id": "31",
+      "id": "16",
       "caption": "Hernán Codari",
       "labels": [
         "Person"
@@ -397,13 +205,13 @@
         "quantum_experience": "interested",
         "event_expectations": "Mayor conocimiento acerca de la tecnología",
         "name": "Hernán Codari",
-        "created_at": "2025-11-16T22:55:39.907000000+00:00",
+        "created_at": "2025-11-17T01:33:14.830000000+00:00",
         "linkedin_url": "https://www.linkedin.com/in/hernancodari",
         "email": "hcodari@bankofchina.com"
       }
     },
     {
-      "id": "32",
+      "id": "17",
       "caption": "Bank of China",
       "labels": [
         "Organization"
@@ -411,11 +219,11 @@
       "properties": {
         "industry_sector": "Industria / Empresa privada",
         "name": "Bank of China",
-        "created_at": "2025-11-16T22:55:39.907000000+00:00"
+        "created_at": "2025-11-17T01:33:14.830000000+00:00"
       }
     },
     {
-      "id": "33",
+      "id": "18",
       "caption": "Diego Tielas",
       "labels": [
         "Person"
@@ -425,13 +233,13 @@
         "quantum_experience": "active",
         "event_expectations": "Networking y actualización",
         "name": "Diego Tielas",
-        "created_at": "2025-11-16T22:55:40.085000000+00:00",
+        "created_at": "2025-11-17T01:33:15.017000000+00:00",
         "linkedin_url": "https://www.linkedin.com/in/Diegotielas",
         "email": "diegotielas@gmail.com"
       }
     },
     {
-      "id": "34",
+      "id": "19",
       "caption": "Marcos Frankiensztajn",
       "labels": [
         "Person"
@@ -441,13 +249,13 @@
         "quantum_experience": "interested",
         "event_expectations": "Conocer el estado de esta tecnologia y sus aplicaciones",
         "name": "Marcos Frankiensztajn",
-        "created_at": "2025-11-16T22:55:40.261000000+00:00",
+        "created_at": "2025-11-17T01:33:15.191000000+00:00",
         "linkedin_url": "https://www.linkedin.com/in/mfrankiensztajn",
         "email": "mfrk001@gmail.com"
       }
     },
     {
-      "id": "35",
+      "id": "20",
       "caption": "Consultoria",
       "labels": [
         "Organization"
@@ -455,11 +263,11 @@
       "properties": {
         "industry_sector": "Consultoria",
         "name": "Consultoria",
-        "created_at": "2025-11-16T22:55:40.261000000+00:00"
+        "created_at": "2025-11-17T01:33:15.191000000+00:00"
       }
     },
     {
-      "id": "36",
+      "id": "21",
       "caption": "César Loiácono",
       "labels": [
         "Person"
@@ -468,13 +276,13 @@
         "role": "consultor/investigador",
         "quantum_experience": "interested",
         "name": "César Loiácono",
-        "created_at": "2025-11-16T22:55:40.427000000+00:00",
+        "created_at": "2025-11-17T01:33:15.353000000+00:00",
         "linkedin_url": "https://www.linkedin.com/in/loiacono-c%C3%A9sar-290664333",
         "email": "cesarloiacono1@gmail.com"
       }
     },
     {
-      "id": "37",
+      "id": "22",
       "caption": "UBA",
       "labels": [
         "Organization"
@@ -482,11 +290,11 @@
       "properties": {
         "industry_sector": "Academia / Investigación",
         "name": "UBA",
-        "created_at": "2025-11-16T22:55:40.427000000+00:00"
+        "created_at": "2025-11-17T01:33:15.353000000+00:00"
       }
     },
     {
-      "id": "38",
+      "id": "23",
       "caption": "Pedro Cabello Salazar",
       "labels": [
         "Person"
@@ -495,13 +303,13 @@
         "role": "D&AA",
         "quantum_experience": "academic",
         "name": "Pedro Cabello Salazar",
-        "created_at": "2025-11-16T22:55:40.599000000+00:00",
+        "created_at": "2025-11-17T01:33:15.518000000+00:00",
         "linkedin_url": "https://www.linkedin.com/in/pedrocabellosalazar",
         "email": "Pedro.Cabello@comafi.com.ar"
       }
     },
     {
-      "id": "39",
+      "id": "24",
       "caption": "Banco Comafi",
       "labels": [
         "Organization"
@@ -509,11 +317,11 @@
       "properties": {
         "industry_sector": "Industria / Empresa privada",
         "name": "Banco Comafi",
-        "created_at": "2025-11-16T22:55:40.599000000+00:00"
+        "created_at": "2025-11-17T01:33:15.518000000+00:00"
       }
     },
     {
-      "id": "40",
+      "id": "25",
       "caption": "Ariel Erusalinsky",
       "labels": [
         "Person"
@@ -523,13 +331,13 @@
         "quantum_experience": "interested",
         "event_expectations": "Actualización general y networking",
         "name": "Ariel Erusalinsky",
-        "created_at": "2025-11-16T22:55:40.770000000+00:00",
+        "created_at": "2025-11-17T01:33:15.683000000+00:00",
         "linkedin_url": "https://www.linkedin.com/in/ariel-erusalinsky",
         "email": "ariel.erusalinsky@ibm.com"
       }
     },
     {
-      "id": "41",
+      "id": "26",
       "caption": "Alejandro Fernandez",
       "labels": [
         "Person"
@@ -539,13 +347,13 @@
         "quantum_experience": "active",
         "event_expectations": "Networking; oportunidades de colaboración; Interés de la industria nacional en las oportunidades que se avisoran",
         "name": "Alejandro Fernandez",
-        "created_at": "2025-11-16T22:55:40.945000000+00:00",
+        "created_at": "2025-11-17T01:33:15.852000000+00:00",
         "linkedin_url": "https://www.linkedin.com/in/alejandrocascofernandez",
         "email": "casco@lifia.info.unlp.edu.ar"
       }
     },
     {
-      "id": "42",
+      "id": "27",
       "caption": "RIPAISC & LIFIA, Facultad de Informática, UNLP",
       "labels": [
         "Organization"
@@ -553,11 +361,22 @@
       "properties": {
         "industry_sector": "Academia / Investigación",
         "name": "RIPAISC & LIFIA, Facultad de Informática, UNLP",
-        "created_at": "2025-11-16T22:55:40.945000000+00:00"
+        "created_at": "2025-11-17T01:33:15.852000000+00:00"
       }
     },
     {
-      "id": "43",
+      "id": "28",
+      "caption": "Falta de networking",
+      "labels": [
+        "Problem"
+      ],
+      "properties": {
+        "name": "Falta de networking",
+        "created_at": "2025-11-17T01:33:15.852000000+00:00"
+      }
+    },
+    {
+      "id": "29",
       "caption": "Carlos Bogado",
       "labels": [
         "Person"
@@ -567,13 +386,13 @@
         "quantum_experience": "interested",
         "event_expectations": "Actualización sobre el desarrollo del cómputo cuántico.",
         "name": "Carlos Bogado",
-        "created_at": "2025-11-16T22:55:41.121000000+00:00",
+        "created_at": "2025-11-17T01:33:16.025000000+00:00",
         "linkedin_url": "https://www.linkedin.com/in/carlos-bogado-5256256",
         "email": "bogadocd@pm.me"
       }
     },
     {
-      "id": "44",
+      "id": "30",
       "caption": "Tlon Space",
       "labels": [
         "Organization"
@@ -581,11 +400,11 @@
       "properties": {
         "industry_sector": "Industria / Empresa privada",
         "name": "Tlon Space",
-        "created_at": "2025-11-16T22:55:41.121000000+00:00"
+        "created_at": "2025-11-17T01:33:16.025000000+00:00"
       }
     },
     {
-      "id": "45",
+      "id": "31",
       "caption": "Ciro Edgardo Romero",
       "labels": [
         "Person"
@@ -594,13 +413,13 @@
         "role": "I+D+i",
         "quantum_experience": "interested",
         "name": "Ciro Edgardo Romero",
-        "created_at": "2025-11-16T22:55:41.293000000+00:00",
+        "created_at": "2025-11-17T01:33:16.193000000+00:00",
         "linkedin_url": "https://www.linkedin.com/in/ciror00",
         "email": "cromero@cys.com.ar"
       }
     },
     {
-      "id": "46",
+      "id": "32",
       "caption": "C&S Informática S.A.",
       "labels": [
         "Organization"
@@ -608,11 +427,11 @@
       "properties": {
         "industry_sector": "Industria / Empresa privada",
         "name": "C&S Informática S.A.",
-        "created_at": "2025-11-16T22:55:41.293000000+00:00"
+        "created_at": "2025-11-17T01:33:16.193000000+00:00"
       }
     },
     {
-      "id": "47",
+      "id": "33",
       "caption": "Walter Cipriano",
       "labels": [
         "Person"
@@ -621,13 +440,13 @@
         "role": "CIO",
         "quantum_experience": "interested",
         "name": "Walter Cipriano",
-        "created_at": "2025-11-16T22:55:41.466000000+00:00",
+        "created_at": "2025-11-17T01:33:16.356000000+00:00",
         "linkedin_url": "https://www.linkedin.com/in/walter-cipriano",
         "email": "wcipriano@faceword.com.ar"
       }
     },
     {
-      "id": "48",
+      "id": "34",
       "caption": "Faceword Argentina",
       "labels": [
         "Organization"
@@ -635,11 +454,11 @@
       "properties": {
         "industry_sector": "Industria / Empresa privada",
         "name": "Faceword Argentina",
-        "created_at": "2025-11-16T22:55:41.466000000+00:00"
+        "created_at": "2025-11-17T01:33:16.356000000+00:00"
       }
     },
     {
-      "id": "49",
+      "id": "35",
       "caption": "Emiliano Gallo",
       "labels": [
         "Person"
@@ -649,13 +468,13 @@
         "quantum_experience": "interested",
         "event_expectations": "Conocer colegas que ya esten en el tema y la oportunidad de comenzar colaborando de alguna manera",
         "name": "Emiliano Gallo",
-        "created_at": "2025-11-16T22:55:41.635000000+00:00",
+        "created_at": "2025-11-17T01:33:16.522000000+00:00",
         "linkedin_url": "https://www.linkedin.com/in/emiliano-gallo",
         "email": "emilianoagustingallo@gmail.com"
       }
     },
     {
-      "id": "50",
+      "id": "36",
       "caption": "Emiliano Gallo (profesional independiente)",
       "labels": [
         "Organization"
@@ -663,11 +482,11 @@
       "properties": {
         "industry_sector": "Industria / Empresa privada",
         "name": "Emiliano Gallo (profesional independiente)",
-        "created_at": "2025-11-16T22:55:41.635000000+00:00"
+        "created_at": "2025-11-17T01:33:16.522000000+00:00"
       }
     },
     {
-      "id": "51",
+      "id": "37",
       "caption": "Maximiliano Ponton",
       "labels": [
         "Person"
@@ -677,13 +496,13 @@
         "quantum_experience": "interested",
         "event_expectations": "https://www.linkedin.com/feed/update/urn:li:activity:7383937019040665600",
         "name": "Maximiliano Ponton",
-        "created_at": "2025-11-16T22:55:41.814000000+00:00",
+        "created_at": "2025-11-17T01:33:16.691000000+00:00",
         "linkedin_url": "https://www.linkedin.com/in/maximilianoponton",
         "email": "mponton@e3stores.ccom"
       }
     },
     {
-      "id": "52",
+      "id": "38",
       "caption": "Leondate S.R.L. - e.tres",
       "labels": [
         "Organization"
@@ -691,11 +510,11 @@
       "properties": {
         "industry_sector": "Industria / Empresa privada",
         "name": "Leondate S.R.L. - e.tres",
-        "created_at": "2025-11-16T22:55:41.814000000+00:00"
+        "created_at": "2025-11-17T01:33:16.691000000+00:00"
       }
     },
     {
-      "id": "53",
+      "id": "39",
       "caption": "Esteban Pablo Demaestri",
       "labels": [
         "Person"
@@ -705,13 +524,13 @@
         "quantum_experience": "academic",
         "event_expectations": "Comprender qué tan posible es un futuro con aplicación de la Computación Cuántica",
         "name": "Esteban Pablo Demaestri",
-        "created_at": "2025-11-16T22:55:41.986000000+00:00",
+        "created_at": "2025-11-17T01:33:16.862000000+00:00",
         "linkedin_url": "https://www.linkedin.com/in/esteban-pablo-demaestri",
         "email": "esteban.demaestri@bbva.com"
       }
     },
     {
-      "id": "54",
+      "id": "40",
       "caption": "BBVA",
       "labels": [
         "Organization"
@@ -719,11 +538,11 @@
       "properties": {
         "industry_sector": "Industria / Empresa privada",
         "name": "BBVA",
-        "created_at": "2025-11-16T22:55:41.986000000+00:00"
+        "created_at": "2025-11-17T01:33:16.862000000+00:00"
       }
     },
     {
-      "id": "55",
+      "id": "41",
       "caption": "Marcelo Carella",
       "labels": [
         "Person"
@@ -733,13 +552,13 @@
         "quantum_experience": "interested",
         "event_expectations": "Conocimientos",
         "name": "Marcelo Carella",
-        "created_at": "2025-11-16T22:55:42.153000000+00:00",
+        "created_at": "2025-11-17T01:33:17.028000000+00:00",
         "linkedin_url": "https://www.linkedin.com/in/un/marcelo-carella-1b216426",
         "email": "mfcarella@teco.com.ar"
       }
     },
     {
-      "id": "56",
+      "id": "42",
       "caption": "Telecom",
       "labels": [
         "Organization"
@@ -747,11 +566,11 @@
       "properties": {
         "industry_sector": "Telco",
         "name": "Telecom",
-        "created_at": "2025-11-16T22:55:42.153000000+00:00"
+        "created_at": "2025-11-17T01:33:17.028000000+00:00"
       }
     },
     {
-      "id": "57",
+      "id": "43",
       "caption": "Maria Clara Jaureguiberry",
       "labels": [
         "Person"
@@ -760,13 +579,13 @@
         "role": "Líder de Digitalización",
         "quantum_experience": "industry_interest",
         "name": "Maria Clara Jaureguiberry",
-        "created_at": "2025-11-16T22:55:42.321000000+00:00",
+        "created_at": "2025-11-17T01:33:17.192000000+00:00",
         "linkedin_url": "https://www.linkedin.com/in/clara-jaureguiberry-5877b026",
         "email": "maria.c.jaureguiberry@axionenergy.com"
       }
     },
     {
-      "id": "58",
+      "id": "44",
       "caption": "PAE",
       "labels": [
         "Organization"
@@ -774,22 +593,22 @@
       "properties": {
         "industry_sector": "Industria / Empresa privada",
         "name": "PAE",
-        "created_at": "2025-11-16T22:55:42.321000000+00:00"
+        "created_at": "2025-11-17T01:33:17.192000000+00:00"
       }
     },
     {
-      "id": "59",
+      "id": "45",
       "caption": "Industria",
       "labels": [
         "Domain"
       ],
       "properties": {
         "name": "Industria",
-        "created_at": "2025-11-16T22:55:42.321000000+00:00"
+        "created_at": "2025-11-17T01:33:17.192000000+00:00"
       }
     },
     {
-      "id": "60",
+      "id": "46",
       "caption": "Leonidas Facundo Caram",
       "labels": [
         "Person"
@@ -799,12 +618,12 @@
         "quantum_experience": "active",
         "event_expectations": "Información",
         "name": "Leonidas Facundo Caram",
-        "created_at": "2025-11-16T22:55:42.488000000+00:00",
+        "created_at": "2025-11-17T01:33:17.356000000+00:00",
         "email": "fcaram@fi.uba.ar"
       }
     },
     {
-      "id": "61",
+      "id": "47",
       "caption": "Laboratorio de redes y sistemas móviles-FIUBA",
       "labels": [
         "Organization"
@@ -812,22 +631,22 @@
       "properties": {
         "industry_sector": "Academia / Investigación",
         "name": "Laboratorio de redes y sistemas móviles-FIUBA",
-        "created_at": "2025-11-16T22:55:42.488000000+00:00"
+        "created_at": "2025-11-17T01:33:17.356000000+00:00"
       }
     },
     {
-      "id": "62",
+      "id": "48",
       "caption": "Redes cuánticas",
       "labels": [
         "Domain"
       ],
       "properties": {
         "name": "Redes cuánticas",
-        "created_at": "2025-11-16T22:55:42.488000000+00:00"
+        "created_at": "2025-11-17T01:33:17.356000000+00:00"
       }
     },
     {
-      "id": "63",
+      "id": "49",
       "caption": "Alejandro Benso",
       "labels": [
         "Person"
@@ -837,13 +656,13 @@
         "quantum_experience": "interested",
         "event_expectations": "Conocimiento de los productos",
         "name": "Alejandro Benso",
-        "created_at": "2025-11-16T22:55:42.677000000+00:00",
+        "created_at": "2025-11-17T01:33:17.561000000+00:00",
         "linkedin_url": "https://www.linkedin.com/in/AlejandroBenso",
         "email": "ajbenso@teco.com.ar"
       }
     },
     {
-      "id": "64",
+      "id": "50",
       "caption": "TELECOM",
       "labels": [
         "Organization"
@@ -851,11 +670,11 @@
       "properties": {
         "industry_sector": "Industria / Empresa privada",
         "name": "TELECOM",
-        "created_at": "2025-11-16T22:55:42.677000000+00:00"
+        "created_at": "2025-11-17T01:33:17.561000000+00:00"
       }
     },
     {
-      "id": "65",
+      "id": "51",
       "caption": "Damian del Campo",
       "labels": [
         "Person"
@@ -865,13 +684,13 @@
         "quantum_experience": "academic",
         "event_expectations": "Un panorama de la madurez de la tecnologia. Posibles Casos de uso",
         "name": "Damian del Campo",
-        "created_at": "2025-11-16T22:55:42.846000000+00:00",
+        "created_at": "2025-11-17T01:33:17.724000000+00:00",
         "linkedin_url": "https://www.linkedin.com/in/damian-del-campo",
         "email": "ddelcampo@teco.com.ar"
       }
     },
     {
-      "id": "66",
+      "id": "52",
       "caption": "Telecom Argentina",
       "labels": [
         "Organization"
@@ -879,11 +698,11 @@
       "properties": {
         "industry_sector": "Industria / Empresa privada",
         "name": "Telecom Argentina",
-        "created_at": "2025-11-16T22:55:42.846000000+00:00"
+        "created_at": "2025-11-17T01:33:17.724000000+00:00"
       }
     },
     {
-      "id": "67",
+      "id": "53",
       "caption": "Andrés Eduardo Barba Rebaza",
       "labels": [
         "Person"
@@ -893,13 +712,13 @@
         "quantum_experience": "exploration",
         "event_expectations": "Incrementar conocimiento",
         "name": "Andrés Eduardo Barba Rebaza",
-        "created_at": "2025-11-16T22:55:43.011000000+00:00",
+        "created_at": "2025-11-17T01:33:17.890000000+00:00",
         "linkedin_url": "https://www.linkedin.com/in/mwlite/profile/in/ing-andr%C3%A9s-e-barba-rebaza-40a68a18",
         "email": "chipsan@gmail.com"
       }
     },
     {
-      "id": "68",
+      "id": "54",
       "caption": "DTaS",
       "labels": [
         "Organization"
@@ -907,11 +726,11 @@
       "properties": {
         "industry_sector": "Startup / Emprendimiento",
         "name": "DTaS",
-        "created_at": "2025-11-16T22:55:43.011000000+00:00"
+        "created_at": "2025-11-17T01:33:17.890000000+00:00"
       }
     },
     {
-      "id": "69",
+      "id": "55",
       "caption": "Julián Melmer Stiefkens",
       "labels": [
         "Person"
@@ -920,13 +739,13 @@
         "role": "Profesor",
         "quantum_experience": "exploration",
         "name": "Julián Melmer Stiefkens",
-        "created_at": "2025-11-16T22:55:43.189000000+00:00",
+        "created_at": "2025-11-17T01:33:18.074000000+00:00",
         "linkedin_url": "https://www.linkedin.com/in/julian-melmer-stiefkens",
         "email": "jstiefkens@fi.uba.ar"
       }
     },
     {
-      "id": "70",
+      "id": "56",
       "caption": "Leandro Iglesias",
       "labels": [
         "Person"
@@ -936,13 +755,13 @@
         "quantum_experience": "interested",
         "event_expectations": "Networking",
         "name": "Leandro Iglesias",
-        "created_at": "2025-11-16T22:55:43.358000000+00:00",
+        "created_at": "2025-11-17T01:33:18.246000000+00:00",
         "linkedin_url": "https://www.linkedin.com/in/leandro-iglesias-59515615",
         "email": "Iglesiasl@lansysdata.com"
       }
     },
     {
-      "id": "71",
+      "id": "57",
       "caption": "Lansys data",
       "labels": [
         "Organization"
@@ -950,11 +769,11 @@
       "properties": {
         "industry_sector": "Startup / Emprendimiento",
         "name": "Lansys data",
-        "created_at": "2025-11-16T22:55:43.358000000+00:00"
+        "created_at": "2025-11-17T01:33:18.246000000+00:00"
       }
     },
     {
-      "id": "72",
+      "id": "58",
       "caption": "Rolando Matkovic",
       "labels": [
         "Person"
@@ -964,13 +783,13 @@
         "quantum_experience": "interested",
         "event_expectations": "Conocer las tecnologías disponibles para difundir y utilizar en el. O texto de las organizaciones",
         "name": "Rolando Matkovic",
-        "created_at": "2025-11-16T22:55:43.525000000+00:00",
+        "created_at": "2025-11-17T01:33:18.411000000+00:00",
         "linkedin_url": "https://www.linkedin.com/in/rolando-matkovic-b326069",
         "email": "rmatkovic11@gmail.com"
       }
     },
     {
-      "id": "73",
+      "id": "59",
       "caption": "Cedyat.org",
       "labels": [
         "Organization"
@@ -978,11 +797,11 @@
       "properties": {
         "industry_sector": "Academia / Investigación",
         "name": "Cedyat.org",
-        "created_at": "2025-11-16T22:55:43.525000000+00:00"
+        "created_at": "2025-11-17T01:33:18.411000000+00:00"
       }
     },
     {
-      "id": "74",
+      "id": "60",
       "caption": "Juan Pablo Braña",
       "labels": [
         "Person"
@@ -992,13 +811,13 @@
         "quantum_experience": "active",
         "event_expectations": "Networking",
         "name": "Juan Pablo Braña",
-        "created_at": "2025-11-16T22:55:43.697000000+00:00",
+        "created_at": "2025-11-17T01:33:18.573000000+00:00",
         "linkedin_url": "https://www.linkedin.com/in/fractaltec",
         "email": "juan.brana@i-314.com"
       }
     },
     {
-      "id": "75",
+      "id": "61",
       "caption": "I-314 S.A.",
       "labels": [
         "Organization"
@@ -1006,22 +825,22 @@
       "properties": {
         "industry_sector": "Industria / Empresa privada",
         "name": "I-314 S.A.",
-        "created_at": "2025-11-16T22:55:43.697000000+00:00"
+        "created_at": "2025-11-17T01:33:18.573000000+00:00"
       }
     },
     {
-      "id": "76",
+      "id": "62",
       "caption": "Cybersecurity",
       "labels": [
         "Domain"
       ],
       "properties": {
         "name": "Cybersecurity",
-        "created_at": "2025-11-16T22:55:43.697000000+00:00"
+        "created_at": "2025-11-17T01:33:18.573000000+00:00"
       }
     },
     {
-      "id": "77",
+      "id": "63",
       "caption": "Gabriel Adrian Antelo",
       "labels": [
         "Person"
@@ -1030,13 +849,13 @@
         "role": "VP of Technology",
         "quantum_experience": "exploration",
         "name": "Gabriel Adrian Antelo",
-        "created_at": "2025-11-16T22:55:44.035000000+00:00",
+        "created_at": "2025-11-17T01:33:18.910000000+00:00",
         "linkedin_url": "https://www.linkedin.com/in/gabrielantelo",
         "email": "gabriel.antelo@globant.com"
       }
     },
     {
-      "id": "78",
+      "id": "64",
       "caption": "Globant",
       "labels": [
         "Organization"
@@ -1044,11 +863,11 @@
       "properties": {
         "industry_sector": "Industria / Empresa privada",
         "name": "Globant",
-        "created_at": "2025-11-16T22:55:44.035000000+00:00"
+        "created_at": "2025-11-17T01:33:18.910000000+00:00"
       }
     },
     {
-      "id": "79",
+      "id": "65",
       "caption": "Alondra Santamaria Castro",
       "labels": [
         "Person"
@@ -1058,13 +877,13 @@
         "quantum_experience": "exploration",
         "event_expectations": "Más información de cómputo cuántico",
         "name": "Alondra Santamaria Castro",
-        "created_at": "2025-11-16T22:55:44.226000000+00:00",
+        "created_at": "2025-11-17T01:33:19.086000000+00:00",
         "linkedin_url": "https://www.linkedin.com/in/me",
         "email": "lolahood731@gmail.com"
       }
     },
     {
-      "id": "80",
+      "id": "66",
       "caption": "Benemérita Universidad Autónoma de Puebla",
       "labels": [
         "Organization"
@@ -1072,11 +891,11 @@
       "properties": {
         "industry_sector": "Academia / Investigación",
         "name": "Benemérita Universidad Autónoma de Puebla",
-        "created_at": "2025-11-16T22:55:44.226000000+00:00"
+        "created_at": "2025-11-17T01:33:19.086000000+00:00"
       }
     },
     {
-      "id": "81",
+      "id": "67",
       "caption": "Miguel Ángel López",
       "labels": [
         "Person"
@@ -1086,13 +905,13 @@
         "quantum_experience": "interested",
         "event_expectations": "Conocimiento",
         "name": "Miguel Ángel López",
-        "created_at": "2025-11-16T22:55:44.405000000+00:00",
+        "created_at": "2025-11-17T01:33:19.263000000+00:00",
         "linkedin_url": "https://www.linkedin.com/in/Datos360",
         "email": "datos360@telecentro.com.ar"
       }
     },
     {
-      "id": "82",
+      "id": "68",
       "caption": "Datos360 Bitbyte",
       "labels": [
         "Organization"
@@ -1100,11 +919,11 @@
       "properties": {
         "industry_sector": "Industria / Empresa privada",
         "name": "Datos360 Bitbyte",
-        "created_at": "2025-11-16T22:55:44.405000000+00:00"
+        "created_at": "2025-11-17T01:33:19.263000000+00:00"
       }
     },
     {
-      "id": "83",
+      "id": "69",
       "caption": "Marcos Sartori",
       "labels": [
         "Person"
@@ -1114,13 +933,13 @@
         "quantum_experience": "interested",
         "event_expectations": "Actualización y Networking",
         "name": "Marcos Sartori",
-        "created_at": "2025-11-16T22:55:44.570000000+00:00",
+        "created_at": "2025-11-17T01:33:19.426000000+00:00",
         "linkedin_url": "https://www.linkedin.com/in/marcos-sartori-a9805a117",
         "email": "mlsartori@graduados.utn.edu.ar"
       }
     },
     {
-      "id": "84",
+      "id": "70",
       "caption": "DIGITEK INGENIERÍA -UTN",
       "labels": [
         "Organization"
@@ -1128,7 +947,232 @@
       "properties": {
         "industry_sector": "Industria / Empresa privada",
         "name": "DIGITEK INGENIERÍA -UTN",
-        "created_at": "2025-11-16T22:55:44.570000000+00:00"
+        "created_at": "2025-11-17T01:33:19.426000000+00:00"
+      }
+    },
+    {
+      "id": "71",
+      "caption": "Federico Holik",
+      "labels": [
+        "Person"
+      ],
+      "properties": {
+        "role": "Investigador",
+        "name": "Federico Holik",
+        "created_at": "2025-11-17T01:33:12.525000000+00:00",
+        "email": "holik@fisica.unlp.edu.ar"
+      }
+    },
+    {
+      "id": "72",
+      "caption": "UNLP - IFLP",
+      "labels": [
+        "Organization"
+      ],
+      "properties": {
+        "updated_at": "2025-11-17T01:33:15.017000000+00:00",
+        "industry_sector": "Academia / Investigación",
+        "name": "UNLP - IFLP",
+        "created_at": "2025-11-17T01:33:12.525000000+00:00"
+      }
+    },
+    {
+      "id": "73",
+      "caption": "Mariano Caruso",
+      "labels": [
+        "Person"
+      ],
+      "properties": {
+        "role": "Investigador & Desarrollo",
+        "name": "Mariano Caruso",
+        "created_at": "2025-11-17T01:33:12.968000000+00:00",
+        "email": "mcaruso@fidesol.org"
+      }
+    },
+    {
+      "id": "74",
+      "caption": "FIDESOL",
+      "labels": [
+        "Organization"
+      ],
+      "properties": {
+        "industry_sector": "Industria / Empresa privada",
+        "name": "FIDESOL",
+        "created_at": "2025-11-17T01:33:12.968000000+00:00"
+      }
+    },
+    {
+      "id": "75",
+      "caption": "Tomás Tagliani",
+      "labels": [
+        "Person"
+      ],
+      "properties": {
+        "role": "Founder",
+        "name": "Tomás Tagliani",
+        "created_at": "2025-11-17T01:33:13.131000000+00:00",
+        "email": "tomas@falcondale.pro"
+      }
+    },
+    {
+      "id": "76",
+      "caption": "Falcondale",
+      "labels": [
+        "Organization"
+      ],
+      "properties": {
+        "industry_sector": "Startup / Emprendimiento",
+        "name": "Falcondale",
+        "created_at": "2025-11-17T01:33:13.131000000+00:00"
+      }
+    },
+    {
+      "id": "77",
+      "caption": "Julio Cella",
+      "labels": [
+        "Person"
+      ],
+      "properties": {
+        "role": "Security Client Leader",
+        "name": "Julio Cella",
+        "created_at": "2025-11-17T01:33:13.292000000+00:00",
+        "email": "Julio.Cella@ibm.com"
+      }
+    },
+    {
+      "id": "78",
+      "caption": "IBM",
+      "labels": [
+        "Organization"
+      ],
+      "properties": {
+        "updated_at": "2025-11-17T01:33:15.683000000+00:00",
+        "industry_sector": "Industria / Empresa privada",
+        "name": "IBM",
+        "created_at": "2025-11-17T01:33:13.292000000+00:00"
+      }
+    },
+    {
+      "id": "79",
+      "caption": "Victoria Dominguez",
+      "labels": [
+        "Person"
+      ],
+      "properties": {
+        "role": "Marketing",
+        "name": "Victoria Dominguez",
+        "created_at": "2025-11-17T01:33:13.454000000+00:00",
+        "email": "marketing@qnow.tech"
+      }
+    },
+    {
+      "id": "80",
+      "caption": "QNOW",
+      "labels": [
+        "Organization"
+      ],
+      "properties": {
+        "updated_at": "2025-11-17T01:33:18.742000000+00:00",
+        "industry_sector": "Startup / Emprendimiento",
+        "name": "QNOW",
+        "created_at": "2025-11-17T01:33:13.454000000+00:00"
+      }
+    },
+    {
+      "id": "81",
+      "caption": "Alejandro Giraldo Londoño",
+      "labels": [
+        "Person"
+      ],
+      "properties": {
+        "role": "Research",
+        "quantum_experience": "active",
+        "updated_at": "2025-11-17T01:33:18.742000000+00:00",
+        "name": "Alejandro Giraldo Londoño",
+        "created_at": "2025-11-17T01:33:13.618000000+00:00",
+        "linkedin_url": "https://www.linkedin.com/in/alejandrosin",
+        "email": "alejandro@qnow.tech"
+      }
+    },
+    {
+      "id": "82",
+      "caption": "Daniel Ruiz",
+      "labels": [
+        "Person"
+      ],
+      "properties": {
+        "role": "CIO",
+        "quantum_experience": "active",
+        "event_expectations": "Contactos clave",
+        "name": "Daniel Ruiz",
+        "created_at": "2025-11-17T01:33:13.779000000+00:00",
+        "email": "daniel@qnow.tech"
+      }
+    },
+    {
+      "id": "83",
+      "caption": "Investigación académica",
+      "labels": [
+        "Domain"
+      ],
+      "properties": {
+        "name": "Investigación académica",
+        "created_at": "2025-11-17T01:33:13.779000000+00:00"
+      }
+    },
+    {
+      "id": "84",
+      "caption": "Casos de uso en Finanzas",
+      "labels": [
+        "Domain"
+      ],
+      "properties": {
+        "name": "Casos de uso en Finanzas",
+        "created_at": "2025-11-17T01:33:13.779000000+00:00"
+      }
+    },
+    {
+      "id": "85",
+      "caption": "Casos de uso en Salud",
+      "labels": [
+        "Domain"
+      ],
+      "properties": {
+        "name": "Casos de uso en Salud",
+        "created_at": "2025-11-17T01:33:13.779000000+00:00"
+      }
+    },
+    {
+      "id": "86",
+      "caption": "Desarrollo de software / algoritmos",
+      "labels": [
+        "Domain"
+      ],
+      "properties": {
+        "name": "Desarrollo de software / algoritmos",
+        "created_at": "2025-11-17T01:33:13.779000000+00:00"
+      }
+    },
+    {
+      "id": "87",
+      "caption": "Networking / Colaboración",
+      "labels": [
+        "Domain"
+      ],
+      "properties": {
+        "name": "Networking / Colaboración",
+        "created_at": "2025-11-17T01:33:13.779000000+00:00"
+      }
+    },
+    {
+      "id": "88",
+      "caption": "Falta de información sobre aplicaciones industriales",
+      "labels": [
+        "Problem"
+      ],
+      "properties": {
+        "name": "Falta de información sobre aplicaciones industriales",
+        "created_at": "2025-11-17T01:33:13.779000000+00:00"
       }
     }
   ],
@@ -1140,177 +1184,177 @@
       "type": "WORKS_AT",
       "caption": "WORKS_AT",
       "properties": {
-        "created_at": "2025-11-16T22:55:36.920000000+00:00"
+        "created_at": "2025-11-17T01:33:13.957000000+00:00"
       }
     },
     {
       "id": "r2",
-      "from": "3",
-      "to": "4",
-      "type": "WORKS_AT",
-      "caption": "WORKS_AT",
-      "properties": {
-        "created_at": "2025-11-16T22:55:37.843000000+00:00"
-      }
-    },
-    {
-      "id": "r3",
       "from": "5",
       "to": "6",
       "type": "WORKS_AT",
       "caption": "WORKS_AT",
       "properties": {
-        "created_at": "2025-11-16T22:55:38.016000000+00:00"
+        "created_at": "2025-11-17T01:33:14.123000000+00:00"
+      }
+    },
+    {
+      "id": "r3",
+      "from": "8",
+      "to": "9",
+      "type": "WORKS_AT",
+      "caption": "WORKS_AT",
+      "properties": {
+        "created_at": "2025-11-17T01:33:14.290000000+00:00"
       }
     },
     {
       "id": "r4",
-      "from": "7",
-      "to": "8",
+      "from": "11",
+      "to": "12",
       "type": "WORKS_AT",
       "caption": "WORKS_AT",
       "properties": {
-        "created_at": "2025-11-16T22:55:38.183000000+00:00"
+        "created_at": "2025-11-17T01:33:14.469000000+00:00"
       }
     },
     {
       "id": "r5",
-      "from": "9",
-      "to": "10",
+      "from": "14",
+      "to": "15",
       "type": "WORKS_AT",
       "caption": "WORKS_AT",
       "properties": {
-        "created_at": "2025-11-16T22:55:38.348000000+00:00"
+        "created_at": "2025-11-17T01:33:14.666000000+00:00"
       }
     },
     {
       "id": "r6",
-      "from": "11",
-      "to": "10",
+      "from": "16",
+      "to": "17",
       "type": "WORKS_AT",
       "caption": "WORKS_AT",
       "properties": {
-        "created_at": "2025-11-16T22:55:38.514000000+00:00"
+        "created_at": "2025-11-17T01:33:14.830000000+00:00"
       }
     },
     {
       "id": "r7",
-      "from": "12",
-      "to": "10",
+      "from": "18",
+      "to": "72",
       "type": "WORKS_AT",
       "caption": "WORKS_AT",
       "properties": {
-        "created_at": "2025-11-16T22:55:38.687000000+00:00"
+        "created_at": "2025-11-17T01:33:15.017000000+00:00"
       }
     },
     {
       "id": "r8",
-      "from": "18",
-      "to": "19",
+      "from": "19",
+      "to": "20",
       "type": "WORKS_AT",
       "caption": "WORKS_AT",
       "properties": {
-        "created_at": "2025-11-16T22:55:38.882000000+00:00"
+        "created_at": "2025-11-17T01:33:15.191000000+00:00"
       }
     },
     {
       "id": "r9",
-      "from": "22",
-      "to": "23",
+      "from": "21",
+      "to": "22",
       "type": "WORKS_AT",
       "caption": "WORKS_AT",
       "properties": {
-        "created_at": "2025-11-16T22:55:39.067000000+00:00"
+        "created_at": "2025-11-17T01:33:15.353000000+00:00"
       }
     },
     {
       "id": "r10",
-      "from": "24",
-      "to": "25",
+      "from": "23",
+      "to": "24",
       "type": "WORKS_AT",
       "caption": "WORKS_AT",
       "properties": {
-        "created_at": "2025-11-16T22:55:39.242000000+00:00"
+        "created_at": "2025-11-17T01:33:15.518000000+00:00"
       }
     },
     {
       "id": "r11",
-      "from": "27",
-      "to": "28",
+      "from": "25",
+      "to": "78",
       "type": "WORKS_AT",
       "caption": "WORKS_AT",
       "properties": {
-        "created_at": "2025-11-16T22:55:39.433000000+00:00"
+        "created_at": "2025-11-17T01:33:15.683000000+00:00"
       }
     },
     {
       "id": "r12",
+      "from": "26",
+      "to": "27",
+      "type": "WORKS_AT",
+      "caption": "WORKS_AT",
+      "properties": {
+        "created_at": "2025-11-17T01:33:15.852000000+00:00"
+      }
+    },
+    {
+      "id": "r13",
       "from": "29",
       "to": "30",
       "type": "WORKS_AT",
       "caption": "WORKS_AT",
       "properties": {
-        "created_at": "2025-11-16T22:55:39.739000000+00:00"
+        "created_at": "2025-11-17T01:33:16.025000000+00:00"
       }
     },
     {
-      "id": "r13",
+      "id": "r14",
       "from": "31",
       "to": "32",
       "type": "WORKS_AT",
       "caption": "WORKS_AT",
       "properties": {
-        "created_at": "2025-11-16T22:55:39.907000000+00:00"
-      }
-    },
-    {
-      "id": "r14",
-      "from": "33",
-      "to": "2",
-      "type": "WORKS_AT",
-      "caption": "WORKS_AT",
-      "properties": {
-        "created_at": "2025-11-16T22:55:40.085000000+00:00"
+        "created_at": "2025-11-17T01:33:16.193000000+00:00"
       }
     },
     {
       "id": "r15",
-      "from": "34",
-      "to": "35",
+      "from": "33",
+      "to": "34",
       "type": "WORKS_AT",
       "caption": "WORKS_AT",
       "properties": {
-        "created_at": "2025-11-16T22:55:40.261000000+00:00"
+        "created_at": "2025-11-17T01:33:16.356000000+00:00"
       }
     },
     {
       "id": "r16",
-      "from": "36",
-      "to": "37",
+      "from": "35",
+      "to": "36",
       "type": "WORKS_AT",
       "caption": "WORKS_AT",
       "properties": {
-        "created_at": "2025-11-16T22:55:40.427000000+00:00"
+        "created_at": "2025-11-17T01:33:16.522000000+00:00"
       }
     },
     {
       "id": "r17",
-      "from": "38",
-      "to": "39",
+      "from": "37",
+      "to": "38",
       "type": "WORKS_AT",
       "caption": "WORKS_AT",
       "properties": {
-        "created_at": "2025-11-16T22:55:40.599000000+00:00"
+        "created_at": "2025-11-17T01:33:16.691000000+00:00"
       }
     },
     {
       "id": "r18",
-      "from": "40",
-      "to": "8",
+      "from": "39",
+      "to": "40",
       "type": "WORKS_AT",
       "caption": "WORKS_AT",
       "properties": {
-        "created_at": "2025-11-16T22:55:40.770000000+00:00"
+        "created_at": "2025-11-17T01:33:16.862000000+00:00"
       }
     },
     {
@@ -1320,7 +1364,7 @@
       "type": "WORKS_AT",
       "caption": "WORKS_AT",
       "properties": {
-        "created_at": "2025-11-16T22:55:40.945000000+00:00"
+        "created_at": "2025-11-17T01:33:17.028000000+00:00"
       }
     },
     {
@@ -1330,77 +1374,77 @@
       "type": "WORKS_AT",
       "caption": "WORKS_AT",
       "properties": {
-        "created_at": "2025-11-16T22:55:41.121000000+00:00"
+        "created_at": "2025-11-17T01:33:17.192000000+00:00"
       }
     },
     {
       "id": "r21",
-      "from": "45",
-      "to": "46",
+      "from": "46",
+      "to": "47",
       "type": "WORKS_AT",
       "caption": "WORKS_AT",
       "properties": {
-        "created_at": "2025-11-16T22:55:41.293000000+00:00"
+        "created_at": "2025-11-17T01:33:17.356000000+00:00"
       }
     },
     {
       "id": "r22",
-      "from": "47",
-      "to": "48",
-      "type": "WORKS_AT",
-      "caption": "WORKS_AT",
-      "properties": {
-        "created_at": "2025-11-16T22:55:41.466000000+00:00"
-      }
-    },
-    {
-      "id": "r23",
       "from": "49",
       "to": "50",
       "type": "WORKS_AT",
       "caption": "WORKS_AT",
       "properties": {
-        "created_at": "2025-11-16T22:55:41.635000000+00:00"
+        "created_at": "2025-11-17T01:33:17.561000000+00:00"
       }
     },
     {
-      "id": "r24",
+      "id": "r23",
       "from": "51",
       "to": "52",
       "type": "WORKS_AT",
       "caption": "WORKS_AT",
       "properties": {
-        "created_at": "2025-11-16T22:55:41.814000000+00:00"
+        "created_at": "2025-11-17T01:33:17.724000000+00:00"
       }
     },
     {
-      "id": "r25",
+      "id": "r24",
       "from": "53",
       "to": "54",
       "type": "WORKS_AT",
       "caption": "WORKS_AT",
       "properties": {
-        "created_at": "2025-11-16T22:55:41.986000000+00:00"
+        "created_at": "2025-11-17T01:33:17.890000000+00:00"
+      }
+    },
+    {
+      "id": "r25",
+      "from": "55",
+      "to": "12",
+      "type": "WORKS_AT",
+      "caption": "WORKS_AT",
+      "properties": {
+        "created_at": "2025-11-17T01:33:18.074000000+00:00"
       }
     },
     {
       "id": "r26",
-      "from": "55",
-      "to": "56",
+      "from": "56",
+      "to": "57",
       "type": "WORKS_AT",
       "caption": "WORKS_AT",
       "properties": {
-        "created_at": "2025-11-16T22:55:42.153000000+00:00"
+        "created_at": "2025-11-17T01:33:18.246000000+00:00"
       }
     },
     {
       "id": "r27",
-      "from": "57",
-      "to": "58",
+      "from": "58",
+      "to": "59",
       "type": "WORKS_AT",
       "caption": "WORKS_AT",
       "properties": {
-        "created_at": "2025-11-16T22:55:42.321000000+00:00"
+        "created_at": "2025-11-17T01:33:18.411000000+00:00"
       }
     },
     {
@@ -1410,7 +1454,7 @@
       "type": "WORKS_AT",
       "caption": "WORKS_AT",
       "properties": {
-        "created_at": "2025-11-16T22:55:42.488000000+00:00"
+        "created_at": "2025-11-17T01:33:18.573000000+00:00"
       }
     },
     {
@@ -1420,7 +1464,7 @@
       "type": "WORKS_AT",
       "caption": "WORKS_AT",
       "properties": {
-        "created_at": "2025-11-16T22:55:42.677000000+00:00"
+        "created_at": "2025-11-17T01:33:18.910000000+00:00"
       }
     },
     {
@@ -1430,7 +1474,7 @@
       "type": "WORKS_AT",
       "caption": "WORKS_AT",
       "properties": {
-        "created_at": "2025-11-16T22:55:42.846000000+00:00"
+        "created_at": "2025-11-17T01:33:19.086000000+00:00"
       }
     },
     {
@@ -1440,47 +1484,47 @@
       "type": "WORKS_AT",
       "caption": "WORKS_AT",
       "properties": {
-        "created_at": "2025-11-16T22:55:43.011000000+00:00"
+        "created_at": "2025-11-17T01:33:19.263000000+00:00"
       }
     },
     {
       "id": "r32",
       "from": "69",
-      "to": "28",
+      "to": "70",
       "type": "WORKS_AT",
       "caption": "WORKS_AT",
       "properties": {
-        "created_at": "2025-11-16T22:55:43.189000000+00:00"
+        "created_at": "2025-11-17T01:33:19.426000000+00:00"
       }
     },
     {
       "id": "r33",
-      "from": "70",
-      "to": "71",
+      "from": "71",
+      "to": "72",
       "type": "WORKS_AT",
       "caption": "WORKS_AT",
       "properties": {
-        "created_at": "2025-11-16T22:55:43.358000000+00:00"
+        "created_at": "2025-11-17T01:33:12.525000000+00:00"
       }
     },
     {
       "id": "r34",
-      "from": "72",
-      "to": "73",
+      "from": "73",
+      "to": "74",
       "type": "WORKS_AT",
       "caption": "WORKS_AT",
       "properties": {
-        "created_at": "2025-11-16T22:55:43.525000000+00:00"
+        "created_at": "2025-11-17T01:33:12.968000000+00:00"
       }
     },
     {
       "id": "r35",
-      "from": "74",
-      "to": "75",
+      "from": "75",
+      "to": "76",
       "type": "WORKS_AT",
       "caption": "WORKS_AT",
       "properties": {
-        "created_at": "2025-11-16T22:55:43.697000000+00:00"
+        "created_at": "2025-11-17T01:33:13.131000000+00:00"
       }
     },
     {
@@ -1490,7 +1534,7 @@
       "type": "WORKS_AT",
       "caption": "WORKS_AT",
       "properties": {
-        "created_at": "2025-11-16T22:55:44.035000000+00:00"
+        "created_at": "2025-11-17T01:33:13.292000000+00:00"
       }
     },
     {
@@ -1500,1814 +1544,2337 @@
       "type": "WORKS_AT",
       "caption": "WORKS_AT",
       "properties": {
-        "created_at": "2025-11-16T22:55:44.226000000+00:00"
+        "created_at": "2025-11-17T01:33:13.454000000+00:00"
       }
     },
     {
       "id": "r38",
       "from": "81",
-      "to": "82",
+      "to": "80",
       "type": "WORKS_AT",
       "caption": "WORKS_AT",
       "properties": {
-        "created_at": "2025-11-16T22:55:44.405000000+00:00"
+        "created_at": "2025-11-17T01:33:13.618000000+00:00"
       }
     },
     {
       "id": "r39",
-      "from": "83",
-      "to": "84",
+      "from": "82",
+      "to": "80",
       "type": "WORKS_AT",
       "caption": "WORKS_AT",
       "properties": {
-        "created_at": "2025-11-16T22:55:44.570000000+00:00"
+        "created_at": "2025-11-17T01:33:13.779000000+00:00"
       }
     },
     {
       "id": "r40",
-      "from": "11",
-      "to": "13",
+      "from": "1",
+      "to": "83",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:43.865000000+00:00"
+        "created_at": "2025-11-17T01:33:13.957000000+00:00"
       }
     },
     {
       "id": "r41",
-      "from": "12",
-      "to": "13",
+      "from": "5",
+      "to": "83",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:38.687000000+00:00"
+        "created_at": "2025-11-17T01:33:14.123000000+00:00"
       }
     },
     {
       "id": "r42",
-      "from": "18",
-      "to": "13",
+      "from": "8",
+      "to": "86",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:38.882000000+00:00"
+        "created_at": "2025-11-17T01:33:14.290000000+00:00"
       }
     },
     {
       "id": "r43",
-      "from": "22",
-      "to": "13",
+      "from": "11",
+      "to": "83",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:39.067000000+00:00"
+        "created_at": "2025-11-17T01:33:14.469000000+00:00"
       }
     },
     {
       "id": "r44",
-      "from": "24",
-      "to": "16",
+      "from": "14",
+      "to": "84",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:39.242000000+00:00"
+        "created_at": "2025-11-17T01:33:14.666000000+00:00"
       }
     },
     {
       "id": "r45",
-      "from": "27",
-      "to": "13",
+      "from": "16",
+      "to": "83",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:39.433000000+00:00"
+        "created_at": "2025-11-17T01:33:14.830000000+00:00"
       }
     },
     {
       "id": "r46",
-      "from": "29",
-      "to": "14",
+      "from": "18",
+      "to": "83",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:39.739000000+00:00"
+        "created_at": "2025-11-17T01:33:15.017000000+00:00"
       }
     },
     {
       "id": "r47",
-      "from": "31",
-      "to": "13",
+      "from": "19",
+      "to": "83",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:39.907000000+00:00"
+        "created_at": "2025-11-17T01:33:15.191000000+00:00"
       }
     },
     {
       "id": "r48",
-      "from": "33",
-      "to": "13",
+      "from": "21",
+      "to": "83",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:40.085000000+00:00"
+        "created_at": "2025-11-17T01:33:15.353000000+00:00"
       }
     },
     {
       "id": "r49",
-      "from": "34",
-      "to": "13",
+      "from": "23",
+      "to": "84",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:40.261000000+00:00"
+        "created_at": "2025-11-17T01:33:15.518000000+00:00"
       }
     },
     {
       "id": "r50",
-      "from": "36",
-      "to": "13",
+      "from": "25",
+      "to": "83",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:40.427000000+00:00"
+        "created_at": "2025-11-17T01:33:15.683000000+00:00"
       }
     },
     {
       "id": "r51",
-      "from": "38",
-      "to": "14",
+      "from": "26",
+      "to": "83",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:40.599000000+00:00"
+        "created_at": "2025-11-17T01:33:15.852000000+00:00"
       }
     },
     {
       "id": "r52",
-      "from": "40",
-      "to": "13",
+      "from": "29",
+      "to": "86",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:40.770000000+00:00"
+        "created_at": "2025-11-17T01:33:16.025000000+00:00"
       }
     },
     {
       "id": "r53",
-      "from": "41",
-      "to": "13",
+      "from": "31",
+      "to": "83",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:40.945000000+00:00"
+        "created_at": "2025-11-17T01:33:16.193000000+00:00"
       }
     },
     {
       "id": "r54",
-      "from": "43",
-      "to": "16",
+      "from": "33",
+      "to": "83",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:41.121000000+00:00"
+        "created_at": "2025-11-17T01:33:16.356000000+00:00"
       }
     },
     {
       "id": "r55",
-      "from": "45",
-      "to": "13",
+      "from": "35",
+      "to": "83",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:41.293000000+00:00"
+        "created_at": "2025-11-17T01:33:16.522000000+00:00"
       }
     },
     {
       "id": "r56",
-      "from": "47",
-      "to": "13",
+      "from": "37",
+      "to": "87",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:41.466000000+00:00"
+        "created_at": "2025-11-17T01:33:16.691000000+00:00"
       }
     },
     {
       "id": "r57",
-      "from": "49",
-      "to": "13",
+      "from": "39",
+      "to": "83",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:41.635000000+00:00"
+        "created_at": "2025-11-17T01:33:16.862000000+00:00"
       }
     },
     {
       "id": "r58",
-      "from": "51",
-      "to": "17",
+      "from": "41",
+      "to": "84",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:41.814000000+00:00"
+        "created_at": "2025-11-17T01:33:17.028000000+00:00"
       }
     },
     {
       "id": "r59",
-      "from": "53",
-      "to": "13",
+      "from": "43",
+      "to": "45",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:41.986000000+00:00"
+        "created_at": "2025-11-17T01:33:17.192000000+00:00"
       }
     },
     {
       "id": "r60",
-      "from": "55",
-      "to": "14",
+      "from": "46",
+      "to": "83",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:42.153000000+00:00"
+        "created_at": "2025-11-17T01:33:17.356000000+00:00"
       }
     },
     {
       "id": "r61",
-      "from": "57",
-      "to": "59",
+      "from": "49",
+      "to": "84",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:42.321000000+00:00"
+        "created_at": "2025-11-17T01:33:17.561000000+00:00"
       }
     },
     {
       "id": "r62",
-      "from": "60",
-      "to": "13",
+      "from": "51",
+      "to": "86",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:42.488000000+00:00"
+        "created_at": "2025-11-17T01:33:17.724000000+00:00"
       }
     },
     {
       "id": "r63",
-      "from": "63",
-      "to": "14",
+      "from": "53",
+      "to": "83",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:42.677000000+00:00"
+        "created_at": "2025-11-17T01:33:17.890000000+00:00"
       }
     },
     {
       "id": "r64",
-      "from": "65",
-      "to": "16",
+      "from": "55",
+      "to": "83",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:42.846000000+00:00"
+        "created_at": "2025-11-17T01:33:18.074000000+00:00"
       }
     },
     {
       "id": "r65",
-      "from": "67",
-      "to": "13",
+      "from": "56",
+      "to": "86",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:43.011000000+00:00"
+        "created_at": "2025-11-17T01:33:18.246000000+00:00"
       }
     },
     {
       "id": "r66",
-      "from": "69",
-      "to": "13",
+      "from": "58",
+      "to": "83",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:43.189000000+00:00"
+        "created_at": "2025-11-17T01:33:18.411000000+00:00"
       }
     },
     {
       "id": "r67",
-      "from": "70",
-      "to": "16",
+      "from": "60",
+      "to": "84",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:43.358000000+00:00"
+        "created_at": "2025-11-17T01:33:18.573000000+00:00"
       }
     },
     {
       "id": "r68",
-      "from": "72",
-      "to": "13",
+      "from": "63",
+      "to": "83",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:43.525000000+00:00"
+        "created_at": "2025-11-17T01:33:18.910000000+00:00"
       }
     },
     {
       "id": "r69",
-      "from": "74",
-      "to": "14",
+      "from": "65",
+      "to": "83",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:43.697000000+00:00"
+        "created_at": "2025-11-17T01:33:19.086000000+00:00"
       }
     },
     {
       "id": "r70",
-      "from": "77",
-      "to": "13",
+      "from": "67",
+      "to": "86",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:44.035000000+00:00"
+        "created_at": "2025-11-17T01:33:19.263000000+00:00"
       }
     },
     {
       "id": "r71",
-      "from": "79",
-      "to": "13",
+      "from": "69",
+      "to": "4",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:44.226000000+00:00"
+        "created_at": "2025-11-17T01:33:19.426000000+00:00"
       }
     },
     {
       "id": "r72",
       "from": "81",
-      "to": "16",
+      "to": "83",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:44.405000000+00:00"
+        "created_at": "2025-11-17T01:33:18.742000000+00:00"
       }
     },
     {
       "id": "r73",
-      "from": "83",
-      "to": "21",
+      "from": "82",
+      "to": "83",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:44.570000000+00:00"
+        "created_at": "2025-11-17T01:33:13.779000000+00:00"
       }
     },
     {
       "id": "r74",
-      "from": "11",
-      "to": "13",
+      "from": "5",
+      "to": "83",
       "type": "HAS_EXPERIENCE_IN",
       "caption": "HAS_EXPERIENCE_IN",
       "properties": {
-        "created_at": "2025-11-16T22:55:43.865000000+00:00",
+        "created_at": "2025-11-17T01:33:14.123000000+00:00",
         "experience_level": "active"
       }
     },
     {
       "id": "r75",
-      "from": "12",
-      "to": "13",
+      "from": "8",
+      "to": "86",
       "type": "HAS_EXPERIENCE_IN",
       "caption": "HAS_EXPERIENCE_IN",
       "properties": {
-        "created_at": "2025-11-16T22:55:38.687000000+00:00",
-        "experience_level": "active"
+        "created_at": "2025-11-17T01:33:14.290000000+00:00",
+        "experience_level": "exploration"
       }
     },
     {
       "id": "r76",
-      "from": "22",
-      "to": "13",
+      "from": "11",
+      "to": "83",
       "type": "HAS_EXPERIENCE_IN",
       "caption": "HAS_EXPERIENCE_IN",
       "properties": {
-        "created_at": "2025-11-16T22:55:39.067000000+00:00",
-        "experience_level": "active"
+        "created_at": "2025-11-17T01:33:14.469000000+00:00",
+        "experience_level": "exploration"
       }
     },
     {
       "id": "r77",
-      "from": "24",
-      "to": "16",
+      "from": "18",
+      "to": "83",
       "type": "HAS_EXPERIENCE_IN",
       "caption": "HAS_EXPERIENCE_IN",
       "properties": {
-        "created_at": "2025-11-16T22:55:39.242000000+00:00",
-        "experience_level": "exploration"
+        "created_at": "2025-11-17T01:33:15.017000000+00:00",
+        "experience_level": "active"
       }
     },
     {
       "id": "r78",
-      "from": "27",
-      "to": "13",
+      "from": "26",
+      "to": "83",
       "type": "HAS_EXPERIENCE_IN",
       "caption": "HAS_EXPERIENCE_IN",
       "properties": {
-        "created_at": "2025-11-16T22:55:39.433000000+00:00",
-        "experience_level": "exploration"
+        "created_at": "2025-11-17T01:33:15.852000000+00:00",
+        "experience_level": "active"
       }
     },
     {
       "id": "r79",
-      "from": "33",
-      "to": "13",
+      "from": "46",
+      "to": "83",
       "type": "HAS_EXPERIENCE_IN",
       "caption": "HAS_EXPERIENCE_IN",
       "properties": {
-        "created_at": "2025-11-16T22:55:40.085000000+00:00",
+        "created_at": "2025-11-17T01:33:17.356000000+00:00",
         "experience_level": "active"
       }
     },
     {
       "id": "r80",
-      "from": "41",
-      "to": "13",
+      "from": "53",
+      "to": "83",
       "type": "HAS_EXPERIENCE_IN",
       "caption": "HAS_EXPERIENCE_IN",
       "properties": {
-        "created_at": "2025-11-16T22:55:40.945000000+00:00",
-        "experience_level": "active"
-      }
-    },
-    {
-      "id": "r81",
-      "from": "60",
-      "to": "13",
-      "type": "HAS_EXPERIENCE_IN",
-      "caption": "HAS_EXPERIENCE_IN",
-      "properties": {
-        "created_at": "2025-11-16T22:55:42.488000000+00:00",
-        "experience_level": "active"
-      }
-    },
-    {
-      "id": "r82",
-      "from": "67",
-      "to": "13",
-      "type": "HAS_EXPERIENCE_IN",
-      "caption": "HAS_EXPERIENCE_IN",
-      "properties": {
-        "created_at": "2025-11-16T22:55:43.011000000+00:00",
+        "created_at": "2025-11-17T01:33:17.890000000+00:00",
         "experience_level": "exploration"
       }
     },
     {
-      "id": "r83",
-      "from": "69",
-      "to": "13",
+      "id": "r81",
+      "from": "55",
+      "to": "83",
       "type": "HAS_EXPERIENCE_IN",
       "caption": "HAS_EXPERIENCE_IN",
       "properties": {
-        "created_at": "2025-11-16T22:55:43.189000000+00:00",
+        "created_at": "2025-11-17T01:33:18.074000000+00:00",
+        "experience_level": "exploration"
+      }
+    },
+    {
+      "id": "r82",
+      "from": "60",
+      "to": "84",
+      "type": "HAS_EXPERIENCE_IN",
+      "caption": "HAS_EXPERIENCE_IN",
+      "properties": {
+        "created_at": "2025-11-17T01:33:18.573000000+00:00",
+        "experience_level": "active"
+      }
+    },
+    {
+      "id": "r83",
+      "from": "63",
+      "to": "83",
+      "type": "HAS_EXPERIENCE_IN",
+      "caption": "HAS_EXPERIENCE_IN",
+      "properties": {
+        "created_at": "2025-11-17T01:33:18.910000000+00:00",
         "experience_level": "exploration"
       }
     },
     {
       "id": "r84",
-      "from": "74",
-      "to": "14",
+      "from": "65",
+      "to": "83",
       "type": "HAS_EXPERIENCE_IN",
       "caption": "HAS_EXPERIENCE_IN",
       "properties": {
-        "created_at": "2025-11-16T22:55:43.697000000+00:00",
-        "experience_level": "active"
+        "created_at": "2025-11-17T01:33:19.086000000+00:00",
+        "experience_level": "exploration"
       }
     },
     {
       "id": "r85",
-      "from": "77",
-      "to": "13",
+      "from": "81",
+      "to": "83",
       "type": "HAS_EXPERIENCE_IN",
       "caption": "HAS_EXPERIENCE_IN",
       "properties": {
-        "created_at": "2025-11-16T22:55:44.035000000+00:00",
-        "experience_level": "exploration"
+        "created_at": "2025-11-17T01:33:18.742000000+00:00",
+        "experience_level": "active"
       }
     },
     {
       "id": "r86",
-      "from": "79",
-      "to": "13",
+      "from": "82",
+      "to": "83",
       "type": "HAS_EXPERIENCE_IN",
       "caption": "HAS_EXPERIENCE_IN",
       "properties": {
-        "created_at": "2025-11-16T22:55:44.226000000+00:00",
-        "experience_level": "exploration"
+        "created_at": "2025-11-17T01:33:13.779000000+00:00",
+        "experience_level": "active"
       }
     },
     {
       "id": "r87",
-      "from": "11",
-      "to": "15",
-      "type": "HAS_INTEREST",
-      "caption": "HAS_INTEREST",
+      "from": "5",
+      "to": "7",
+      "type": "HAS_PROBLEM",
+      "caption": "HAS_PROBLEM",
       "properties": {
-        "created_at": "2025-11-16T22:55:43.865000000+00:00"
+        "created_at": "2025-11-17T01:33:14.123000000+00:00"
       }
     },
     {
       "id": "r88",
-      "from": "12",
-      "to": "14",
-      "type": "HAS_INTEREST",
-      "caption": "HAS_INTEREST",
+      "from": "6",
+      "to": "7",
+      "type": "HAS_PROBLEM",
+      "caption": "HAS_PROBLEM",
       "properties": {
-        "created_at": "2025-11-16T22:55:38.687000000+00:00"
+        "created_at": "2025-11-17T01:33:14.123000000+00:00"
       }
     },
     {
       "id": "r89",
-      "from": "18",
-      "to": "14",
-      "type": "HAS_INTEREST",
-      "caption": "HAS_INTEREST",
+      "from": "8",
+      "to": "7",
+      "type": "HAS_PROBLEM",
+      "caption": "HAS_PROBLEM",
       "properties": {
-        "created_at": "2025-11-16T22:55:38.882000000+00:00"
+        "created_at": "2025-11-17T01:33:14.290000000+00:00"
       }
     },
     {
       "id": "r90",
-      "from": "22",
-      "to": "16",
-      "type": "HAS_INTEREST",
-      "caption": "HAS_INTEREST",
+      "from": "9",
+      "to": "7",
+      "type": "HAS_PROBLEM",
+      "caption": "HAS_PROBLEM",
       "properties": {
-        "created_at": "2025-11-16T22:55:39.067000000+00:00"
+        "created_at": "2025-11-17T01:33:14.290000000+00:00"
       }
     },
     {
       "id": "r91",
-      "from": "24",
-      "to": "20",
-      "type": "HAS_INTEREST",
-      "caption": "HAS_INTEREST",
+      "from": "11",
+      "to": "13",
+      "type": "HAS_PROBLEM",
+      "caption": "HAS_PROBLEM",
       "properties": {
-        "created_at": "2025-11-16T22:55:39.242000000+00:00"
+        "created_at": "2025-11-17T01:33:14.469000000+00:00"
       }
     },
     {
       "id": "r92",
-      "from": "27",
-      "to": "16",
-      "type": "HAS_INTEREST",
-      "caption": "HAS_INTEREST",
+      "from": "12",
+      "to": "13",
+      "type": "HAS_PROBLEM",
+      "caption": "HAS_PROBLEM",
       "properties": {
-        "created_at": "2025-11-16T22:55:39.433000000+00:00"
+        "created_at": "2025-11-17T01:33:14.469000000+00:00"
       }
     },
     {
       "id": "r93",
-      "from": "29",
-      "to": "16",
-      "type": "HAS_INTEREST",
-      "caption": "HAS_INTEREST",
+      "from": "18",
+      "to": "13",
+      "type": "HAS_PROBLEM",
+      "caption": "HAS_PROBLEM",
       "properties": {
-        "created_at": "2025-11-16T22:55:39.739000000+00:00"
+        "created_at": "2025-11-17T01:33:15.017000000+00:00"
       }
     },
     {
       "id": "r94",
-      "from": "31",
-      "to": "14",
-      "type": "HAS_INTEREST",
-      "caption": "HAS_INTEREST",
+      "from": "26",
+      "to": "28",
+      "type": "HAS_PROBLEM",
+      "caption": "HAS_PROBLEM",
       "properties": {
-        "created_at": "2025-11-16T22:55:39.907000000+00:00"
+        "created_at": "2025-11-17T01:33:15.852000000+00:00"
       }
     },
     {
       "id": "r95",
-      "from": "33",
-      "to": "14",
-      "type": "HAS_INTEREST",
-      "caption": "HAS_INTEREST",
+      "from": "27",
+      "to": "28",
+      "type": "HAS_PROBLEM",
+      "caption": "HAS_PROBLEM",
       "properties": {
-        "created_at": "2025-11-16T22:55:40.085000000+00:00"
+        "created_at": "2025-11-17T01:33:15.852000000+00:00"
       }
     },
     {
       "id": "r96",
-      "from": "36",
-      "to": "16",
-      "type": "HAS_INTEREST",
-      "caption": "HAS_INTEREST",
+      "from": "46",
+      "to": "7",
+      "type": "HAS_PROBLEM",
+      "caption": "HAS_PROBLEM",
       "properties": {
-        "created_at": "2025-11-16T22:55:40.427000000+00:00"
+        "created_at": "2025-11-17T01:33:17.356000000+00:00"
       }
     },
     {
       "id": "r97",
-      "from": "38",
-      "to": "16",
-      "type": "HAS_INTEREST",
-      "caption": "HAS_INTEREST",
+      "from": "47",
+      "to": "7",
+      "type": "HAS_PROBLEM",
+      "caption": "HAS_PROBLEM",
       "properties": {
-        "created_at": "2025-11-16T22:55:40.599000000+00:00"
+        "created_at": "2025-11-17T01:33:17.356000000+00:00"
       }
     },
     {
       "id": "r98",
-      "from": "40",
-      "to": "14",
-      "type": "HAS_INTEREST",
-      "caption": "HAS_INTEREST",
+      "from": "53",
+      "to": "7",
+      "type": "HAS_PROBLEM",
+      "caption": "HAS_PROBLEM",
       "properties": {
-        "created_at": "2025-11-16T22:55:40.770000000+00:00"
+        "created_at": "2025-11-17T01:33:17.890000000+00:00"
       }
     },
     {
       "id": "r99",
-      "from": "41",
-      "to": "16",
-      "type": "HAS_INTEREST",
-      "caption": "HAS_INTEREST",
+      "from": "54",
+      "to": "7",
+      "type": "HAS_PROBLEM",
+      "caption": "HAS_PROBLEM",
       "properties": {
-        "created_at": "2025-11-16T22:55:40.945000000+00:00"
+        "created_at": "2025-11-17T01:33:17.890000000+00:00"
       }
     },
     {
       "id": "r100",
-      "from": "43",
-      "to": "20",
-      "type": "HAS_INTEREST",
-      "caption": "HAS_INTEREST",
+      "from": "55",
+      "to": "88",
+      "type": "HAS_PROBLEM",
+      "caption": "HAS_PROBLEM",
       "properties": {
-        "created_at": "2025-11-16T22:55:41.121000000+00:00"
+        "created_at": "2025-11-17T01:33:18.074000000+00:00"
       }
     },
     {
       "id": "r101",
-      "from": "45",
-      "to": "16",
-      "type": "HAS_INTEREST",
-      "caption": "HAS_INTEREST",
+      "from": "60",
+      "to": "88",
+      "type": "HAS_PROBLEM",
+      "caption": "HAS_PROBLEM",
       "properties": {
-        "created_at": "2025-11-16T22:55:41.293000000+00:00"
+        "created_at": "2025-11-17T01:33:18.573000000+00:00"
       }
     },
     {
       "id": "r102",
-      "from": "47",
-      "to": "14",
-      "type": "HAS_INTEREST",
-      "caption": "HAS_INTEREST",
+      "from": "61",
+      "to": "88",
+      "type": "HAS_PROBLEM",
+      "caption": "HAS_PROBLEM",
       "properties": {
-        "created_at": "2025-11-16T22:55:41.466000000+00:00"
+        "created_at": "2025-11-17T01:33:18.573000000+00:00"
       }
     },
     {
       "id": "r103",
-      "from": "49",
-      "to": "16",
-      "type": "HAS_INTEREST",
-      "caption": "HAS_INTEREST",
+      "from": "63",
+      "to": "13",
+      "type": "HAS_PROBLEM",
+      "caption": "HAS_PROBLEM",
       "properties": {
-        "created_at": "2025-11-16T22:55:41.635000000+00:00"
+        "created_at": "2025-11-17T01:33:18.910000000+00:00"
       }
     },
     {
       "id": "r104",
-      "from": "53",
-      "to": "14",
-      "type": "HAS_INTEREST",
-      "caption": "HAS_INTEREST",
+      "from": "64",
+      "to": "13",
+      "type": "HAS_PROBLEM",
+      "caption": "HAS_PROBLEM",
       "properties": {
-        "created_at": "2025-11-16T22:55:41.986000000+00:00"
+        "created_at": "2025-11-17T01:33:18.910000000+00:00"
       }
     },
     {
       "id": "r105",
-      "from": "55",
-      "to": "16",
-      "type": "HAS_INTEREST",
-      "caption": "HAS_INTEREST",
+      "from": "65",
+      "to": "13",
+      "type": "HAS_PROBLEM",
+      "caption": "HAS_PROBLEM",
       "properties": {
-        "created_at": "2025-11-16T22:55:42.153000000+00:00"
+        "created_at": "2025-11-17T01:33:19.086000000+00:00"
       }
     },
     {
       "id": "r106",
-      "from": "60",
-      "to": "20",
-      "type": "HAS_INTEREST",
-      "caption": "HAS_INTEREST",
+      "from": "66",
+      "to": "13",
+      "type": "HAS_PROBLEM",
+      "caption": "HAS_PROBLEM",
       "properties": {
-        "created_at": "2025-11-16T22:55:42.488000000+00:00"
+        "created_at": "2025-11-17T01:33:19.086000000+00:00"
       }
     },
     {
       "id": "r107",
-      "from": "65",
-      "to": "21",
-      "type": "HAS_INTEREST",
-      "caption": "HAS_INTEREST",
+      "from": "72",
+      "to": "13",
+      "type": "HAS_PROBLEM",
+      "caption": "HAS_PROBLEM",
       "properties": {
-        "created_at": "2025-11-16T22:55:42.846000000+00:00"
+        "created_at": "2025-11-17T01:33:15.017000000+00:00"
       }
     },
     {
       "id": "r108",
-      "from": "67",
-      "to": "14",
-      "type": "HAS_INTEREST",
-      "caption": "HAS_INTEREST",
+      "from": "81",
+      "to": "88",
+      "type": "HAS_PROBLEM",
+      "caption": "HAS_PROBLEM",
       "properties": {
-        "created_at": "2025-11-16T22:55:43.011000000+00:00"
+        "created_at": "2025-11-17T01:33:18.742000000+00:00"
       }
     },
     {
       "id": "r109",
-      "from": "69",
-      "to": "16",
-      "type": "HAS_INTEREST",
-      "caption": "HAS_INTEREST",
+      "from": "82",
+      "to": "88",
+      "type": "HAS_PROBLEM",
+      "caption": "HAS_PROBLEM",
       "properties": {
-        "created_at": "2025-11-16T22:55:43.189000000+00:00"
+        "created_at": "2025-11-17T01:33:13.779000000+00:00"
       }
     },
     {
       "id": "r110",
-      "from": "70",
-      "to": "21",
-      "type": "HAS_INTEREST",
-      "caption": "HAS_INTEREST",
+      "from": "7",
+      "to": "83",
+      "type": "CAN_BE_SOLVED_BY",
+      "caption": "CAN_BE_SOLVED_BY",
       "properties": {
-        "created_at": "2025-11-16T22:55:43.358000000+00:00"
+        "created_at": "2025-11-17T01:33:14.123000000+00:00"
       }
     },
     {
       "id": "r111",
-      "from": "72",
-      "to": "17",
-      "type": "HAS_INTEREST",
-      "caption": "HAS_INTEREST",
+      "from": "13",
+      "to": "83",
+      "type": "CAN_BE_SOLVED_BY",
+      "caption": "CAN_BE_SOLVED_BY",
       "properties": {
-        "created_at": "2025-11-16T22:55:43.525000000+00:00"
+        "created_at": "2025-11-17T01:33:14.469000000+00:00"
       }
     },
     {
       "id": "r112",
-      "from": "74",
-      "to": "76",
-      "type": "HAS_INTEREST",
-      "caption": "HAS_INTEREST",
+      "from": "28",
+      "to": "83",
+      "type": "CAN_BE_SOLVED_BY",
+      "caption": "CAN_BE_SOLVED_BY",
       "properties": {
-        "created_at": "2025-11-16T22:55:43.697000000+00:00"
+        "created_at": "2025-11-17T01:33:15.852000000+00:00"
       }
     },
     {
       "id": "r113",
-      "from": "77",
-      "to": "14",
-      "type": "HAS_INTEREST",
-      "caption": "HAS_INTEREST",
+      "from": "88",
+      "to": "83",
+      "type": "CAN_BE_SOLVED_BY",
+      "caption": "CAN_BE_SOLVED_BY",
       "properties": {
-        "created_at": "2025-11-16T22:55:44.035000000+00:00"
+        "created_at": "2025-11-17T01:33:13.779000000+00:00"
       }
     },
     {
       "id": "r114",
-      "from": "79",
-      "to": "16",
+      "from": "1",
+      "to": "84",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:44.226000000+00:00"
+        "created_at": "2025-11-17T01:33:13.957000000+00:00"
       }
     },
     {
       "id": "r115",
-      "from": "11",
-      "to": "15",
-      "type": "HAS_EXPERIENCE_IN",
-      "caption": "HAS_EXPERIENCE_IN",
+      "from": "5",
+      "to": "86",
+      "type": "HAS_INTEREST",
+      "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:43.865000000+00:00",
-        "experience_level": "active"
+        "created_at": "2025-11-17T01:33:14.123000000+00:00"
       }
     },
     {
       "id": "r116",
-      "from": "12",
-      "to": "14",
-      "type": "HAS_EXPERIENCE_IN",
-      "caption": "HAS_EXPERIENCE_IN",
+      "from": "8",
+      "to": "3",
+      "type": "HAS_INTEREST",
+      "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:38.687000000+00:00",
-        "experience_level": "active"
+        "created_at": "2025-11-17T01:33:14.290000000+00:00"
       }
     },
     {
       "id": "r117",
-      "from": "22",
-      "to": "16",
-      "type": "HAS_EXPERIENCE_IN",
-      "caption": "HAS_EXPERIENCE_IN",
+      "from": "11",
+      "to": "86",
+      "type": "HAS_INTEREST",
+      "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:39.067000000+00:00",
-        "experience_level": "active"
+        "created_at": "2025-11-17T01:33:14.469000000+00:00"
       }
     },
     {
       "id": "r118",
-      "from": "24",
-      "to": "20",
-      "type": "HAS_EXPERIENCE_IN",
-      "caption": "HAS_EXPERIENCE_IN",
+      "from": "14",
+      "to": "86",
+      "type": "HAS_INTEREST",
+      "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:39.242000000+00:00",
-        "experience_level": "exploration"
+        "created_at": "2025-11-17T01:33:14.666000000+00:00"
       }
     },
     {
       "id": "r119",
-      "from": "27",
-      "to": "16",
-      "type": "HAS_EXPERIENCE_IN",
-      "caption": "HAS_EXPERIENCE_IN",
+      "from": "16",
+      "to": "84",
+      "type": "HAS_INTEREST",
+      "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:39.433000000+00:00",
-        "experience_level": "exploration"
+        "created_at": "2025-11-17T01:33:14.830000000+00:00"
       }
     },
     {
       "id": "r120",
-      "from": "33",
-      "to": "14",
-      "type": "HAS_EXPERIENCE_IN",
-      "caption": "HAS_EXPERIENCE_IN",
+      "from": "18",
+      "to": "84",
+      "type": "HAS_INTEREST",
+      "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:40.085000000+00:00",
-        "experience_level": "active"
+        "created_at": "2025-11-17T01:33:15.017000000+00:00"
       }
     },
     {
       "id": "r121",
-      "from": "41",
-      "to": "16",
-      "type": "HAS_EXPERIENCE_IN",
-      "caption": "HAS_EXPERIENCE_IN",
+      "from": "21",
+      "to": "86",
+      "type": "HAS_INTEREST",
+      "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:40.945000000+00:00",
-        "experience_level": "active"
+        "created_at": "2025-11-17T01:33:15.353000000+00:00"
       }
     },
     {
       "id": "r122",
-      "from": "60",
-      "to": "20",
-      "type": "HAS_EXPERIENCE_IN",
-      "caption": "HAS_EXPERIENCE_IN",
+      "from": "23",
+      "to": "86",
+      "type": "HAS_INTEREST",
+      "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:42.488000000+00:00",
-        "experience_level": "active"
+        "created_at": "2025-11-17T01:33:15.518000000+00:00"
       }
     },
     {
       "id": "r123",
-      "from": "67",
-      "to": "14",
-      "type": "HAS_EXPERIENCE_IN",
-      "caption": "HAS_EXPERIENCE_IN",
+      "from": "25",
+      "to": "84",
+      "type": "HAS_INTEREST",
+      "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:43.011000000+00:00",
-        "experience_level": "exploration"
+        "created_at": "2025-11-17T01:33:15.683000000+00:00"
       }
     },
     {
       "id": "r124",
-      "from": "69",
-      "to": "16",
-      "type": "HAS_EXPERIENCE_IN",
-      "caption": "HAS_EXPERIENCE_IN",
+      "from": "26",
+      "to": "86",
+      "type": "HAS_INTEREST",
+      "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:43.189000000+00:00",
-        "experience_level": "exploration"
+        "created_at": "2025-11-17T01:33:15.852000000+00:00"
       }
     },
     {
       "id": "r125",
-      "from": "74",
-      "to": "76",
-      "type": "HAS_EXPERIENCE_IN",
-      "caption": "HAS_EXPERIENCE_IN",
+      "from": "29",
+      "to": "3",
+      "type": "HAS_INTEREST",
+      "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:43.697000000+00:00",
-        "experience_level": "active"
+        "created_at": "2025-11-17T01:33:16.025000000+00:00"
       }
     },
     {
       "id": "r126",
-      "from": "77",
-      "to": "14",
-      "type": "HAS_EXPERIENCE_IN",
-      "caption": "HAS_EXPERIENCE_IN",
+      "from": "31",
+      "to": "86",
+      "type": "HAS_INTEREST",
+      "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:44.035000000+00:00",
-        "experience_level": "exploration"
+        "created_at": "2025-11-17T01:33:16.193000000+00:00"
       }
     },
     {
       "id": "r127",
-      "from": "79",
-      "to": "16",
-      "type": "HAS_EXPERIENCE_IN",
-      "caption": "HAS_EXPERIENCE_IN",
+      "from": "33",
+      "to": "84",
+      "type": "HAS_INTEREST",
+      "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:44.226000000+00:00",
-        "experience_level": "exploration"
+        "created_at": "2025-11-17T01:33:16.356000000+00:00"
       }
     },
     {
       "id": "r128",
-      "from": "11",
-      "to": "16",
+      "from": "35",
+      "to": "86",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:43.865000000+00:00"
+        "created_at": "2025-11-17T01:33:16.522000000+00:00"
       }
     },
     {
       "id": "r129",
-      "from": "12",
-      "to": "15",
+      "from": "39",
+      "to": "84",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:38.687000000+00:00"
+        "created_at": "2025-11-17T01:33:16.862000000+00:00"
       }
     },
     {
       "id": "r130",
-      "from": "18",
-      "to": "15",
+      "from": "41",
+      "to": "86",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:38.882000000+00:00"
+        "created_at": "2025-11-17T01:33:17.028000000+00:00"
       }
     },
     {
       "id": "r131",
-      "from": "24",
-      "to": "21",
+      "from": "46",
+      "to": "3",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:39.242000000+00:00"
+        "created_at": "2025-11-17T01:33:17.356000000+00:00"
       }
     },
     {
       "id": "r132",
-      "from": "27",
-      "to": "20",
+      "from": "51",
+      "to": "4",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:39.433000000+00:00"
+        "created_at": "2025-11-17T01:33:17.724000000+00:00"
       }
     },
     {
       "id": "r133",
-      "from": "29",
-      "to": "20",
+      "from": "53",
+      "to": "84",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:39.739000000+00:00"
+        "created_at": "2025-11-17T01:33:17.890000000+00:00"
       }
     },
     {
       "id": "r134",
-      "from": "33",
-      "to": "16",
+      "from": "55",
+      "to": "86",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:40.085000000+00:00"
+        "created_at": "2025-11-17T01:33:18.074000000+00:00"
       }
     },
     {
       "id": "r135",
-      "from": "36",
-      "to": "20",
+      "from": "56",
+      "to": "4",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:40.427000000+00:00"
+        "created_at": "2025-11-17T01:33:18.246000000+00:00"
       }
     },
     {
       "id": "r136",
-      "from": "38",
-      "to": "21",
+      "from": "58",
+      "to": "87",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:40.599000000+00:00"
+        "created_at": "2025-11-17T01:33:18.411000000+00:00"
       }
     },
     {
       "id": "r137",
-      "from": "40",
-      "to": "15",
+      "from": "60",
+      "to": "62",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:40.770000000+00:00"
+        "created_at": "2025-11-17T01:33:18.573000000+00:00"
       }
     },
     {
       "id": "r138",
-      "from": "41",
-      "to": "21",
+      "from": "63",
+      "to": "84",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:40.945000000+00:00"
+        "created_at": "2025-11-17T01:33:18.910000000+00:00"
       }
     },
     {
       "id": "r139",
-      "from": "43",
-      "to": "17",
+      "from": "65",
+      "to": "86",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:41.121000000+00:00"
+        "created_at": "2025-11-17T01:33:19.086000000+00:00"
       }
     },
     {
       "id": "r140",
-      "from": "45",
-      "to": "21",
+      "from": "81",
+      "to": "85",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:41.293000000+00:00"
+        "created_at": "2025-11-17T01:33:18.742000000+00:00"
       }
     },
     {
       "id": "r141",
-      "from": "47",
-      "to": "15",
+      "from": "82",
+      "to": "84",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:41.466000000+00:00"
+        "created_at": "2025-11-17T01:33:13.779000000+00:00"
       }
     },
     {
       "id": "r142",
-      "from": "49",
-      "to": "21",
-      "type": "HAS_INTEREST",
-      "caption": "HAS_INTEREST",
+      "from": "5",
+      "to": "86",
+      "type": "HAS_EXPERIENCE_IN",
+      "caption": "HAS_EXPERIENCE_IN",
       "properties": {
-        "created_at": "2025-11-16T22:55:41.635000000+00:00"
+        "created_at": "2025-11-17T01:33:14.123000000+00:00",
+        "experience_level": "active"
       }
     },
     {
       "id": "r143",
-      "from": "53",
-      "to": "16",
-      "type": "HAS_INTEREST",
-      "caption": "HAS_INTEREST",
+      "from": "8",
+      "to": "3",
+      "type": "HAS_EXPERIENCE_IN",
+      "caption": "HAS_EXPERIENCE_IN",
       "properties": {
-        "created_at": "2025-11-16T22:55:41.986000000+00:00"
+        "created_at": "2025-11-17T01:33:14.290000000+00:00",
+        "experience_level": "exploration"
       }
     },
     {
       "id": "r144",
-      "from": "55",
-      "to": "17",
-      "type": "HAS_INTEREST",
-      "caption": "HAS_INTEREST",
+      "from": "11",
+      "to": "86",
+      "type": "HAS_EXPERIENCE_IN",
+      "caption": "HAS_EXPERIENCE_IN",
       "properties": {
-        "created_at": "2025-11-16T22:55:42.153000000+00:00"
+        "created_at": "2025-11-17T01:33:14.469000000+00:00",
+        "experience_level": "exploration"
       }
     },
     {
       "id": "r145",
-      "from": "60",
-      "to": "21",
-      "type": "HAS_INTEREST",
-      "caption": "HAS_INTEREST",
+      "from": "18",
+      "to": "84",
+      "type": "HAS_EXPERIENCE_IN",
+      "caption": "HAS_EXPERIENCE_IN",
       "properties": {
-        "created_at": "2025-11-16T22:55:42.488000000+00:00"
+        "created_at": "2025-11-17T01:33:15.017000000+00:00",
+        "experience_level": "active"
       }
     },
     {
       "id": "r146",
-      "from": "67",
-      "to": "15",
-      "type": "HAS_INTEREST",
-      "caption": "HAS_INTEREST",
+      "from": "26",
+      "to": "86",
+      "type": "HAS_EXPERIENCE_IN",
+      "caption": "HAS_EXPERIENCE_IN",
       "properties": {
-        "created_at": "2025-11-16T22:55:43.011000000+00:00"
+        "created_at": "2025-11-17T01:33:15.852000000+00:00",
+        "experience_level": "active"
       }
     },
     {
       "id": "r147",
-      "from": "69",
-      "to": "21",
-      "type": "HAS_INTEREST",
-      "caption": "HAS_INTEREST",
+      "from": "46",
+      "to": "3",
+      "type": "HAS_EXPERIENCE_IN",
+      "caption": "HAS_EXPERIENCE_IN",
       "properties": {
-        "created_at": "2025-11-16T22:55:43.189000000+00:00"
+        "created_at": "2025-11-17T01:33:17.356000000+00:00",
+        "experience_level": "active"
       }
     },
     {
       "id": "r148",
-      "from": "70",
-      "to": "17",
-      "type": "HAS_INTEREST",
-      "caption": "HAS_INTEREST",
+      "from": "53",
+      "to": "84",
+      "type": "HAS_EXPERIENCE_IN",
+      "caption": "HAS_EXPERIENCE_IN",
       "properties": {
-        "created_at": "2025-11-16T22:55:43.358000000+00:00"
+        "created_at": "2025-11-17T01:33:17.890000000+00:00",
+        "experience_level": "exploration"
       }
     },
     {
       "id": "r149",
-      "from": "77",
-      "to": "15",
-      "type": "HAS_INTEREST",
-      "caption": "HAS_INTEREST",
+      "from": "55",
+      "to": "86",
+      "type": "HAS_EXPERIENCE_IN",
+      "caption": "HAS_EXPERIENCE_IN",
       "properties": {
-        "created_at": "2025-11-16T22:55:44.035000000+00:00"
+        "created_at": "2025-11-17T01:33:18.074000000+00:00",
+        "experience_level": "exploration"
       }
     },
     {
       "id": "r150",
-      "from": "79",
-      "to": "20",
-      "type": "HAS_INTEREST",
-      "caption": "HAS_INTEREST",
+      "from": "60",
+      "to": "62",
+      "type": "HAS_EXPERIENCE_IN",
+      "caption": "HAS_EXPERIENCE_IN",
       "properties": {
-        "created_at": "2025-11-16T22:55:44.226000000+00:00"
+        "created_at": "2025-11-17T01:33:18.573000000+00:00",
+        "experience_level": "active"
       }
     },
     {
       "id": "r151",
-      "from": "11",
-      "to": "16",
+      "from": "63",
+      "to": "84",
       "type": "HAS_EXPERIENCE_IN",
       "caption": "HAS_EXPERIENCE_IN",
       "properties": {
-        "created_at": "2025-11-16T22:55:43.865000000+00:00",
-        "experience_level": "active"
+        "created_at": "2025-11-17T01:33:18.910000000+00:00",
+        "experience_level": "exploration"
       }
     },
     {
       "id": "r152",
-      "from": "12",
-      "to": "15",
+      "from": "65",
+      "to": "86",
       "type": "HAS_EXPERIENCE_IN",
       "caption": "HAS_EXPERIENCE_IN",
       "properties": {
-        "created_at": "2025-11-16T22:55:38.687000000+00:00",
-        "experience_level": "active"
+        "created_at": "2025-11-17T01:33:19.086000000+00:00",
+        "experience_level": "exploration"
       }
     },
     {
       "id": "r153",
-      "from": "24",
-      "to": "21",
+      "from": "81",
+      "to": "85",
       "type": "HAS_EXPERIENCE_IN",
       "caption": "HAS_EXPERIENCE_IN",
       "properties": {
-        "created_at": "2025-11-16T22:55:39.242000000+00:00",
-        "experience_level": "exploration"
+        "created_at": "2025-11-17T01:33:18.742000000+00:00",
+        "experience_level": "active"
       }
     },
     {
       "id": "r154",
-      "from": "27",
-      "to": "20",
+      "from": "82",
+      "to": "84",
       "type": "HAS_EXPERIENCE_IN",
       "caption": "HAS_EXPERIENCE_IN",
       "properties": {
-        "created_at": "2025-11-16T22:55:39.433000000+00:00",
-        "experience_level": "exploration"
+        "created_at": "2025-11-17T01:33:13.779000000+00:00",
+        "experience_level": "active"
       }
     },
     {
       "id": "r155",
-      "from": "33",
-      "to": "16",
-      "type": "HAS_EXPERIENCE_IN",
-      "caption": "HAS_EXPERIENCE_IN",
+      "from": "12",
+      "to": "88",
+      "type": "HAS_PROBLEM",
+      "caption": "HAS_PROBLEM",
       "properties": {
-        "created_at": "2025-11-16T22:55:40.085000000+00:00",
-        "experience_level": "active"
+        "created_at": "2025-11-17T01:33:18.074000000+00:00"
       }
     },
     {
       "id": "r156",
-      "from": "41",
-      "to": "21",
-      "type": "HAS_EXPERIENCE_IN",
-      "caption": "HAS_EXPERIENCE_IN",
+      "from": "7",
+      "to": "86",
+      "type": "CAN_BE_SOLVED_BY",
+      "caption": "CAN_BE_SOLVED_BY",
       "properties": {
-        "created_at": "2025-11-16T22:55:40.945000000+00:00",
-        "experience_level": "active"
+        "created_at": "2025-11-17T01:33:14.123000000+00:00"
       }
     },
     {
       "id": "r157",
-      "from": "60",
-      "to": "21",
-      "type": "HAS_EXPERIENCE_IN",
-      "caption": "HAS_EXPERIENCE_IN",
+      "from": "13",
+      "to": "86",
+      "type": "CAN_BE_SOLVED_BY",
+      "caption": "CAN_BE_SOLVED_BY",
       "properties": {
-        "created_at": "2025-11-16T22:55:42.488000000+00:00",
-        "experience_level": "active"
+        "created_at": "2025-11-17T01:33:14.469000000+00:00"
       }
     },
     {
       "id": "r158",
-      "from": "67",
-      "to": "15",
-      "type": "HAS_EXPERIENCE_IN",
-      "caption": "HAS_EXPERIENCE_IN",
+      "from": "28",
+      "to": "86",
+      "type": "CAN_BE_SOLVED_BY",
+      "caption": "CAN_BE_SOLVED_BY",
       "properties": {
-        "created_at": "2025-11-16T22:55:43.011000000+00:00",
-        "experience_level": "exploration"
+        "created_at": "2025-11-17T01:33:15.852000000+00:00"
       }
     },
     {
       "id": "r159",
-      "from": "69",
-      "to": "21",
-      "type": "HAS_EXPERIENCE_IN",
-      "caption": "HAS_EXPERIENCE_IN",
+      "from": "88",
+      "to": "84",
+      "type": "CAN_BE_SOLVED_BY",
+      "caption": "CAN_BE_SOLVED_BY",
       "properties": {
-        "created_at": "2025-11-16T22:55:43.189000000+00:00",
-        "experience_level": "exploration"
+        "created_at": "2025-11-17T01:33:13.779000000+00:00"
       }
     },
     {
       "id": "r160",
-      "from": "77",
-      "to": "15",
-      "type": "HAS_EXPERIENCE_IN",
-      "caption": "HAS_EXPERIENCE_IN",
+      "from": "1",
+      "to": "85",
+      "type": "HAS_INTEREST",
+      "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:44.035000000+00:00",
-        "experience_level": "exploration"
+        "created_at": "2025-11-17T01:33:13.957000000+00:00"
       }
     },
     {
       "id": "r161",
-      "from": "79",
-      "to": "20",
-      "type": "HAS_EXPERIENCE_IN",
-      "caption": "HAS_EXPERIENCE_IN",
+      "from": "8",
+      "to": "4",
+      "type": "HAS_INTEREST",
+      "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:44.226000000+00:00",
-        "experience_level": "exploration"
+        "created_at": "2025-11-17T01:33:14.290000000+00:00"
       }
     },
     {
       "id": "r162",
-      "from": "12",
-      "to": "16",
+      "from": "11",
+      "to": "3",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:38.687000000+00:00"
+        "created_at": "2025-11-17T01:33:14.469000000+00:00"
       }
     },
     {
       "id": "r163",
-      "from": "18",
-      "to": "16",
+      "from": "14",
+      "to": "3",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:38.882000000+00:00"
+        "created_at": "2025-11-17T01:33:14.666000000+00:00"
       }
     },
     {
       "id": "r164",
-      "from": "24",
-      "to": "17",
+      "from": "18",
+      "to": "86",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:39.242000000+00:00"
+        "created_at": "2025-11-17T01:33:15.017000000+00:00"
       }
     },
     {
       "id": "r165",
-      "from": "27",
-      "to": "17",
+      "from": "21",
+      "to": "3",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:39.433000000+00:00"
+        "created_at": "2025-11-17T01:33:15.353000000+00:00"
       }
     },
     {
       "id": "r166",
-      "from": "33",
-      "to": "17",
+      "from": "23",
+      "to": "4",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:40.085000000+00:00"
+        "created_at": "2025-11-17T01:33:15.518000000+00:00"
       }
     },
     {
       "id": "r167",
-      "from": "36",
-      "to": "21",
+      "from": "25",
+      "to": "85",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:40.427000000+00:00"
+        "created_at": "2025-11-17T01:33:15.683000000+00:00"
       }
     },
     {
       "id": "r168",
-      "from": "38",
-      "to": "17",
+      "from": "26",
+      "to": "4",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:40.599000000+00:00"
+        "created_at": "2025-11-17T01:33:15.852000000+00:00"
       }
     },
     {
       "id": "r169",
-      "from": "40",
-      "to": "16",
+      "from": "29",
+      "to": "87",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:40.770000000+00:00"
+        "created_at": "2025-11-17T01:33:16.025000000+00:00"
       }
     },
     {
       "id": "r170",
-      "from": "41",
-      "to": "17",
+      "from": "31",
+      "to": "4",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:40.945000000+00:00"
+        "created_at": "2025-11-17T01:33:16.193000000+00:00"
       }
     },
     {
       "id": "r171",
-      "from": "45",
-      "to": "17",
+      "from": "33",
+      "to": "85",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:41.293000000+00:00"
+        "created_at": "2025-11-17T01:33:16.356000000+00:00"
       }
     },
     {
       "id": "r172",
-      "from": "47",
-      "to": "16",
+      "from": "35",
+      "to": "4",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:41.466000000+00:00"
+        "created_at": "2025-11-17T01:33:16.522000000+00:00"
       }
     },
     {
       "id": "r173",
-      "from": "49",
-      "to": "17",
+      "from": "39",
+      "to": "86",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:41.635000000+00:00"
+        "created_at": "2025-11-17T01:33:16.862000000+00:00"
       }
     },
     {
       "id": "r174",
-      "from": "53",
-      "to": "21",
+      "from": "41",
+      "to": "87",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:41.986000000+00:00"
+        "created_at": "2025-11-17T01:33:17.028000000+00:00"
       }
     },
     {
       "id": "r175",
-      "from": "60",
-      "to": "17",
+      "from": "46",
+      "to": "4",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:42.488000000+00:00"
+        "created_at": "2025-11-17T01:33:17.356000000+00:00"
       }
     },
     {
       "id": "r176",
-      "from": "67",
-      "to": "16",
+      "from": "53",
+      "to": "85",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:43.011000000+00:00"
+        "created_at": "2025-11-17T01:33:17.890000000+00:00"
       }
     },
     {
       "id": "r177",
-      "from": "69",
-      "to": "17",
+      "from": "55",
+      "to": "4",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:43.189000000+00:00"
+        "created_at": "2025-11-17T01:33:18.074000000+00:00"
       }
     },
     {
       "id": "r178",
-      "from": "77",
-      "to": "20",
+      "from": "56",
+      "to": "87",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:44.035000000+00:00"
+        "created_at": "2025-11-17T01:33:18.246000000+00:00"
       }
     },
     {
       "id": "r179",
-      "from": "79",
-      "to": "21",
+      "from": "63",
+      "to": "85",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:44.226000000+00:00"
+        "created_at": "2025-11-17T01:33:18.910000000+00:00"
       }
     },
     {
       "id": "r180",
-      "from": "12",
-      "to": "16",
-      "type": "HAS_EXPERIENCE_IN",
-      "caption": "HAS_EXPERIENCE_IN",
+      "from": "65",
+      "to": "3",
+      "type": "HAS_INTEREST",
+      "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:38.687000000+00:00",
-        "experience_level": "active"
+        "created_at": "2025-11-17T01:33:19.086000000+00:00"
       }
     },
     {
       "id": "r181",
-      "from": "24",
-      "to": "17",
-      "type": "HAS_EXPERIENCE_IN",
-      "caption": "HAS_EXPERIENCE_IN",
+      "from": "81",
+      "to": "86",
+      "type": "HAS_INTEREST",
+      "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:39.242000000+00:00",
-        "experience_level": "exploration"
+        "created_at": "2025-11-17T01:33:18.742000000+00:00"
       }
     },
     {
       "id": "r182",
-      "from": "27",
-      "to": "17",
-      "type": "HAS_EXPERIENCE_IN",
-      "caption": "HAS_EXPERIENCE_IN",
+      "from": "82",
+      "to": "85",
+      "type": "HAS_INTEREST",
+      "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:39.433000000+00:00",
-        "experience_level": "exploration"
+        "created_at": "2025-11-17T01:33:13.779000000+00:00"
       }
     },
     {
       "id": "r183",
-      "from": "33",
-      "to": "17",
+      "from": "8",
+      "to": "4",
       "type": "HAS_EXPERIENCE_IN",
       "caption": "HAS_EXPERIENCE_IN",
       "properties": {
-        "created_at": "2025-11-16T22:55:40.085000000+00:00",
-        "experience_level": "active"
+        "created_at": "2025-11-17T01:33:14.290000000+00:00",
+        "experience_level": "exploration"
       }
     },
     {
       "id": "r184",
-      "from": "41",
-      "to": "17",
+      "from": "11",
+      "to": "3",
       "type": "HAS_EXPERIENCE_IN",
       "caption": "HAS_EXPERIENCE_IN",
       "properties": {
-        "created_at": "2025-11-16T22:55:40.945000000+00:00",
-        "experience_level": "active"
+        "created_at": "2025-11-17T01:33:14.469000000+00:00",
+        "experience_level": "exploration"
       }
     },
     {
       "id": "r185",
-      "from": "60",
-      "to": "17",
+      "from": "18",
+      "to": "86",
       "type": "HAS_EXPERIENCE_IN",
       "caption": "HAS_EXPERIENCE_IN",
       "properties": {
-        "created_at": "2025-11-16T22:55:42.488000000+00:00",
+        "created_at": "2025-11-17T01:33:15.017000000+00:00",
         "experience_level": "active"
       }
     },
     {
       "id": "r186",
-      "from": "67",
-      "to": "16",
+      "from": "26",
+      "to": "4",
       "type": "HAS_EXPERIENCE_IN",
       "caption": "HAS_EXPERIENCE_IN",
       "properties": {
-        "created_at": "2025-11-16T22:55:43.011000000+00:00",
-        "experience_level": "exploration"
+        "created_at": "2025-11-17T01:33:15.852000000+00:00",
+        "experience_level": "active"
       }
     },
     {
       "id": "r187",
-      "from": "69",
-      "to": "17",
+      "from": "46",
+      "to": "4",
       "type": "HAS_EXPERIENCE_IN",
       "caption": "HAS_EXPERIENCE_IN",
       "properties": {
-        "created_at": "2025-11-16T22:55:43.189000000+00:00",
-        "experience_level": "exploration"
+        "created_at": "2025-11-17T01:33:17.356000000+00:00",
+        "experience_level": "active"
       }
     },
     {
       "id": "r188",
-      "from": "77",
-      "to": "20",
+      "from": "53",
+      "to": "85",
       "type": "HAS_EXPERIENCE_IN",
       "caption": "HAS_EXPERIENCE_IN",
       "properties": {
-        "created_at": "2025-11-16T22:55:44.035000000+00:00",
+        "created_at": "2025-11-17T01:33:17.890000000+00:00",
         "experience_level": "exploration"
       }
     },
     {
       "id": "r189",
-      "from": "79",
-      "to": "21",
+      "from": "55",
+      "to": "4",
       "type": "HAS_EXPERIENCE_IN",
       "caption": "HAS_EXPERIENCE_IN",
       "properties": {
-        "created_at": "2025-11-16T22:55:44.226000000+00:00",
+        "created_at": "2025-11-17T01:33:18.074000000+00:00",
         "experience_level": "exploration"
       }
     },
     {
       "id": "r190",
-      "from": "12",
-      "to": "17",
-      "type": "HAS_INTEREST",
-      "caption": "HAS_INTEREST",
+      "from": "63",
+      "to": "85",
+      "type": "HAS_EXPERIENCE_IN",
+      "caption": "HAS_EXPERIENCE_IN",
       "properties": {
-        "created_at": "2025-11-16T22:55:38.687000000+00:00"
+        "created_at": "2025-11-17T01:33:18.910000000+00:00",
+        "experience_level": "exploration"
       }
     },
     {
       "id": "r191",
-      "from": "18",
-      "to": "20",
-      "type": "HAS_INTEREST",
-      "caption": "HAS_INTEREST",
+      "from": "65",
+      "to": "3",
+      "type": "HAS_EXPERIENCE_IN",
+      "caption": "HAS_EXPERIENCE_IN",
       "properties": {
-        "created_at": "2025-11-16T22:55:38.882000000+00:00"
+        "created_at": "2025-11-17T01:33:19.086000000+00:00",
+        "experience_level": "exploration"
       }
     },
     {
       "id": "r192",
-      "from": "24",
-      "to": "26",
-      "type": "HAS_INTEREST",
-      "caption": "HAS_INTEREST",
+      "from": "81",
+      "to": "86",
+      "type": "HAS_EXPERIENCE_IN",
+      "caption": "HAS_EXPERIENCE_IN",
       "properties": {
-        "created_at": "2025-11-16T22:55:39.242000000+00:00"
+        "created_at": "2025-11-17T01:33:18.742000000+00:00",
+        "experience_level": "active"
       }
     },
     {
       "id": "r193",
-      "from": "36",
-      "to": "17",
-      "type": "HAS_INTEREST",
-      "caption": "HAS_INTEREST",
+      "from": "82",
+      "to": "85",
+      "type": "HAS_EXPERIENCE_IN",
+      "caption": "HAS_EXPERIENCE_IN",
       "properties": {
-        "created_at": "2025-11-16T22:55:40.427000000+00:00"
+        "created_at": "2025-11-17T01:33:13.779000000+00:00",
+        "experience_level": "active"
       }
     },
     {
       "id": "r194",
-      "from": "40",
-      "to": "20",
-      "type": "HAS_INTEREST",
-      "caption": "HAS_INTEREST",
+      "from": "7",
+      "to": "87",
+      "type": "CAN_BE_SOLVED_BY",
+      "caption": "CAN_BE_SOLVED_BY",
       "properties": {
-        "created_at": "2025-11-16T22:55:40.770000000+00:00"
+        "created_at": "2025-11-17T01:33:14.290000000+00:00"
       }
     },
     {
       "id": "r195",
-      "from": "47",
-      "to": "20",
-      "type": "HAS_INTEREST",
-      "caption": "HAS_INTEREST",
+      "from": "13",
+      "to": "3",
+      "type": "CAN_BE_SOLVED_BY",
+      "caption": "CAN_BE_SOLVED_BY",
       "properties": {
-        "created_at": "2025-11-16T22:55:41.466000000+00:00"
+        "created_at": "2025-11-17T01:33:14.469000000+00:00"
       }
     },
     {
       "id": "r196",
-      "from": "60",
-      "to": "62",
-      "type": "HAS_INTEREST",
-      "caption": "HAS_INTEREST",
+      "from": "28",
+      "to": "4",
+      "type": "CAN_BE_SOLVED_BY",
+      "caption": "CAN_BE_SOLVED_BY",
       "properties": {
-        "created_at": "2025-11-16T22:55:42.488000000+00:00"
+        "created_at": "2025-11-17T01:33:15.852000000+00:00"
       }
     },
     {
       "id": "r197",
-      "from": "67",
-      "to": "21",
-      "type": "HAS_INTEREST",
-      "caption": "HAS_INTEREST",
+      "from": "88",
+      "to": "85",
+      "type": "CAN_BE_SOLVED_BY",
+      "caption": "CAN_BE_SOLVED_BY",
       "properties": {
-        "created_at": "2025-11-16T22:55:43.011000000+00:00"
+        "created_at": "2025-11-17T01:33:13.779000000+00:00"
       }
     },
     {
       "id": "r198",
-      "from": "79",
-      "to": "17",
+      "from": "1",
+      "to": "86",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:44.226000000+00:00"
+        "created_at": "2025-11-17T01:33:13.957000000+00:00"
       }
     },
     {
       "id": "r199",
-      "from": "12",
-      "to": "17",
-      "type": "HAS_EXPERIENCE_IN",
-      "caption": "HAS_EXPERIENCE_IN",
+      "from": "8",
+      "to": "87",
+      "type": "HAS_INTEREST",
+      "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:38.687000000+00:00",
-        "experience_level": "active"
+        "created_at": "2025-11-17T01:33:14.290000000+00:00"
       }
     },
     {
       "id": "r200",
-      "from": "24",
-      "to": "26",
-      "type": "HAS_EXPERIENCE_IN",
-      "caption": "HAS_EXPERIENCE_IN",
+      "from": "11",
+      "to": "87",
+      "type": "HAS_INTEREST",
+      "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:39.242000000+00:00",
-        "experience_level": "exploration"
+        "created_at": "2025-11-17T01:33:14.469000000+00:00"
       }
     },
     {
       "id": "r201",
-      "from": "60",
-      "to": "62",
-      "type": "HAS_EXPERIENCE_IN",
-      "caption": "HAS_EXPERIENCE_IN",
+      "from": "18",
+      "to": "87",
+      "type": "HAS_INTEREST",
+      "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:42.488000000+00:00",
-        "experience_level": "active"
+        "created_at": "2025-11-17T01:33:15.017000000+00:00"
       }
     },
     {
       "id": "r202",
-      "from": "67",
-      "to": "21",
-      "type": "HAS_EXPERIENCE_IN",
-      "caption": "HAS_EXPERIENCE_IN",
+      "from": "21",
+      "to": "4",
+      "type": "HAS_INTEREST",
+      "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:43.011000000+00:00",
-        "experience_level": "exploration"
+        "created_at": "2025-11-17T01:33:15.353000000+00:00"
       }
     },
     {
       "id": "r203",
-      "from": "79",
-      "to": "17",
-      "type": "HAS_EXPERIENCE_IN",
-      "caption": "HAS_EXPERIENCE_IN",
+      "from": "23",
+      "to": "87",
+      "type": "HAS_INTEREST",
+      "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:44.226000000+00:00",
-        "experience_level": "exploration"
+        "created_at": "2025-11-17T01:33:15.518000000+00:00"
       }
     },
     {
       "id": "r204",
-      "from": "18",
-      "to": "21",
+      "from": "25",
+      "to": "86",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:38.882000000+00:00"
+        "created_at": "2025-11-17T01:33:15.683000000+00:00"
       }
     },
     {
       "id": "r205",
-      "from": "40",
-      "to": "21",
+      "from": "26",
+      "to": "87",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:40.770000000+00:00"
+        "created_at": "2025-11-17T01:33:15.852000000+00:00"
       }
     },
     {
       "id": "r206",
-      "from": "47",
-      "to": "21",
+      "from": "31",
+      "to": "87",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:41.466000000+00:00"
+        "created_at": "2025-11-17T01:33:16.193000000+00:00"
       }
     },
     {
       "id": "r207",
-      "from": "67",
-      "to": "17",
+      "from": "33",
+      "to": "86",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:43.011000000+00:00"
+        "created_at": "2025-11-17T01:33:16.356000000+00:00"
       }
     },
     {
       "id": "r208",
-      "from": "67",
-      "to": "17",
-      "type": "HAS_EXPERIENCE_IN",
-      "caption": "HAS_EXPERIENCE_IN",
+      "from": "35",
+      "to": "87",
+      "type": "HAS_INTEREST",
+      "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:43.011000000+00:00",
-        "experience_level": "exploration"
+        "created_at": "2025-11-17T01:33:16.522000000+00:00"
       }
     },
     {
       "id": "r209",
-      "from": "18",
-      "to": "17",
+      "from": "39",
+      "to": "4",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:38.882000000+00:00"
+        "created_at": "2025-11-17T01:33:16.862000000+00:00"
       }
     },
     {
       "id": "r210",
-      "from": "40",
-      "to": "17",
+      "from": "46",
+      "to": "87",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:40.770000000+00:00"
+        "created_at": "2025-11-17T01:33:17.356000000+00:00"
       }
     },
     {
       "id": "r211",
-      "from": "47",
-      "to": "17",
+      "from": "53",
+      "to": "86",
       "type": "HAS_INTEREST",
       "caption": "HAS_INTEREST",
       "properties": {
-        "created_at": "2025-11-16T22:55:41.466000000+00:00"
+        "created_at": "2025-11-17T01:33:17.890000000+00:00"
+      }
+    },
+    {
+      "id": "r212",
+      "from": "55",
+      "to": "87",
+      "type": "HAS_INTEREST",
+      "caption": "HAS_INTEREST",
+      "properties": {
+        "created_at": "2025-11-17T01:33:18.074000000+00:00"
+      }
+    },
+    {
+      "id": "r213",
+      "from": "63",
+      "to": "3",
+      "type": "HAS_INTEREST",
+      "caption": "HAS_INTEREST",
+      "properties": {
+        "created_at": "2025-11-17T01:33:18.910000000+00:00"
+      }
+    },
+    {
+      "id": "r214",
+      "from": "65",
+      "to": "4",
+      "type": "HAS_INTEREST",
+      "caption": "HAS_INTEREST",
+      "properties": {
+        "created_at": "2025-11-17T01:33:19.086000000+00:00"
+      }
+    },
+    {
+      "id": "r215",
+      "from": "82",
+      "to": "86",
+      "type": "HAS_INTEREST",
+      "caption": "HAS_INTEREST",
+      "properties": {
+        "created_at": "2025-11-17T01:33:13.779000000+00:00"
+      }
+    },
+    {
+      "id": "r216",
+      "from": "8",
+      "to": "87",
+      "type": "HAS_EXPERIENCE_IN",
+      "caption": "HAS_EXPERIENCE_IN",
+      "properties": {
+        "created_at": "2025-11-17T01:33:14.290000000+00:00",
+        "experience_level": "exploration"
+      }
+    },
+    {
+      "id": "r217",
+      "from": "11",
+      "to": "87",
+      "type": "HAS_EXPERIENCE_IN",
+      "caption": "HAS_EXPERIENCE_IN",
+      "properties": {
+        "created_at": "2025-11-17T01:33:14.469000000+00:00",
+        "experience_level": "exploration"
+      }
+    },
+    {
+      "id": "r218",
+      "from": "18",
+      "to": "87",
+      "type": "HAS_EXPERIENCE_IN",
+      "caption": "HAS_EXPERIENCE_IN",
+      "properties": {
+        "created_at": "2025-11-17T01:33:15.017000000+00:00",
+        "experience_level": "active"
+      }
+    },
+    {
+      "id": "r219",
+      "from": "26",
+      "to": "87",
+      "type": "HAS_EXPERIENCE_IN",
+      "caption": "HAS_EXPERIENCE_IN",
+      "properties": {
+        "created_at": "2025-11-17T01:33:15.852000000+00:00",
+        "experience_level": "active"
+      }
+    },
+    {
+      "id": "r220",
+      "from": "46",
+      "to": "87",
+      "type": "HAS_EXPERIENCE_IN",
+      "caption": "HAS_EXPERIENCE_IN",
+      "properties": {
+        "created_at": "2025-11-17T01:33:17.356000000+00:00",
+        "experience_level": "active"
+      }
+    },
+    {
+      "id": "r221",
+      "from": "53",
+      "to": "86",
+      "type": "HAS_EXPERIENCE_IN",
+      "caption": "HAS_EXPERIENCE_IN",
+      "properties": {
+        "created_at": "2025-11-17T01:33:17.890000000+00:00",
+        "experience_level": "exploration"
+      }
+    },
+    {
+      "id": "r222",
+      "from": "55",
+      "to": "87",
+      "type": "HAS_EXPERIENCE_IN",
+      "caption": "HAS_EXPERIENCE_IN",
+      "properties": {
+        "created_at": "2025-11-17T01:33:18.074000000+00:00",
+        "experience_level": "exploration"
+      }
+    },
+    {
+      "id": "r223",
+      "from": "63",
+      "to": "3",
+      "type": "HAS_EXPERIENCE_IN",
+      "caption": "HAS_EXPERIENCE_IN",
+      "properties": {
+        "created_at": "2025-11-17T01:33:18.910000000+00:00",
+        "experience_level": "exploration"
+      }
+    },
+    {
+      "id": "r224",
+      "from": "65",
+      "to": "4",
+      "type": "HAS_EXPERIENCE_IN",
+      "caption": "HAS_EXPERIENCE_IN",
+      "properties": {
+        "created_at": "2025-11-17T01:33:19.086000000+00:00",
+        "experience_level": "exploration"
+      }
+    },
+    {
+      "id": "r225",
+      "from": "82",
+      "to": "86",
+      "type": "HAS_EXPERIENCE_IN",
+      "caption": "HAS_EXPERIENCE_IN",
+      "properties": {
+        "created_at": "2025-11-17T01:33:13.779000000+00:00",
+        "experience_level": "active"
+      }
+    },
+    {
+      "id": "r226",
+      "from": "7",
+      "to": "10",
+      "type": "CAN_BE_SOLVED_BY",
+      "caption": "CAN_BE_SOLVED_BY",
+      "properties": {
+        "created_at": "2025-11-17T01:33:14.290000000+00:00"
+      }
+    },
+    {
+      "id": "r227",
+      "from": "13",
+      "to": "87",
+      "type": "CAN_BE_SOLVED_BY",
+      "caption": "CAN_BE_SOLVED_BY",
+      "properties": {
+        "created_at": "2025-11-17T01:33:14.469000000+00:00"
+      }
+    },
+    {
+      "id": "r228",
+      "from": "28",
+      "to": "87",
+      "type": "CAN_BE_SOLVED_BY",
+      "caption": "CAN_BE_SOLVED_BY",
+      "properties": {
+        "created_at": "2025-11-17T01:33:15.852000000+00:00"
+      }
+    },
+    {
+      "id": "r229",
+      "from": "88",
+      "to": "86",
+      "type": "CAN_BE_SOLVED_BY",
+      "caption": "CAN_BE_SOLVED_BY",
+      "properties": {
+        "created_at": "2025-11-17T01:33:13.779000000+00:00"
+      }
+    },
+    {
+      "id": "r230",
+      "from": "1",
+      "to": "3",
+      "type": "HAS_INTEREST",
+      "caption": "HAS_INTEREST",
+      "properties": {
+        "created_at": "2025-11-17T01:33:13.957000000+00:00"
+      }
+    },
+    {
+      "id": "r231",
+      "from": "8",
+      "to": "10",
+      "type": "HAS_INTEREST",
+      "caption": "HAS_INTEREST",
+      "properties": {
+        "created_at": "2025-11-17T01:33:14.290000000+00:00"
+      }
+    },
+    {
+      "id": "r232",
+      "from": "21",
+      "to": "87",
+      "type": "HAS_INTEREST",
+      "caption": "HAS_INTEREST",
+      "properties": {
+        "created_at": "2025-11-17T01:33:15.353000000+00:00"
+      }
+    },
+    {
+      "id": "r233",
+      "from": "25",
+      "to": "3",
+      "type": "HAS_INTEREST",
+      "caption": "HAS_INTEREST",
+      "properties": {
+        "created_at": "2025-11-17T01:33:15.683000000+00:00"
+      }
+    },
+    {
+      "id": "r234",
+      "from": "33",
+      "to": "3",
+      "type": "HAS_INTEREST",
+      "caption": "HAS_INTEREST",
+      "properties": {
+        "created_at": "2025-11-17T01:33:16.356000000+00:00"
+      }
+    },
+    {
+      "id": "r235",
+      "from": "46",
+      "to": "48",
+      "type": "HAS_INTEREST",
+      "caption": "HAS_INTEREST",
+      "properties": {
+        "created_at": "2025-11-17T01:33:17.356000000+00:00"
+      }
+    },
+    {
+      "id": "r236",
+      "from": "53",
+      "to": "4",
+      "type": "HAS_INTEREST",
+      "caption": "HAS_INTEREST",
+      "properties": {
+        "created_at": "2025-11-17T01:33:17.890000000+00:00"
+      }
+    },
+    {
+      "id": "r237",
+      "from": "65",
+      "to": "87",
+      "type": "HAS_INTEREST",
+      "caption": "HAS_INTEREST",
+      "properties": {
+        "created_at": "2025-11-17T01:33:19.086000000+00:00"
+      }
+    },
+    {
+      "id": "r238",
+      "from": "82",
+      "to": "87",
+      "type": "HAS_INTEREST",
+      "caption": "HAS_INTEREST",
+      "properties": {
+        "created_at": "2025-11-17T01:33:13.779000000+00:00"
+      }
+    },
+    {
+      "id": "r239",
+      "from": "8",
+      "to": "10",
+      "type": "HAS_EXPERIENCE_IN",
+      "caption": "HAS_EXPERIENCE_IN",
+      "properties": {
+        "created_at": "2025-11-17T01:33:14.290000000+00:00",
+        "experience_level": "exploration"
+      }
+    },
+    {
+      "id": "r240",
+      "from": "46",
+      "to": "48",
+      "type": "HAS_EXPERIENCE_IN",
+      "caption": "HAS_EXPERIENCE_IN",
+      "properties": {
+        "created_at": "2025-11-17T01:33:17.356000000+00:00",
+        "experience_level": "active"
+      }
+    },
+    {
+      "id": "r241",
+      "from": "53",
+      "to": "4",
+      "type": "HAS_EXPERIENCE_IN",
+      "caption": "HAS_EXPERIENCE_IN",
+      "properties": {
+        "created_at": "2025-11-17T01:33:17.890000000+00:00",
+        "experience_level": "exploration"
+      }
+    },
+    {
+      "id": "r242",
+      "from": "65",
+      "to": "87",
+      "type": "HAS_EXPERIENCE_IN",
+      "caption": "HAS_EXPERIENCE_IN",
+      "properties": {
+        "created_at": "2025-11-17T01:33:19.086000000+00:00",
+        "experience_level": "exploration"
+      }
+    },
+    {
+      "id": "r243",
+      "from": "82",
+      "to": "87",
+      "type": "HAS_EXPERIENCE_IN",
+      "caption": "HAS_EXPERIENCE_IN",
+      "properties": {
+        "created_at": "2025-11-17T01:33:13.779000000+00:00",
+        "experience_level": "active"
+      }
+    },
+    {
+      "id": "r244",
+      "from": "7",
+      "to": "84",
+      "type": "CAN_BE_SOLVED_BY",
+      "caption": "CAN_BE_SOLVED_BY",
+      "properties": {
+        "created_at": "2025-11-17T01:33:17.890000000+00:00"
+      }
+    },
+    {
+      "id": "r245",
+      "from": "13",
+      "to": "84",
+      "type": "CAN_BE_SOLVED_BY",
+      "caption": "CAN_BE_SOLVED_BY",
+      "properties": {
+        "created_at": "2025-11-17T01:33:15.017000000+00:00"
+      }
+    },
+    {
+      "id": "r246",
+      "from": "88",
+      "to": "87",
+      "type": "CAN_BE_SOLVED_BY",
+      "caption": "CAN_BE_SOLVED_BY",
+      "properties": {
+        "created_at": "2025-11-17T01:33:13.779000000+00:00"
+      }
+    },
+    {
+      "id": "r247",
+      "from": "1",
+      "to": "4",
+      "type": "HAS_INTEREST",
+      "caption": "HAS_INTEREST",
+      "properties": {
+        "created_at": "2025-11-17T01:33:13.957000000+00:00"
+      }
+    },
+    {
+      "id": "r248",
+      "from": "25",
+      "to": "4",
+      "type": "HAS_INTEREST",
+      "caption": "HAS_INTEREST",
+      "properties": {
+        "created_at": "2025-11-17T01:33:15.683000000+00:00"
+      }
+    },
+    {
+      "id": "r249",
+      "from": "33",
+      "to": "4",
+      "type": "HAS_INTEREST",
+      "caption": "HAS_INTEREST",
+      "properties": {
+        "created_at": "2025-11-17T01:33:16.356000000+00:00"
+      }
+    },
+    {
+      "id": "r250",
+      "from": "53",
+      "to": "87",
+      "type": "HAS_INTEREST",
+      "caption": "HAS_INTEREST",
+      "properties": {
+        "created_at": "2025-11-17T01:33:17.890000000+00:00"
+      }
+    },
+    {
+      "id": "r251",
+      "from": "53",
+      "to": "87",
+      "type": "HAS_EXPERIENCE_IN",
+      "caption": "HAS_EXPERIENCE_IN",
+      "properties": {
+        "created_at": "2025-11-17T01:33:17.890000000+00:00",
+        "experience_level": "exploration"
+      }
+    },
+    {
+      "id": "r252",
+      "from": "7",
+      "to": "85",
+      "type": "CAN_BE_SOLVED_BY",
+      "caption": "CAN_BE_SOLVED_BY",
+      "properties": {
+        "created_at": "2025-11-17T01:33:17.890000000+00:00"
+      }
+    },
+    {
+      "id": "r253",
+      "from": "13",
+      "to": "85",
+      "type": "CAN_BE_SOLVED_BY",
+      "caption": "CAN_BE_SOLVED_BY",
+      "properties": {
+        "created_at": "2025-11-17T01:33:18.910000000+00:00"
+      }
+    },
+    {
+      "id": "r254",
+      "from": "88",
+      "to": "4",
+      "type": "CAN_BE_SOLVED_BY",
+      "caption": "CAN_BE_SOLVED_BY",
+      "properties": {
+        "created_at": "2025-11-17T01:33:18.074000000+00:00"
+      }
+    },
+    {
+      "id": "r255",
+      "from": "1",
+      "to": "87",
+      "type": "HAS_INTEREST",
+      "caption": "HAS_INTEREST",
+      "properties": {
+        "created_at": "2025-11-17T01:33:13.957000000+00:00"
+      }
+    },
+    {
+      "id": "r256",
+      "from": "25",
+      "to": "87",
+      "type": "HAS_INTEREST",
+      "caption": "HAS_INTEREST",
+      "properties": {
+        "created_at": "2025-11-17T01:33:15.683000000+00:00"
+      }
+    },
+    {
+      "id": "r257",
+      "from": "33",
+      "to": "87",
+      "type": "HAS_INTEREST",
+      "caption": "HAS_INTEREST",
+      "properties": {
+        "created_at": "2025-11-17T01:33:16.356000000+00:00"
+      }
+    },
+    {
+      "id": "r258",
+      "from": "13",
+      "to": "4",
+      "type": "CAN_BE_SOLVED_BY",
+      "caption": "CAN_BE_SOLVED_BY",
+      "properties": {
+        "created_at": "2025-11-17T01:33:19.086000000+00:00"
+      }
+    },
+    {
+      "id": "r259",
+      "from": "80",
+      "to": "88",
+      "type": "HAS_PROBLEM",
+      "caption": "HAS_PROBLEM",
+      "properties": {
+        "created_at": "2025-11-17T01:33:13.779000000+00:00"
+      }
+    },
+    {
+      "id": "r260",
+      "from": "7",
+      "to": "3",
+      "type": "CAN_BE_SOLVED_BY",
+      "caption": "CAN_BE_SOLVED_BY",
+      "properties": {
+        "created_at": "2025-11-17T01:33:14.290000000+00:00"
+      }
+    },
+    {
+      "id": "r261",
+      "from": "7",
+      "to": "4",
+      "type": "CAN_BE_SOLVED_BY",
+      "caption": "CAN_BE_SOLVED_BY",
+      "properties": {
+        "created_at": "2025-11-17T01:33:14.290000000+00:00"
+      }
+    },
+    {
+      "id": "r262",
+      "from": "7",
+      "to": "48",
+      "type": "CAN_BE_SOLVED_BY",
+      "caption": "CAN_BE_SOLVED_BY",
+      "properties": {
+        "created_at": "2025-11-17T01:33:17.356000000+00:00"
+      }
+    },
+    {
+      "id": "r263",
+      "from": "88",
+      "to": "62",
+      "type": "CAN_BE_SOLVED_BY",
+      "caption": "CAN_BE_SOLVED_BY",
+      "properties": {
+        "created_at": "2025-11-17T01:33:18.573000000+00:00"
       }
     }
   ],
   "stats": {
-    "totalNodes": 84,
-    "totalRelationships": 211,
+    "totalNodes": 88,
+    "totalRelationships": 263,
     "nodeTypes": [
       "Domain",
       "Organization",
-      "Person"
+      "Person",
+      "Problem"
     ],
     "relationshipTypes": [
+      "CAN_BE_SOLVED_BY",
       "HAS_EXPERIENCE_IN",
       "HAS_INTEREST",
+      "HAS_PROBLEM",
       "WORKS_AT"
     ]
   }

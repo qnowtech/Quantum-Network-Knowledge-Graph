@@ -22,6 +22,11 @@ from neo4j import Driver, GraphDatabase
 
 from src.config.conf import settings
 from src.core.logger import get_logger
+from src.core.llm_service import (
+    infer_problem_category,
+    build_contextual_text,
+    PROBLEM_CATEGORIES
+)
 
 # Initialize logger
 logger = get_logger(__name__)
@@ -275,6 +280,125 @@ def normalize_industry_sector(sector: Any) -> Optional[str]:
     return sector_str
 
 
+def infer_problems_from_expectations(
+    event_expectations: Any,
+    quantum_experience: Optional[str] = None
+) -> List[str]:
+    """
+    Infer problem categories from event expectations and quantum experience.
+    
+    Analyzes the event_expectations field to identify problems/needs that
+    participants are trying to solve. Returns a list of normalized problem categories.
+    
+    Problem categories inferred:
+    - "Falta de conocimiento general": Need for general knowledge about quantum computing
+    - "Falta de actualización": Need to stay updated with latest developments
+    - "Falta de networking": Need for professional connections
+    - "Falta de información sobre aplicaciones": Need for information about applications/use cases
+    - "Falta de información sobre madurez tecnológica": Need to understand technology maturity
+    - "Falta de información sobre viabilidad": Need to understand feasibility/viability
+    - "Falta de información sobre aplicaciones industriales": Need for industrial application info
+    - "Falta de oportunidades de colaboración": Need for collaboration opportunities
+    - "Falta de información sobre demanda laboral": Need for information about job market
+    - "Falta de información sobre productos": Need for information about products
+    - "Falta de ideas para implementación": Need for implementation ideas
+    - "Gap entre negocio y tecnología": Gap between business and technology
+    
+    Args:
+        event_expectations: Text describing what the person expects from the event
+        quantum_experience: Level of quantum experience (optional, for additional context)
+        
+    Returns:
+        List of problem category names (normalized)
+    """
+    if pd.isna(event_expectations) or event_expectations == '':
+        # If no expectations but has industry_interest experience, infer industrial application problem
+        if quantum_experience == 'industry_interest':
+            return ["Falta de información sobre aplicaciones industriales"]
+        return []
+    
+    expectations_str = str(event_expectations).strip().lower()
+    problems = []
+    
+    # Falta de conocimiento general
+    if any(keyword in expectations_str for keyword in [
+        'conocer', 'conocimiento', 'información', 'informacion', 
+        'más información', 'mas informacion', 'incrementar conocimiento'
+    ]):
+        problems.append("Falta de conocimiento general")
+    
+    # Falta de actualización
+    if 'actualización' in expectations_str or 'actualizacion' in expectations_str:
+        problems.append("Falta de actualización")
+    
+    # Falta de networking
+    if any(keyword in expectations_str for keyword in [
+        'networking', 'contactos', 'contactos clave', 'colaborar', 
+        'colaboración', 'colaboracion', 'colegas'
+    ]):
+        problems.append("Falta de networking")
+    
+    # Falta de información sobre aplicaciones
+    if any(keyword in expectations_str for keyword in [
+        'aplicaciones', 'aplicacionws', 'casos de uso', 'casos de uso',
+        'estado de esta tecnologia y sus aplicaciones'
+    ]):
+        problems.append("Falta de información sobre aplicaciones")
+    
+    # Falta de información sobre madurez tecnológica
+    if any(keyword in expectations_str for keyword in [
+        'madurez', 'estado actual', 'estado de la tecnología', 
+        'desarrollo del cómputo cuántico', 'desarrollo del computo cuantico'
+    ]):
+        problems.append("Falta de información sobre madurez tecnológica")
+    
+    # Falta de información sobre viabilidad
+    if any(keyword in expectations_str for keyword in [
+        'posible', 'futuro', 'qué tan posible', 'que tan posible',
+        'viabilidad', 'viable', 'comprender qué tan posible'
+    ]):
+        problems.append("Falta de información sobre viabilidad")
+    
+    # Falta de información sobre aplicaciones industriales
+    if quantum_experience == 'industry_interest' or 'aplicación potencial en la industria' in expectations_str:
+        problems.append("Falta de información sobre aplicaciones industriales")
+    
+    # Falta de oportunidades de colaboración
+    if any(keyword in expectations_str for keyword in [
+        'oportunidades de colaboración', 'oportunidades de colaboracion',
+        'colaborar', 'colaboración', 'colaboracion', 'oportunidad de comenzar colaborando'
+    ]):
+        problems.append("Falta de oportunidades de colaboración")
+    
+    # Falta de información sobre demanda laboral
+    if any(keyword in expectations_str for keyword in [
+        'demanda', 'trabajar en', 'trabajo', 'demanda para trabajar'
+    ]):
+        problems.append("Falta de información sobre demanda laboral")
+    
+    # Falta de información sobre productos
+    if 'productos' in expectations_str or 'producto' in expectations_str:
+        problems.append("Falta de información sobre productos")
+    
+    # Falta de ideas para implementación
+    if any(keyword in expectations_str for keyword in [
+        'ideas', 'implementar', 'implementación', 'implementacion'
+    ]):
+        problems.append("Falta de ideas para implementación")
+    
+    # Gap entre negocio y tecnología
+    if any(keyword in expectations_str for keyword in [
+        'gap', 'business', 'negocio', 'busness', 'quantum gaps'
+    ]):
+        problems.append("Gap entre negocio y tecnología")
+    
+    # If no specific problems found but has expectations, infer general knowledge problem
+    if not problems and expectations_str:
+        problems.append("Falta de conocimiento general")
+    
+    return list(set(problems))  # Remove duplicates
+
+
 # ============================================================================
 # STEP 3: COMPLETE DATAFRAME TRANSFORMATION
 # ============================================================================
@@ -332,6 +456,67 @@ def transform_dataframe(df: pd.DataFrame) -> pd.DataFrame:
             normalize_industry_sector
         )
     
+    # Step 8: Build contextual text column (without personal data)
+    # This column concatenates relevant contextual information for LLM inference
+    df_transformed['contextual_text'] = df_transformed.apply(
+        lambda row: build_contextual_text(
+            event_expectations=row.get('event_expectations'),
+            quantum_experience=row.get('quantum_experience'),
+            interests=row.get('interests_list', []),
+            industry_sector=row.get('industry_sector'),
+            role=row.get('role')
+        ),
+        axis=1
+    )
+    
+    # Step 9: Infer problems using LLM ReAct agent
+    # This uses the new LLM service with ReAct pattern for better inference
+    logger.info("Inferring problems using LLM ReAct agent...")
+    df_transformed['llm_problem_inference'] = df_transformed['contextual_text'].apply(
+        lambda context: infer_problem_category(context) if context and context.strip() else {
+            "problem_category": "SIN IDENTIFICAR PROBLEMA",
+            "confidence": 0.0,
+            "thought": "No hay contexto disponible",
+            "action": "N/A",
+            "observation": "Contexto vacío",
+        }
+    )
+    
+    # Step 10: Extract problem category from LLM inference
+    # Use LLM inference as primary source, fallback to rule-based if needed
+    def extract_problem_from_llm_inference(llm_result: Dict[str, Any]) -> List[str]:
+        """
+        Extract problem category from LLM inference result.
+        
+        Returns a list with the inferred problem category, or empty list
+        if confidence is too low or category is "SIN IDENTIFICAR PROBLEMA".
+        """
+        if not isinstance(llm_result, dict):
+            return []
+        
+        problem_category = llm_result.get('problem_category', 'SIN IDENTIFICAR PROBLEMA')
+        confidence = llm_result.get('confidence', 0.0)
+        
+        # Only return problem if confidence is reasonable and not "SIN IDENTIFICAR PROBLEMA"
+        if problem_category != "SIN IDENTIFICAR PROBLEMA" and confidence >= 0.3:
+            return [problem_category]
+        
+        return []
+    
+    df_transformed['problems_list'] = df_transformed['llm_problem_inference'].apply(
+        extract_problem_from_llm_inference
+    )
+    
+    # Log statistics about LLM inference
+    if len(df_transformed) > 0:
+        llm_problems = df_transformed['llm_problem_inference'].apply(
+            lambda x: x.get('problem_category', 'SIN IDENTIFICAR PROBLEMA') if isinstance(x, dict) else 'SIN IDENTIFICAR PROBLEMA'
+        )
+        problem_counts = llm_problems.value_counts()
+        logger.info(f"LLM inference statistics:")
+        for problem, count in problem_counts.items():
+            logger.info(f"  - {problem}: {count} ({count/len(df_transformed)*100:.1f}%)")
+    
     logger.info(f"DataFrame transformation completed: {len(df_transformed)} rows")
     
     return df_transformed
@@ -364,6 +549,7 @@ def prepare_row_for_neo4j(row: pd.Series) -> Dict[str, Any]:
         'organization': row.get('organization'),
         'industry_sector': row.get('industry_sector'),
         'interests': row.get('interests_list', []),  # List of interests
+        'problems': row.get('problems_list', []),  # List of inferred problems
     }
     
     return data
@@ -384,9 +570,13 @@ def generate_cypher_query() -> str:
     4. Creates Domain nodes for each interest (quantum computing areas)
     5. Creates HAS_INTEREST relationships between Person and Domain
     6. Creates HAS_EXPERIENCE_IN relationships based on quantum_experience
+    7. Creates Problem nodes from inferred problems
+    8. Creates HAS_PROBLEM relationships between Person/Organization and Problem
+    9. Creates CAN_BE_SOLVED_BY relationships between Problem and Domain
     
     The model is designed to facilitate conversations: finding people
-    with common interests (same Domains) to initiate dialogues.
+    with common interests (same Domains) to initiate dialogues, and
+    matching problems with potential solutions (Domains).
     
     Returns:
         String with the Cypher query
@@ -394,7 +584,7 @@ def generate_cypher_query() -> str:
     query = """
     // Query to insert a complete row into the graph
     // Expected parameters: $row (dictionary with normalized data)
-    // Purpose: Facilitate conversations by connecting people with common interests
+    // Purpose: Facilitate conversations by connecting people with common interests and problems
     
     UNWIND [$row] AS row
     
@@ -448,7 +638,7 @@ def generate_cypher_query() -> str:
     // 5. Create HAS_EXPERIENCE_IN relationship based on quantum_experience
     // Only for people with active or exploration experience
     // Connects with all their interest Domains
-    WITH p, row
+    WITH p, o, row
     WHERE row.quantum_experience IN ['active', 'exploration']
     UNWIND [interest IN row.interests WHERE interest IS NOT NULL AND interest <> ''] AS interest
     MATCH (d:Domain {name: trim(interest)})
@@ -456,6 +646,37 @@ def generate_cypher_query() -> str:
     ON CREATE SET
         e.experience_level = row.quantum_experience,
         e.created_at = datetime()
+    
+    // 6. Create Problem nodes from inferred problems
+    // Problems represent needs/challenges identified from event expectations
+    WITH p, o, row
+    UNWIND [problem IN row.problems WHERE problem IS NOT NULL AND problem <> ''] AS problem
+    MERGE (pr:Problem {name: trim(problem)})
+    ON CREATE SET
+        pr.created_at = datetime()
+    
+    // 7. Create HAS_PROBLEM relationship between Person and Problem
+    MERGE (p)-[hp:HAS_PROBLEM]->(pr)
+    ON CREATE SET
+        hp.created_at = datetime()
+    
+    // 8. Create HAS_PROBLEM relationship between Organization and Problem
+    // Organizations inherit problems from their employees
+    WITH p, o, pr, row
+    WHERE row.organization IS NOT NULL
+    MERGE (o)-[op:HAS_PROBLEM]->(pr)
+    ON CREATE SET
+        op.created_at = datetime()
+    
+    // 9. Create CAN_BE_SOLVED_BY relationship between Problem and Domain
+    // If a person has both a problem and an interest in a domain,
+    // we infer that domain might help solve that problem
+    WITH p, pr, row
+    UNWIND [interest IN row.interests WHERE interest IS NOT NULL AND interest <> ''] AS interest
+    MATCH (d:Domain {name: trim(interest)})
+    MERGE (pr)-[csb:CAN_BE_SOLVED_BY]->(d)
+    ON CREATE SET
+        csb.created_at = datetime()
     
     RETURN count(p) AS persons_processed
     """
@@ -517,7 +738,70 @@ def get_session(driver: Driver):
 
 
 # ============================================================================
-# STEP 7: NEO4J INSERTION FUNCTION
+# STEP 7: GRAPH CLEANUP FUNCTION
+# ============================================================================
+
+def clear_graph(session: Any, confirm: bool = False) -> Dict[str, Any]:
+    """
+    Clear all nodes and relationships from the Neo4j graph.
+    
+    This function deletes all data from the graph to avoid duplicates
+    when reloading data. It's useful for testing and full reloads.
+    
+    WARNING: This will delete ALL data in the graph. Use with caution!
+    
+    Args:
+        session: Neo4j session
+        confirm: If False, raises ValueError to prevent accidental deletion.
+                 Set to True to actually execute the deletion.
+        
+    Returns:
+        Dictionary with deletion statistics:
+        - nodes_deleted: Number of nodes deleted
+        - relationships_deleted: Number of relationships deleted
+        
+    Raises:
+        ValueError: If confirm is False (safety check)
+    """
+    if not confirm:
+        raise ValueError(
+            "clear_graph requires confirm=True to prevent accidental deletion. "
+            "This will delete ALL nodes and relationships in the graph!"
+        )
+    
+    logger.warning("Clearing all nodes and relationships from Neo4j graph...")
+    
+    # Count relationships before deletion
+    count_relationships_query = "MATCH ()-[r]->() RETURN count(r) AS rel_count"
+    result = session.run(count_relationships_query)
+    rel_count_record = result.single()
+    relationships_deleted = rel_count_record["rel_count"] if rel_count_record else 0
+    
+    # Count nodes before deletion
+    count_nodes_query = "MATCH (n) RETURN count(n) AS node_count"
+    result = session.run(count_nodes_query)
+    node_count_record = result.single()
+    nodes_deleted = node_count_record["node_count"] if node_count_record else 0
+    
+    # Delete all relationships first (using DETACH DELETE would delete nodes too)
+    delete_relationships_query = "MATCH ()-[r]->() DELETE r"
+    session.run(delete_relationships_query).consume()
+    logger.info(f"Deleted {relationships_deleted} relationships")
+    
+    # Then delete all nodes
+    delete_nodes_query = "MATCH (n) DELETE n"
+    session.run(delete_nodes_query).consume()
+    logger.info(f"Deleted {nodes_deleted} nodes")
+    logger.info("Graph cleared successfully")
+    
+    return {
+        'nodes_deleted': nodes_deleted,
+        'relationships_deleted': relationships_deleted,
+    }
+
+
+# ============================================================================
+# STEP 8: NEO4J INSERTION FUNCTION
 # ============================================================================
 
 def insert_row_to_neo4j(session: Any, row_data: Dict[str, Any]) -> Dict[str, Any]:
@@ -547,7 +831,7 @@ def insert_row_to_neo4j(session: Any, row_data: Dict[str, Any]) -> Dict[str, Any
 
 
 # ============================================================================
-# STEP 8: COMPLETE ETL PIPELINE
+# STEP 9: COMPLETE ETL PIPELINE
 # ============================================================================
 
 def run_etl_pipeline(
@@ -555,7 +839,8 @@ def run_etl_pipeline(
     neo4j_uri: Optional[str] = None,
     neo4j_user: Optional[str] = None,
     neo4j_password: Optional[str] = None,
-    batch_size: int = 10
+    batch_size: int = 10,
+    clear_before_load: bool = False
 ) -> Dict[str, Any]:
     """
     Execute the complete ETL pipeline.
@@ -573,6 +858,8 @@ def run_etl_pipeline(
         neo4j_user: Neo4j username (optional, uses Settings.NEO4J_USER)
         neo4j_password: Neo4j password (optional, uses Settings.NEO4J_QUANTUM_NETWORK_AURA)
         batch_size: Batch size for processing (optional, for future optimizations)
+        clear_before_load: If True, clears all existing nodes and relationships before loading.
+                          WARNING: This will delete ALL data in the graph!
         
     Returns:
         Dictionary with process statistics
@@ -641,6 +928,15 @@ def run_etl_pipeline(
     
     try:
         with get_session(driver) as session:
+            # Clear graph if requested (before loading new data)
+            if clear_before_load:
+                logger.warning("Clearing graph before loading new data...")
+                clear_stats = clear_graph(session, confirm=True)
+                stats['graph_cleared'] = clear_stats
+                logger.info(
+                    f"Graph cleared: {clear_stats['nodes_deleted']} nodes, "
+                    f"{clear_stats['relationships_deleted']} relationships deleted"
+                )
             for idx, row in df_transformed.iterrows():
                 try:
                     # Prepare row data
@@ -692,15 +988,22 @@ if __name__ == "__main__":
     
     Optional environment variables:
     - CSV_PATH: Path to CSV file (default: "data/quantum_network.csv")
+    - CLEAR_BEFORE_LOAD: Set to "true" to clear graph before loading (default: false)
     """
+    import os
     
     logger.info("=" * 80)
     logger.info("EXECUTING ETL PIPELINE")
     logger.info("=" * 80)
     
+    # Check if we should clear the graph before loading
+    clear_before_load = os.getenv("CLEAR_BEFORE_LOAD", "false").lower() == "true"
+    if clear_before_load:
+        logger.warning("CLEAR_BEFORE_LOAD is enabled - graph will be cleared before loading!")
+    
     try:
         # Execute pipeline (uses Settings automatically)
-        stats = run_etl_pipeline()
+        stats = run_etl_pipeline(clear_before_load=clear_before_load)
         
         logger.info("=" * 80)
         logger.info("FINAL SUMMARY")
