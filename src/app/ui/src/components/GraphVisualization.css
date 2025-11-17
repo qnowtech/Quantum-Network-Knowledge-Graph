@@ -157,6 +157,13 @@
   line-height: 1.4;
 }
 
+.recommended-badge {
+  color: #4A90E2;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-left: 0.25rem;
+}
+
 /* Filtros de Nodos */
 .node-filters {
   display: flex;
@@ -354,9 +361,48 @@
   margin-right: 400px;
 }
 
+/* Ajustar el canvas cuando hay un panel de queries abierto */
+.graph-container.has-query-panel .graph-canvas {
+  margin-left: 500px;
+}
+
 @media (max-width: 768px) {
   .graph-container.has-panel .graph-canvas {
     margin-right: 0;
+  }
+  
+  .graph-container.has-query-panel .graph-canvas {
+    margin-left: 0;
+  }
+}
+
+.show-queries-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 100;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s;
+}
+
+.show-queries-btn:hover {
+  background: #f8f9fa;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .show-queries-btn {
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0.4rem 0.6rem;
+    font-size: 1rem;
   }
 }
 

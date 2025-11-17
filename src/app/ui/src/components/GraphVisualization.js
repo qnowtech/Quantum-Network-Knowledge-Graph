@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import { InteractiveNvlWrapper } from '@neo4j-nvl/react';
 import { useGraphData } from '../hooks/useGraphData';
 import NodeInfoPanel from './NodeInfoPanel';
+import QueryPanel from './QueryPanel';
 import './GraphVisualization.css';
 
 // Mapeo de colores para cada tipo de nodo
@@ -114,13 +115,32 @@ function enrichRelationships(relationships, opacity = 0.6, width = 1.0) {
 }
 
 // Layouts disponibles en @neo4j-nvl/react
-// Nota: Los nombres pueden variar según la versión de la librería
+// Basado en la documentación oficial de @neo4j-nvl/react 0.3.9
 const AVAILABLE_LAYOUTS = [
-  { value: 'force', label: 'Force-Directed', description: 'Layout basado en fuerzas físicas (recomendado)' },
-  { value: 'hierarchical', label: 'Jerárquico', description: 'Organiza nodos en niveles jerárquicos' },
-  { value: 'circular', label: 'Circular', description: 'Dispone nodos en círculo' },
-  { value: 'grid', label: 'Cuadrícula', description: 'Organiza nodos en una cuadrícula regular' },
-  { value: 'forceDirected', label: 'Force-Directed (alt)', description: 'Variante del layout de fuerzas' }
+  { 
+    value: 'forceDirected', 
+    label: 'Force-Directed', 
+    description: 'Layout basado en fuerzas físicas (recomendado para grafos de conocimiento)',
+    recommended: true
+  },
+  { 
+    value: 'hierarchical', 
+    label: 'Jerárquico', 
+    description: 'Organiza nodos en niveles jerárquicos basado en relaciones',
+    recommended: false
+  },
+  { 
+    value: 'circular', 
+    label: 'Circular', 
+    description: 'Dispone nodos en círculo (útil para visualizar comunidades)',
+    recommended: false
+  },
+  { 
+    value: 'grid', 
+    label: 'Cuadrícula', 
+    description: 'Organiza nodos en una cuadrícula regular (útil para comparación)',
+    recommended: false
+  }
 ];
 
 // Función para calcular el degree (grado) de cada nodo
@@ -147,7 +167,8 @@ function GraphVisualization() {
   const eventLogRef = useRef(null);
   const { nodes, relationships, stats, loading, error } = useGraphData();
   const [selectedNode, setSelectedNode] = useState(null);
-  const [currentLayout, setCurrentLayout] = useState('force');
+  const [showQueryPanel, setShowQueryPanel] = useState(false); // Mostrar/ocultar panel de queries
+  const [currentLayout, setCurrentLayout] = useState('forceDirected');
   const [layoutKey, setLayoutKey] = useState(0); // Key para forzar re-render
   const [nodeSizeMultiplier, setNodeSizeMultiplier] = useState(1.5); // Multiplicador de tamaño (1.0 = normal)
   const [showControls, setShowControls] = useState(true); // Mostrar/ocultar controles
@@ -361,10 +382,10 @@ function GraphVisualization() {
   };
 
   // Configuración de opciones según el layout
+  // Optimizado para el esquema: Person (39), Organization (34), Domain (11), Problem (4)
   const nvlOptions = React.useMemo(() => {
     const baseOptions = {
       layout: currentLayout,
-      initialZoom: currentLayout === 'circular' ? 0.8 : 1.0, // Zoom inicial menor para circular
       allowDynamicMinZoom: true,
       disableWebGL: false,
       maxZoom: 5,
@@ -373,36 +394,71 @@ function GraphVisualization() {
       relationshipCurve: 'curved', // Usar curvas en lugar de líneas rectas para relaciones
       relationshipRouting: 'curved', // Enrutamiento curvo para relaciones paralelas
       relationshipSeparation: 10, // Separación mínima entre relaciones paralelas (píxeles)
-      // Opciones de fuerza para layouts force-directed
-      ...(currentLayout === 'force' || currentLayout === 'forceDirected' ? {
-        force: {
-          charge: -300, // Fuerza de repulsión entre nodos (negativo = repulsión)
-          linkDistance: 100, // Distancia preferida entre nodos conectados
-          linkStrength: 0.5, // Fuerza de los enlaces (0-1)
-          collisionRadius: 20, // Radio de colisión para evitar superposición de nodos
-          // Opciones para mejorar el espaciado
-          centerStrength: 0.1, // Fuerza hacia el centro (evita que se dispersen demasiado)
-          manyBodyStrength: -300 // Fuerza de repulsión entre todos los nodos
-        }
-      } : {})
     };
-    
-    // Opciones específicas para layout circular
-    if (currentLayout === 'circular') {
-      // Forzar que el layout se aplique correctamente
-      return {
-        ...baseOptions,
-        // Algunas librerías necesitan estas opciones para circular
-        circular: {
-          enabled: true
-        }
-      };
+
+    // Configuraciones específicas por layout
+    switch (currentLayout) {
+      case 'forceDirected':
+        return {
+          ...baseOptions,
+          initialZoom: 0.6, // Zoom inicial ajustado para ~88 nodos con más espaciado
+          // Opciones de fuerza optimizadas para alejar más los nodos
+          force: {
+            charge: -600, // Fuerza de repulsión aumentada (más negativo = más separación)
+            linkDistance: 180, // Distancia preferida aumentada entre nodos conectados
+            linkStrength: 0.5, // Fuerza de los enlaces ligeramente reducida
+            collisionRadius: 40, // Radio de colisión aumentado para más espacio
+            centerStrength: 0.1, // Fuerza hacia el centro reducida (permite más dispersión)
+            manyBodyStrength: -600, // Fuerza de repulsión aumentada entre todos los nodos
+            // Parámetros adicionales para estabilidad con más espaciado
+            alpha: 0.3, // Parámetro de enfriamiento inicial
+            alphaDecay: 0.0228, // Tasa de enfriamiento (1 - pow(0.01, 1 / 200))
+            velocityDecay: 0.4 // Fricción (0-1)
+          }
+        };
+
+      case 'hierarchical':
+        return {
+          ...baseOptions,
+          initialZoom: 0.7,
+          hierarchical: {
+            direction: 'LR', // Left to Right (también: TB, BT, RL)
+            nodeSeparation: 150, // Separación horizontal aumentada entre nodos
+            levelSeparation: 200, // Separación vertical aumentada entre niveles
+            sortMethod: 'directed' // Ordenamiento: directed, hubsize, etc.
+          }
+        };
+
+      case 'circular':
+        return {
+          ...baseOptions,
+          initialZoom: 0.6, // Zoom menor para ver todo el círculo
+          circular: {
+            enabled: true,
+            radius: null, // null = auto-calcular basado en número de nodos
+            startAngle: 0, // Ángulo inicial en radianes
+            clockwise: true // Dirección del ordenamiento
+          }
+        };
+
+      case 'grid':
+        return {
+          ...baseOptions,
+          initialZoom: 0.8,
+          grid: {
+            rows: null, // null = auto-calcular (sqrt(nodes))
+            columns: null, // null = auto-calcular
+            cellWidth: 200, // Ancho de celda aumentado
+            cellHeight: 200 // Alto de celda aumentado
+          }
+        };
+
+      default:
+        return {
+          ...baseOptions,
+          initialZoom: 1.0
+        };
     }
-    
-    // Debug: ver qué opciones se están pasando
-    console.log('NVL Options:', baseOptions);
-    
-    return baseOptions;
   }, [currentLayout]);
 
   // Mostrar estado de carga
@@ -426,7 +482,7 @@ function GraphVisualization() {
           <p>{error}</p>
           <p className="error-hint">
             Asegúrate de que el archivo graph-data.json existe en la carpeta public/.
-            Ejecuta: <code>python src/app/scripts/export_neo4j_data.py</code>
+            Ejecuta: <code>node src/app/scripts/export_neo4j_data.js</code> o <code>npm run export-data</code>
           </p>
         </div>
       </div>
@@ -446,7 +502,7 @@ function GraphVisualization() {
   }
 
   return (
-    <div className={`graph-container ${selectedNode ? 'has-panel' : ''}`}>
+    <div className={`graph-container ${selectedNode ? 'has-panel' : ''} ${showQueryPanel ? 'has-query-panel' : ''}`}>
       {/* Panel de Controles */}
       {showControls && (
         <div className="controls-panel">
@@ -464,7 +520,12 @@ function GraphVisualization() {
           <div className="controls-content">
             {/* Selector de Layout */}
             <div className="control-group">
-              <label htmlFor="layout-select">Layout:</label>
+              <label htmlFor="layout-select">
+                Layout:
+                {AVAILABLE_LAYOUTS.find(l => l.value === currentLayout)?.recommended && (
+                  <span className="recommended-badge"> ⭐ Recomendado</span>
+                )}
+              </label>
               <select
                 id="layout-select"
                 value={currentLayout}
@@ -473,7 +534,7 @@ function GraphVisualization() {
               >
                 {AVAILABLE_LAYOUTS.map(layout => (
                   <option key={layout.value} value={layout.value}>
-                    {layout.label}
+                    {layout.label} {layout.recommended ? '⭐' : ''}
                   </option>
                 ))}
               </select>
@@ -606,15 +667,36 @@ function GraphVisualization() {
         </div>
       )}
 
-      {/* Botón para mostrar controles si están ocultos */}
-      {!showControls && (
+      {/* Botones de control en la esquina superior derecha */}
+      <div className="top-controls-buttons">
+        {/* Botón para mostrar panel de queries */}
         <button 
-          className="show-controls-btn"
-          onClick={() => setShowControls(true)}
-          aria-label="Mostrar controles"
+          className={`control-btn queries-btn ${showQueryPanel ? 'active' : ''}`}
+          onClick={() => setShowQueryPanel(!showQueryPanel)}
+          aria-label={showQueryPanel ? "Ocultar queries" : "Mostrar queries"}
+          title="Queries Estratégicas"
+        >
+          {showQueryPanel ? '✕' : '📊'}
+        </button>
+
+        {/* Botón para mostrar/ocultar controles */}
+        <button 
+          className={`control-btn config-btn ${showControls ? 'active' : ''}`}
+          onClick={() => setShowControls(!showControls)}
+          aria-label={showControls ? "Ocultar controles" : "Mostrar controles"}
+          title="Configuración"
         >
           ⚙️
         </button>
+      </div>
+
+      {/* Panel de Queries */}
+      {showQueryPanel && (
+        <QueryPanel
+          nodes={nodes}
+          relationships={relationships}
+          onClose={() => setShowQueryPanel(false)}
+        />
       )}
 
       <div className="graph-canvas">

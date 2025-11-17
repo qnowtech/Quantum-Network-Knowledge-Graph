@@ -45,7 +45,6 @@ This project is born under **QNOW's philosophy** as a company focused on **knowl
 
 Instead of merely storing event data, this public project builds an **open semantic layer** that:
 
-
 ![knowlesge](data/kg_graph_schema.png)
 
 - Represents people, organizations, domains, and problems as connected nodes.
@@ -180,12 +179,25 @@ Includes an interactive web interface built with React and Neo4j NVL to visualiz
 - Detailed information panel per node
 - Filtering and search of entities
 - Graph data export
+- **Strategic queries panel**: Execute Cypher queries from the README directly in the UI
+- **Real-time query execution**: Connect to Neo4j through FastAPI backend
+
+#### API Server
+
+A FastAPI backend server provides:
+
+- RESTful API for executing Cypher queries
+- Secure connection to Neo4j (credentials on server-side)
+- CORS enabled for React frontend
+- Health check endpoints
+- Automatic result formatting for UI consumption
 
 #### Technologies
 
-- **Backend**: Python 3.12+, Neo4j, pandas
+- **Backend**: Python 3.12+, Neo4j, pandas, FastAPI, uvicorn
 - **Frontend**: React, Neo4j NVL
 - **Database**: Neo4j (knowledge graph)
+- **API**: FastAPI REST API for query execution
 
 ### Installation and Usage
 
@@ -204,18 +216,79 @@ Includes an interactive web interface built with React and Neo4j NVL to visualiz
    NEO4J_USER=neo4j
    NEO4J_QUANTUM_NETWORK_AURA=
    ```
+
+   Or create a `.env` file in the project root with these variables.
 2. Run the ETL pipeline:
 
    ```bash
    python src/pipeline/etl_to_graph.py
    ```
-3. Start the visualization interface:
+3. Start the FastAPI backend server:
+
+   ```bash
+   uvicorn src.api.api:app --reload --host 0.0.0.0 --port 8000# Opción 1: Usando el script de inicio
+   python src/api/start_api.py
+
+   # Opción 2: Usando uvicorn directamente
+   uvicorn src.api.api:app --reload --host 0.0.0.0 --port 8000
+   ```
+
+   The API will be available at:
+
+   - API: http://localhost:8000
+   - API Docs (Swagger): http://localhost:8000/docs
+   - API Docs (ReDoc): http://localhost:8000/redoc
+4. Start the visualization interface:
 
    ```bash
    cd src/app/ui
    npm install
    npm start
    ```
+
+   The React app will be available at http://localhost:3000
+
+#### Complete Setup Workflow
+
+For a complete development setup, run these commands in separate terminals:
+
+**Terminal 1 - FastAPI Backend:**
+
+```bash
+python src/api/start_api.py
+```
+
+**Terminal 2 - React Frontend:**
+
+```bash
+cd src/app/ui
+npm start
+```
+
+**Terminal 3 - Export Graph Data (if needed):**
+
+```bash
+python src/app/scripts/export_neo4j_data.py
+```
+
+#### API Endpoints
+
+The FastAPI server provides the following endpoints:
+
+- `GET /` - API information
+- `GET /api/health` - Health check endpoint
+- `POST /api/query/execute` - Execute a Cypher query against Neo4j
+
+Example query execution:
+
+```bash
+curl -X POST "http://localhost:8000/api/query/execute" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "cypher": "MATCH (p:Person) RETURN p.name AS name LIMIT 5",
+    "parameters": {}
+  }'
+```
 
 ### Strategic Query Examples (Cypher)
 
