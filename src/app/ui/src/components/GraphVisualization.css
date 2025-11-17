@@ -9,29 +9,79 @@
   flex-direction: column;
 }
 
-.layout-selector {
+/* Panel de Controles */
+.controls-panel {
   position: absolute;
   top: 1rem;
   left: 1rem;
   z-index: 100;
   background: white;
-  padding: 0.75rem 1rem;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  min-width: 280px;
+  max-width: 350px;
+  overflow: hidden;
+}
+
+.controls-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background: #f8f9fa;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.controls-header h4 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.toggle-controls-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: #666;
+  cursor: pointer;
+  padding: 0;
+  width: 24px;
+  height: 24px;
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.toggle-controls-btn:hover {
+  background: #e0e0e0;
+  color: #333;
+}
+
+.controls-content {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.control-group label {
+  font-weight: 600;
+  color: #333;
   font-size: 0.9rem;
 }
 
-.layout-selector label {
-  font-weight: 600;
-  color: #333;
-  margin: 0;
-}
-
-.layout-select {
-  padding: 0.5rem 1rem;
+.control-select {
+  padding: 0.5rem 0.75rem;
   border: 1px solid #ddd;
   border-radius: 4px;
   background: white;
@@ -41,32 +91,146 @@
   transition: border-color 0.2s;
 }
 
-.layout-select:hover {
+.control-select:hover {
   border-color: #4A90E2;
 }
 
-.layout-select:focus {
+.control-select:focus {
   outline: none;
   border-color: #4A90E2;
   box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
 }
 
-.layout-description {
+.control-slider {
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: #e0e0e0;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.control-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #4A90E2;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.control-slider::-webkit-slider-thumb:hover {
+  background: #357ABD;
+  transform: scale(1.1);
+}
+
+.control-slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #4A90E2;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s;
+}
+
+.control-slider::-moz-range-thumb:hover {
+  background: #357ABD;
+  transform: scale(1.1);
+}
+
+.slider-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
   color: #666;
-  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+.control-description {
+  color: #666;
+  font-size: 0.8rem;
   font-style: italic;
-  max-width: 300px;
+  line-height: 1.4;
+}
+
+/* Filtros de Nodos */
+.node-filters {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.filter-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.filter-checkbox:hover {
+  background-color: #f8f9fa;
+}
+
+.filter-checkbox input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: #4A90E2;
+}
+
+.filter-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #333;
+  user-select: none;
+}
+
+.filter-color {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+}
+
+.show-controls-btn {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 100;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s;
+}
+
+.show-controls-btn:hover {
+  background: #f8f9fa;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 @media (max-width: 768px) {
-  .layout-selector {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
+  .controls-panel {
+    min-width: 240px;
+    max-width: 90vw;
   }
   
-  .layout-description {
-    max-width: 200px;
+  .control-description {
     font-size: 0.75rem;
   }
 }

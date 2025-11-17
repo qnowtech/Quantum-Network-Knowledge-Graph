@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { InteractiveNvlWrapper } from '@neo4j-nvl/react';
 import { useGraphData } from '../hooks/useGraphData';
 import NodeInfoPanel from './NodeInfoPanel';
@@ -26,13 +26,34 @@ function getNodeColor(labels) {
 }
 
 // Función para enriquecer nodos con colores y hacerlos más visibles
-function enrichNodesWithColors(nodes) {
+function enrichNodesWithColors(nodes, sizeMultiplier = 1.0) {
   return nodes.map(node => {
+    // Si el nodo ya está marcado como oculto (fantasma), mantener su estilo
+    if (node.hidden) {
+      return {
+        ...node,
+        // Mantener opacidad reducida y estilo de nodo fantasma
+        size: (node.size || 1.0) * sizeMultiplier * 0.7, // Más pequeños los nodos fantasma
+        radius: Math.max(10, (node.size || 1.0) * sizeMultiplier * 7)
+      };
+    }
+    
     const nodeColor = getNodeColor(node.labels);
-    // Tamaños más grandes para mejor visibilidad
-    const baseSize = node.labels?.includes('Person') ? 2.5 : 
-                     node.labels?.includes('Organization') ? 3.5 : 
-                     2.0;
+    
+    // Tamaños base multiplicados por el factor de escala
+    let baseSize;
+    if (node.labels?.includes('Person')) {
+      baseSize = 2.5 * sizeMultiplier;
+    } else if (node.labels?.includes('Organization')) {
+      baseSize = 3.5 * sizeMultiplier;
+    } else if (node.labels?.includes('Domain')) {
+      baseSize = 2.0 * sizeMultiplier;
+    } else {
+      baseSize = 2.0 * sizeMultiplier;
+    }
+    
+    // Calcular radio en píxeles (mínimo 15px para legibilidad)
+    const radius = Math.max(15, baseSize * 10);
     
     return {
       ...node,
@@ -40,30 +61,32 @@ function enrichNodesWithColors(nodes) {
       color: nodeColor,
       fill: nodeColor,
       backgroundColor: nodeColor,
-      // Tamaños más grandes para mejor visibilidad
+      // Tamaños ajustables
       size: baseSize,
-      radius: baseSize * 10, // Radio en píxeles
+      radius: radius,
       // Agregar estilo personalizado si es necesario
       style: {
         fill: nodeColor,
         stroke: '#ffffff',
-        strokeWidth: 3,
+        strokeWidth: Math.max(2, 3 * sizeMultiplier),
         opacity: 0.9
       },
       // Asegurar que el texto sea visible
       fontColor: '#ffffff',
-      fontSize: 14,
+      fontSize: Math.max(12, 14 * sizeMultiplier),
       fontWeight: 'bold'
     };
   });
 }
 
 // Layouts disponibles en @neo4j-nvl/react
+// Nota: Los nombres pueden variar según la versión de la librería
 const AVAILABLE_LAYOUTS = [
   { value: 'force', label: 'Force-Directed', description: 'Layout basado en fuerzas físicas (recomendado)' },
   { value: 'hierarchical', label: 'Jerárquico', description: 'Organiza nodos en niveles jerárquicos' },
   { value: 'circular', label: 'Circular', description: 'Dispone nodos en círculo' },
-  { value: 'grid', label: 'Cuadrícula', description: 'Organiza nodos en una cuadrícula regular' }
+  { value: 'grid', label: 'Cuadrícula', description: 'Organiza nodos en una cuadrícula regular' },
+  { value: 'forceDirected', label: 'Force-Directed (alt)', description: 'Variante del layout de fuerzas' }
 ];
 
 function GraphVisualization() {
@@ -71,11 +94,84 @@ function GraphVisualization() {
   const { nodes, relationships, stats, loading, error } = useGraphData();
   const [selectedNode, setSelectedNode] = useState(null);
   const [currentLayout, setCurrentLayout] = useState('force');
+  const [layoutKey, setLayoutKey] = useState(0); // Key para forzar re-render
+  const [nodeSizeMultiplier, setNodeSizeMultiplier] = useState(1.5); // Multiplicador de tamaño (1.0 = normal)
+  const [showControls, setShowControls] = useState(true); // Mostrar/ocultar controles
+  
+  // Filtros de nodos por tipo
+  const [nodeFilters, setNodeFilters] = useState({
+    Person: true,
+    Organization: true,
+    Domain: true
+  });
+  
+  // Filtrar nodos según los filtros activos
+  const filteredNodes = React.useMemo(() => {
+    return nodes.filter(node => {
+      if (!node.labels || node.labels.length === 0) return true;
+      // Mostrar nodo si al menos uno de sus labels está activo
+      return node.labels.some(label => nodeFilters[label] !== false);
+    });
+  }, [nodes, nodeFilters]);
+  
+  // Filtrar relaciones: mostrar todas las relaciones de nodos visibles
+  // Incluso si el otro extremo está oculto, para ver todas las conexiones
+  const filteredRelationships = React.useMemo(() => {
+    const visibleNodeIds = new Set(filteredNodes.map(n => n.id));
+    return relationships.filter(rel => 
+      // Mostrar relación si al menos uno de sus nodos está visible
+      visibleNodeIds.has(rel.from) || visibleNodeIds.has(rel.to)
+    );
+  }, [relationships, filteredNodes]);
+  
+  // Incluir nodos "fantasma" (ocultos pero conectados) para que las relaciones se vean correctamente
+  const allVisibleNodes = React.useMemo(() => {
+    const visibleNodeIds = new Set(filteredNodes.map(n => n.id));
+    const connectedNodeIds = new Set();
+    
+    // Encontrar todos los nodos conectados a nodos visibles
+    // Usar relationships directamente para evitar dependencia circular
+    relationships.forEach(rel => {
+      if (visibleNodeIds.has(rel.from)) {
+        connectedNodeIds.add(rel.to);
+      }
+      if (visibleNodeIds.has(rel.to)) {
+        connectedNodeIds.add(rel.from);
+      }
+    });
+    
+    // Obtener nodos conectados que no están visibles (para mostrar las relaciones)
+    const ghostNodes = nodes.filter(n => 
+      connectedNodeIds.has(n.id) && !visibleNodeIds.has(n.id)
+    );
+    
+    // Combinar nodos visibles con nodos fantasma (pero marcarlos como ocultos visualmente)
+    return [...filteredNodes, ...ghostNodes.map(node => ({
+      ...node,
+      hidden: true, // Marcar como oculto para estilos diferentes
+      opacity: 0.3, // Hacer más transparentes
+      style: {
+        ...node.style,
+        opacity: 0.3,
+        stroke: '#ccc',
+        strokeWidth: 1
+      }
+    }))];
+  }, [filteredNodes, relationships, nodes]);
   
   // Enriquecer nodos con colores y hacerlos más visibles
+  // Incluir nodos visibles y nodos fantasma (conectados pero ocultos)
   const enrichedNodes = React.useMemo(() => {
-    return enrichNodesWithColors(nodes);
-  }, [nodes]);
+    return enrichNodesWithColors(allVisibleNodes, nodeSizeMultiplier);
+  }, [allVisibleNodes, nodeSizeMultiplier]);
+
+  // Forzar actualización del layout cuando cambia
+  useEffect(() => {
+    console.log('Layout cambiado a:', currentLayout);
+    setLayoutKey(prev => prev + 1);
+    // Limpiar selección de nodo al cambiar layout para mejor experiencia
+    setSelectedNode(null);
+  }, [currentLayout]);
 
   const logEvent = (nvlEventName, nvlEventData) => {
     const { originalEvent, data, hitTargets } = nvlEventData;
@@ -147,16 +243,33 @@ function GraphVisualization() {
       logEvent('Zoom', { originalEvent, data: zoomLevel })
   };
 
-  // Configuración simplificada de opciones - solo las que la librería acepta
+  // Configuración de opciones según el layout
   const nvlOptions = React.useMemo(() => {
-    return {
+    const baseOptions = {
       layout: currentLayout,
-      initialZoom: 1.0,
+      initialZoom: currentLayout === 'circular' ? 0.8 : 1.0, // Zoom inicial menor para circular
       allowDynamicMinZoom: true,
       disableWebGL: false,
       maxZoom: 5,
       minZoom: 0.1
     };
+    
+    // Opciones específicas para layout circular
+    if (currentLayout === 'circular') {
+      // Forzar que el layout se aplique correctamente
+      return {
+        ...baseOptions,
+        // Algunas librerías necesitan estas opciones para circular
+        circular: {
+          enabled: true
+        }
+      };
+    }
+    
+    // Debug: ver qué opciones se están pasando
+    console.log('NVL Options:', baseOptions);
+    
+    return baseOptions;
   }, [currentLayout]);
 
   // Mostrar estado de carga
@@ -201,30 +314,128 @@ function GraphVisualization() {
 
   return (
     <div className={`graph-container ${selectedNode ? 'has-panel' : ''}`}>
-      {/* Selector de Layout */}
-      <div className="layout-selector">
-        <label htmlFor="layout-select">Layout:</label>
-        <select
-          id="layout-select"
-          value={currentLayout}
-          onChange={(e) => setCurrentLayout(e.target.value)}
-          className="layout-select"
+      {/* Panel de Controles */}
+      {showControls && (
+        <div className="controls-panel">
+          <div className="controls-header">
+            <h4>Configuración</h4>
+            <button 
+              className="toggle-controls-btn"
+              onClick={() => setShowControls(false)}
+              aria-label="Ocultar controles"
+            >
+              −
+            </button>
+          </div>
+          
+          <div className="controls-content">
+            {/* Selector de Layout */}
+            <div className="control-group">
+              <label htmlFor="layout-select">Layout:</label>
+              <select
+                id="layout-select"
+                value={currentLayout}
+                onChange={(e) => setCurrentLayout(e.target.value)}
+                className="control-select"
+              >
+                {AVAILABLE_LAYOUTS.map(layout => (
+                  <option key={layout.value} value={layout.value}>
+                    {layout.label}
+                  </option>
+                ))}
+              </select>
+              <span className="control-description">
+                {AVAILABLE_LAYOUTS.find(l => l.value === currentLayout)?.description}
+              </span>
+            </div>
+
+            {/* Control de Tamaño de Nodos */}
+            <div className="control-group">
+              <label htmlFor="node-size-slider">
+                Tamaño de Nodos: {nodeSizeMultiplier.toFixed(1)}x
+              </label>
+              <input
+                id="node-size-slider"
+                type="range"
+                min="0.5"
+                max="3.0"
+                step="0.1"
+                value={nodeSizeMultiplier}
+                onChange={(e) => setNodeSizeMultiplier(parseFloat(e.target.value))}
+                className="control-slider"
+              />
+              <div className="slider-labels">
+                <span>Pequeño</span>
+                <span>Normal</span>
+                <span>Grande</span>
+              </div>
+              <span className="control-description">
+                Ajusta el tamaño de todos los nodos para mejorar la legibilidad
+              </span>
+            </div>
+
+            {/* Filtros de Tipos de Nodos */}
+            <div className="control-group">
+              <label>Filtrar por Tipo:</label>
+              <div className="node-filters">
+                <label className="filter-checkbox">
+                  <input
+                    type="checkbox"
+                    checked={nodeFilters.Person}
+                    onChange={(e) => setNodeFilters(prev => ({ ...prev, Person: e.target.checked }))}
+                  />
+                  <span className="filter-label">
+                    <span className="filter-color" style={{ backgroundColor: NODE_COLORS.Person }}></span>
+                    Personas ({nodes.filter(n => n.labels?.includes('Person')).length})
+                  </span>
+                </label>
+                <label className="filter-checkbox">
+                  <input
+                    type="checkbox"
+                    checked={nodeFilters.Organization}
+                    onChange={(e) => setNodeFilters(prev => ({ ...prev, Organization: e.target.checked }))}
+                  />
+                  <span className="filter-label">
+                    <span className="filter-color" style={{ backgroundColor: NODE_COLORS.Organization }}></span>
+                    Organizaciones ({nodes.filter(n => n.labels?.includes('Organization')).length})
+                  </span>
+                </label>
+                <label className="filter-checkbox">
+                  <input
+                    type="checkbox"
+                    checked={nodeFilters.Domain}
+                    onChange={(e) => setNodeFilters(prev => ({ ...prev, Domain: e.target.checked }))}
+                  />
+                  <span className="filter-label">
+                    <span className="filter-color" style={{ backgroundColor: NODE_COLORS.Domain }}></span>
+                    Dominios ({nodes.filter(n => n.labels?.includes('Domain')).length})
+                  </span>
+                </label>
+              </div>
+              <span className="control-description">
+                Muestra u oculta tipos específicos de nodos en el grafo
+              </span>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Botón para mostrar controles si están ocultos */}
+      {!showControls && (
+        <button 
+          className="show-controls-btn"
+          onClick={() => setShowControls(true)}
+          aria-label="Mostrar controles"
         >
-          {AVAILABLE_LAYOUTS.map(layout => (
-            <option key={layout.value} value={layout.value}>
-              {layout.label}
-            </option>
-          ))}
-        </select>
-        <span className="layout-description">
-          {AVAILABLE_LAYOUTS.find(l => l.value === currentLayout)?.description}
-        </span>
-      </div>
+          ⚙️
+        </button>
+      )}
 
       <div className="graph-canvas">
         <InteractiveNvlWrapper
+          key={`${currentLayout}-${layoutKey}`} // Forzar re-render completo cuando cambia el layout
           nodes={enrichedNodes}
-          rels={relationships}
+          rels={filteredRelationships}
           nvlOptions={nvlOptions}
           mouseEventCallbacks={mouseEventCallbacks}
         />

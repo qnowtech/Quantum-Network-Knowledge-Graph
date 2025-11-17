@@ -3,7 +3,10 @@ __pycache__/
 *.py[codz]
 *$py.class
 
+.lab/*
+
 # C extensions
+
 *.so
 
 # Distribution / packaging
