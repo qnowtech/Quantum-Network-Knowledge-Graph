@@ -5,8 +5,8 @@
   "homepage": "./",
   "scripts": {
     "start": "react-scripts start",
-    "build": "npm run export-data && react-scripts build",
-    "export-data": "node ../../app/scripts/export_neo4j_data.js",
+    "build": "react-scripts build",
+    "export-data": "python ../../app/scripts/export_neo4j_data.py",
     "prebuild": "npm run export-data",
     "test": "react-scripts test",
     "deploy": "npm run build && gh-pages -d build"

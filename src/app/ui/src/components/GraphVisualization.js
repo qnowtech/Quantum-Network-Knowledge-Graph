@@ -23,16 +23,16 @@ const NODE_LABELS_ES = {
 
 // Función para obtener el color según el tipo de nodo
 function getNodeColor(labels) {
-  if (!labels || labels.length === 0) return '#888888';
-  
+  if (!labels || labels.length === 0) return "#888888";
+
   // Buscar el primer label que tenga un color definido
   for (const label of labels) {
     if (NODE_COLORS[label]) {
       return NODE_COLORS[label];
     }
   }
-  
-  return '#888888'; // Color por defecto
+
+  return "#888888"; // Color por defecto
 }
 
 // Función para enriquecer nodos con colores y hacerlos más visibles
@@ -44,10 +44,10 @@ function enrichNodesWithColors(nodes, sizeMultiplier = 1.0, nodeDegrees = new Ma
         ...node,
         // Mantener opacidad reducida y estilo de nodo fantasma
         size: (node.size || 1.0) * sizeMultiplier * 0.7, // Más pequeños los nodos fantasma
-        radius: Math.max(10, (node.size || 1.0) * sizeMultiplier * 7)
+        radius: Math.max(10, (node.size || 1.0) * sizeMultiplier * 7),
       };
     }
-    
+
     const nodeColor = getNodeColor(node.labels);
     const degree = nodeDegrees.get(node.id) || 0;
     
@@ -71,10 +71,10 @@ function enrichNodesWithColors(nodes, sizeMultiplier = 1.0, nodeDegrees = new Ma
         baseSize = 2.0 * sizeMultiplier;
       }
     }
-    
+
     // Calcular radio en píxeles (mínimo 15px para legibilidad)
     const radius = Math.max(15, baseSize * 10);
-    
+
     return {
       ...node,
       // Intentar múltiples propiedades de color que la librería podría aceptar
@@ -82,7 +82,14 @@ function enrichNodesWithColors(nodes, sizeMultiplier = 1.0, nodeDegrees = new Ma
       fill: nodeColor,
       backgroundColor: nodeColor,
       // Tamaños ajustables
-      size: baseSize,
+      size: baseSize * 5,
+      captions: [
+        {
+          key: "Bold text",
+          styles: ["bold", "large"],
+          value: node.caption,
+        },
+      ],
       radius: radius,
       degree: degree, // Agregar degree como propiedad
       // Agregar estilo personalizado si es necesario
@@ -235,31 +242,32 @@ function GraphVisualization() {
   
   // Filtrar nodos según los filtros activos
   const filteredNodes = React.useMemo(() => {
-    return nodes.filter(node => {
+    return nodes.filter((node) => {
       if (!node.labels || node.labels.length === 0) return true;
       // Mostrar nodo si al menos uno de sus labels está activo
-      return node.labels.some(label => nodeFilters[label] !== false);
+      return node.labels.some((label) => nodeFilters[label] !== false);
     });
   }, [nodes, nodeFilters]);
-  
+
   // Filtrar relaciones: mostrar todas las relaciones de nodos visibles
   // Incluso si el otro extremo está oculto, para ver todas las conexiones
   const filteredRelationships = React.useMemo(() => {
-    const visibleNodeIds = new Set(filteredNodes.map(n => n.id));
-    return relationships.filter(rel => 
-      // Mostrar relación si al menos uno de sus nodos está visible
-      visibleNodeIds.has(rel.from) || visibleNodeIds.has(rel.to)
+    const visibleNodeIds = new Set(filteredNodes.map((n) => n.id));
+    return relationships.filter(
+      (rel) =>
+        // Mostrar relación si al menos uno de sus nodos está visible
+        visibleNodeIds.has(rel.from) || visibleNodeIds.has(rel.to)
     );
   }, [relationships, filteredNodes]);
-  
+
   // Incluir nodos "fantasma" (ocultos pero conectados) para que las relaciones se vean correctamente
   const allVisibleNodes = React.useMemo(() => {
-    const visibleNodeIds = new Set(filteredNodes.map(n => n.id));
+    const visibleNodeIds = new Set(filteredNodes.map((n) => n.id));
     const connectedNodeIds = new Set();
-    
+
     // Encontrar todos los nodos conectados a nodos visibles
     // Usar relationships directamente para evitar dependencia circular
-    relationships.forEach(rel => {
+    relationships.forEach((rel) => {
       if (visibleNodeIds.has(rel.from)) {
         connectedNodeIds.add(rel.to);
       }
@@ -267,24 +275,27 @@ function GraphVisualization() {
         connectedNodeIds.add(rel.from);
       }
     });
-    
+
     // Obtener nodos conectados que no están visibles (para mostrar las relaciones)
-    const ghostNodes = nodes.filter(n => 
-      connectedNodeIds.has(n.id) && !visibleNodeIds.has(n.id)
+    const ghostNodes = nodes.filter(
+      (n) => connectedNodeIds.has(n.id) && !visibleNodeIds.has(n.id)
     );
-    
+
     // Combinar nodos visibles con nodos fantasma (pero marcarlos como ocultos visualmente)
-    return [...filteredNodes, ...ghostNodes.map(node => ({
-      ...node,
-      hidden: true, // Marcar como oculto para estilos diferentes
-      opacity: 0.3, // Hacer más transparentes
-      style: {
-        ...node.style,
-        opacity: 0.3,
-        stroke: '#ccc',
-        strokeWidth: 1
-      }
-    }))];
+    return [
+      ...filteredNodes,
+      ...ghostNodes.map((node) => ({
+        ...node,
+        hidden: true, // Marcar como oculto para estilos diferentes
+        opacity: 0.3, // Hacer más transparentes
+        style: {
+          ...node.style,
+          opacity: 0.3,
+          stroke: "#ccc",
+          strokeWidth: 1,
+        },
+      })),
+    ];
   }, [filteredNodes, relationships, nodes]);
   
   // Enriquecer relaciones con opacidad y grosor
@@ -300,8 +311,8 @@ function GraphVisualization() {
 
   // Forzar actualización del layout cuando cambia
   useEffect(() => {
-    console.log('Layout cambiado a:', currentLayout);
-    setLayoutKey(prev => prev + 1);
+    console.log("Layout cambiado a:", currentLayout);
+    setLayoutKey((prev) => prev + 1);
     // Limpiar selección de nodo al cambiar layout para mejor experiencia
     setSelectedNode(null);
   }, [currentLayout]);
@@ -332,53 +343,69 @@ function GraphVisualization() {
         }
       }
     },
-    
+
     onNodeClick: (node, hitTargets, originalEvent) => {
       logEvent('Click en Nodo', { originalEvent, data: node, hitTargets });
       // Seleccionar nodo al hacer click (funciona en desktop y móvil)
       if (node && node.id) {
-        const clickedNode = enrichedNodes.find(n => n.id === node.id);
+        const clickedNode = enrichedNodes.find((n) => n.id === node.id);
         if (clickedNode) {
           setSelectedNode(clickedNode);
         }
       }
     },
-    
+
     onNodeRightClick: (node, hitTargets, originalEvent) =>
-      logEvent('Click Derecho en Nodo', { originalEvent, data: node, hitTargets }),
-    
+      logEvent("Click Derecho en Nodo", {
+        originalEvent,
+        data: node,
+        hitTargets,
+      }),
+
     onNodeDoubleClick: (node, hitTargets, originalEvent) =>
-      logEvent('Doble Click en Nodo', { originalEvent, data: node, hitTargets }),
-    
+      logEvent("Doble Click en Nodo", {
+        originalEvent,
+        data: node,
+        hitTargets,
+      }),
+
     onRelationshipClick: (rel, hitTargets, originalEvent) =>
-      logEvent('Click en Relación', { originalEvent, data: rel, hitTargets }),
-    
+      logEvent("Click en Relación", { originalEvent, data: rel, hitTargets }),
+
     onRelationshipRightClick: (rel, hitTargets, originalEvent) =>
-      logEvent('Click Derecho en Relación', { originalEvent, data: rel, hitTargets }),
-    
+      logEvent("Click Derecho en Relación", {
+        originalEvent,
+        data: rel,
+        hitTargets,
+      }),
+
     onRelationshipDoubleClick: (rel, hitTargets, originalEvent) =>
-      logEvent('Doble Click en Relación', { originalEvent, data: rel, hitTargets }),
-    
+      logEvent("Doble Click en Relación", {
+        originalEvent,
+        data: rel,
+        hitTargets,
+      }),
+
     onCanvasClick: (originalEvent) => {
-      logEvent('Click en Canvas', { originalEvent });
+      logEvent("Click en Canvas", { originalEvent });
       // Cerrar panel al hacer click en el canvas
       setSelectedNode(null);
     },
-    
-    onCanvasDoubleClick: (originalEvent) => 
-      logEvent('Doble Click en Canvas', { originalEvent }),
-    
-    onCanvasRightClick: (originalEvent) => 
-      logEvent('Click Derecho en Canvas', { originalEvent }),
-    
+
+    onCanvasDoubleClick: (originalEvent) =>
+      logEvent("Doble Click en Canvas", { originalEvent }),
+
+    onCanvasRightClick: (originalEvent) =>
+      logEvent("Click Derecho en Canvas", { originalEvent }),
+
     onDrag: (draggedNodes, originalEvent) =>
-      logEvent('Arrastrando Nodos', { originalEvent, data: draggedNodes }),
-    
+      logEvent("Arrastrando Nodos", { originalEvent, data: draggedNodes }),
+
     onPan: (pan, originalEvent) =>
-      logEvent('Pan', { originalEvent, data: pan }),
-    
-    onZoom: (zoomLevel, originalEvent) => 
-      logEvent('Zoom', { originalEvent, data: zoomLevel })
+      logEvent("Pan", { originalEvent, data: pan }),
+
+    onZoom: (zoomLevel, originalEvent) =>
+      logEvent("Zoom", { originalEvent, data: zoomLevel }),
   };
 
   // Configuración de opciones según el layout
@@ -495,7 +522,10 @@ function GraphVisualization() {
       <div className="graph-container">
         <div className="empty-state">
           <h3>📊 No hay datos disponibles</h3>
-          <p>El grafo está vacío. Ejecuta el script de exportación para generar datos.</p>
+          <p>
+            El grafo está vacío. Ejecuta el script de exportación para generar
+            datos.
+          </p>
         </div>
       </div>
     );
@@ -508,7 +538,7 @@ function GraphVisualization() {
         <div className="controls-panel">
           <div className="controls-header">
             <h4>Configuración</h4>
-            <button 
+            <button
               className="toggle-controls-btn"
               onClick={() => setShowControls(false)}
               aria-label="Ocultar controles"
@@ -516,7 +546,7 @@ function GraphVisualization() {
               −
             </button>
           </div>
-          
+
           <div className="controls-content">
             {/* Selector de Layout */}
             <div className="control-group">
@@ -532,14 +562,17 @@ function GraphVisualization() {
                 onChange={(e) => setCurrentLayout(e.target.value)}
                 className="control-select"
               >
-                {AVAILABLE_LAYOUTS.map(layout => (
+                {AVAILABLE_LAYOUTS.map((layout) => (
                   <option key={layout.value} value={layout.value}>
                     {layout.label} {layout.recommended ? '⭐' : ''}
                   </option>
                 ))}
               </select>
               <span className="control-description">
-                {AVAILABLE_LAYOUTS.find(l => l.value === currentLayout)?.description}
+                {
+                  AVAILABLE_LAYOUTS.find((l) => l.value === currentLayout)
+                    ?.description
+                }
               </span>
             </div>
 
@@ -555,7 +588,9 @@ function GraphVisualization() {
                 max="3.0"
                 step="0.1"
                 value={nodeSizeMultiplier}
-                onChange={(e) => setNodeSizeMultiplier(parseFloat(e.target.value))}
+                onChange={(e) =>
+                  setNodeSizeMultiplier(parseFloat(e.target.value))
+                }
                 className="control-slider"
               />
               <div className="slider-labels">
@@ -721,4 +756,3 @@ function GraphVisualization() {
 }
 
 export default GraphVisualization;
-
